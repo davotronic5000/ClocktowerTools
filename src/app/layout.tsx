@@ -1,8 +1,6 @@
+import Icon from "@/components/icon/icon";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -16,7 +14,15 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={inter.className}>{children}</body>
+            <body>
+                <div className="navbar bg-base-100">
+                    <Icon type="clocktower" />
+                    <a className="text-xl normal-case">Clocktower Guru</a>
+                    <Icon type="death-book" size="sm" />
+                </div>
+                <div className="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3"></div>
+                {children}
+            </body>
         </html>
     );
 }
