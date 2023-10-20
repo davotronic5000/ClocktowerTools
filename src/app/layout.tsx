@@ -1,5 +1,9 @@
 import Icon from "@/components/icon/icon";
 import "./globals.css";
+import "@fontsource/raleway/400.css";
+import "@fontsource/raleway/600.css";
+import "@fontsource/raleway/700.css";
+import "@fontsource/old-standard-tt/700.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,12 +17,16 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
+        <html lang="en" data-theme="clocktower">
             <body>
                 <div className="navbar bg-base-100">
-                    <Icon type="clocktower" />
-                    <a className="text-xl normal-case">Clocktower Guru</a>
-                    <Icon type="death-book" size="sm" />
+                    <Icon type="clocktower" className="text-accent" />
+                    <h1>
+                        <a className="small-caps font-serif text-3xl font-semibold">
+                            Clocktower Guru
+                        </a>
+                    </h1>
+                    <Icon type="death-book" className="pl-2 text-accent" />
                 </div>
                 <div className="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3"></div>
                 {children}

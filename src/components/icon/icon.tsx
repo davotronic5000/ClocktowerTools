@@ -8,7 +8,7 @@ interface IconProps {
     className?: string;
 }
 
-const Icon: ComponentType<IconProps> = ({ type, size = "xl", className }) => {
+const Icon: ComponentType<IconProps> = ({ type, size = "md", className }) => {
     const iconType = icons[type];
     const sizes = {
         xs: tw`h-4 w-4`,
