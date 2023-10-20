@@ -1,10 +1,10 @@
-import Icon from "@/components/icon/icon";
-import "./globals.css";
+import { Header } from "@/components/header";
+import "@fontsource/old-standard-tt/700.css";
 import "@fontsource/raleway/400.css";
 import "@fontsource/raleway/600.css";
 import "@fontsource/raleway/700.css";
-import "@fontsource/old-standard-tt/700.css";
 import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -19,16 +19,7 @@ export default function RootLayout({
     return (
         <html lang="en" data-theme="clocktower">
             <body>
-                <div className="navbar bg-base-100">
-                    <Icon type="clocktower" className="text-accent" />
-                    <h1>
-                        <a className="small-caps font-serif text-3xl font-semibold">
-                            Clocktower Guru
-                        </a>
-                    </h1>
-                    <Icon type="death-book" className="pl-2 text-accent" />
-                </div>
-                <div className="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3"></div>
+                <Header />
                 {children}
             </body>
         </html>

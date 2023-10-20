@@ -1,7 +1,10 @@
 /** @type {import("prettier").Config} */
 const config = {
     tabWidth: 4,
-    plugins: ["prettier-plugin-tailwindcss"],
+    plugins: [
+        "prettier-plugin-tailwindcss",
+        "prettier-plugin-organize-imports",
+    ],
     tailwindFunctions: ["tw"],
 };
 

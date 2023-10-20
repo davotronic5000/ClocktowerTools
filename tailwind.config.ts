@@ -17,15 +17,15 @@ const config: Config = {
         themes: [
             {
                 clocktower: {
-                    primary: "#b8a8f4",
+                    primary: "#3F88C5",
 
-                    secondary: "#1049ba",
+                    secondary: "#E55934",
 
-                    accent: "#b38900",
+                    accent: "#F5B841",
 
-                    neutral: "#1b1424",
+                    neutral: "#393E41",
 
-                    "base-100": "#4b4153",
+                    "base-100": "#95969D",
 
                     info: "#8ea7ec",
 

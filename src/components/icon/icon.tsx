@@ -1,6 +1,6 @@
+import { tw } from "@/utilities/tailwind";
 import { ComponentType } from "react";
 import icons, { iconTypes } from "./icons";
-import { tw } from "@/utilities/tailwind";
 
 interface IconProps {
     type: iconTypes;
