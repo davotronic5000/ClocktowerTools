@@ -1,15 +1,15 @@
+import { ButtonLink } from "@/components/button";
 import Link from "next/link";
 import { ComponentType } from "react";
 
 const Page: ComponentType = () => {
     return (
         <main>
-            <Link href="/script" className="btn btn-primary">
-                Script Generator
-            </Link>
-            <Link href="/token" className="btn btn-secondary">
-                Token Generator
-            </Link>
+            <div className="mx-auto flex w-[600px] flex-col items-center">
+                <ButtonLink href="/script">Script Generator</ButtonLink>
+                <div className="divider">OR</div>
+                <ButtonLink href="/token">Token Generator</ButtonLink>
+            </div>
         </main>
     );
 };

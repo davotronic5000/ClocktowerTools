@@ -21,11 +21,13 @@ const config: Config = {
                     secondary: "#E55934",
                     accent: "#F5B841",
                     neutral: "#393E41",
-                    "base-100": "#95969D",
+                    "base-100": "#3F3047",
                     info: "#8ea7ec",
                     success: "#219754",
                     warning: "#f5c95c",
                     error: "#e67c70",
+                    "--rounded-btn": "0", // border radius rounded-btn utility class, used in buttons and similar element
+                    "--border-btn": "4px", // border width of buttons
                 },
             },
         ],
