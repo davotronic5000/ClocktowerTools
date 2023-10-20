@@ -18,21 +18,13 @@ const config: Config = {
             {
                 clocktower: {
                     primary: "#3F88C5",
-
                     secondary: "#E55934",
-
                     accent: "#F5B841",
-
                     neutral: "#393E41",
-
                     "base-100": "#95969D",
-
                     info: "#8ea7ec",
-
                     success: "#219754",
-
                     warning: "#f5c95c",
-
                     error: "#e67c70",
                 },
             },
