@@ -19,8 +19,15 @@ export default function RootLayout({
     return (
         <html lang="en" data-theme="clocktower">
             <body>
-                <Header />
-                {children}
+                <div className="flex min-h-screen flex-col justify-between">
+                    <Header />
+                    {children}
+                    <footer className="bg-neutral p-2 text-sm text-neutral-content">
+                        This project is not affiliated with The Pandemonium
+                        Institute. All roles & content are the property of
+                        Steven Medway and The Pandemonium Institute.
+                    </footer>
+                </div>
             </body>
         </html>
     );

@@ -4,10 +4,13 @@ import { ComponentType } from "react";
 
 const Header: ComponentType = () => {
     return (
-        <div className="navbar bg-neutral">
+        <div className="navbar bg-neutral text-neutral-content">
             <Icon type="clocktower" className="text-accent" />
             <h1>
-                <Link className="small-caps font-serif text-3xl font-semibold">
+                <Link
+                    href="/"
+                    className="small-caps font-serif text-3xl font-semibold"
+                >
                     Clocktower Guru
                 </Link>
             </h1>
