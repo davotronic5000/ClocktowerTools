@@ -1,4 +1,5 @@
 import { Header } from "@/components/header";
+import DarkBox from "@/components/simple-styles/dark-box";
 import "@fontsource/old-standard-tt/700.css";
 import "@fontsource/raleway/400.css";
 import "@fontsource/raleway/600.css";
@@ -19,14 +20,18 @@ export default function RootLayout({
     return (
         <html lang="en" data-theme="clocktower">
             <body>
-                <div className="flex min-h-screen flex-col justify-between">
+                <div className="flex h-screen flex-col justify-between">
                     <Header />
-                    <main>{children}</main>
-                    <footer className="bg-neutral p-2 text-sm text-neutral-content">
-                        This project is not affiliated with The Pandemonium
-                        Institute. All roles & content are the property of
-                        Steven Medway and The Pandemonium Institute.
-                    </footer>
+                    <main className="flex grow overflow-auto bg-gray-700">
+                        {children}
+                    </main>
+                    <DarkBox>
+                        <footer className={`p-2 text-sm`}>
+                            This project is not affiliated with The Pandemonium
+                            Institute. All roles & content are the property of
+                            Steven Medway and The Pandemonium Institute.
+                        </footer>
+                    </DarkBox>
                 </div>
             </body>
         </html>
