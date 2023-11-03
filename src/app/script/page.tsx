@@ -1,10 +1,8 @@
-import { ComponentType } from "react";
-
-const Page: ComponentType = () => {
+const Page = () => {
     return (
-        <div>
-            <h2>Script</h2>
-        </div>
+        <section>
+            <h2></h2>
+        </section>
     );
 };
 

@@ -1,6 +1,4 @@
-import { ComponentType } from "react";
-
-const Page: ComponentType = () => {
+const Page = () => {
     return (
         <div>
             <h2>Token</h2>
