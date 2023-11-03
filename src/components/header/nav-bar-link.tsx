@@ -17,8 +17,8 @@ const NavBarLink: ComponentType<NavBarLinkProps> = ({ path, children }) => {
             className={`
                 px-4
                 underline-offset-4
-                hover:text-accent
-                ${pathname === path ? "text-accent underline" : ""}`}
+                hover:text-amber-400
+                ${pathname === path ? "text-amber-500 underline" : ""}`}
         >
             {children}
         </Link>
