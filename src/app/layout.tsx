@@ -26,7 +26,9 @@ export default function RootLayout({
                         {children}
                     </main>
                     <DarkBox>
-                        <footer className={`p-2 text-sm`}>
+                        <footer
+                            className={`p-2 text-sm border-t-2 border-gray-600 border-solid `}
+                        >
                             This project is not affiliated with The Pandemonium
                             Institute. All roles & content are the property of
                             Steven Medway and The Pandemonium Institute.
