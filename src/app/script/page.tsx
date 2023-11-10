@@ -1,13 +1,12 @@
-import { Heading } from "@/components/typography";
+import FileUpload from "@/components/file-upload/file-upload";
+import SideBar from "@/components/sidebar/sidebar";
 
 const Page = () => {
     return (
         <div className="flex grow overflow-auto">
-            <section className="bg-indigo-950 overflow-auto h-full border-r-2 border-gray-600 border-solid shadow-xl shadow-gray-900 text-gray-200 py-4 px-8">
-                <Heading className="px-4 border-b border-gray-200 border-solid">
-                    Script Tool Options
-                </Heading>
-            </section>
+            <SideBar heading="Script Tool Options">
+                <FileUpload />
+            </SideBar>
             <article className="overflow-auto h-full grow">
                 PDF
                 <div className="h-[2000px]">Stuff</div>
