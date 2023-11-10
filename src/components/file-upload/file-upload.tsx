@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { Button } from "../button";
 import { Icon } from "../icon";
 import Toast from "../toast";
+import { toastStyle } from "../toast/toast";
 
 const FileUpload = () => {
     const [dragActive, updateDragActive] = useState<boolean>(false);
@@ -93,15 +94,23 @@ const FileUpload = () => {
                     />
                 </div>
             )}
-            <Button
-                onClick={() =>
-                    toast.custom(<Toast />, {
-                        duration: 1000000,
-                    })
-                }
-            >
-                Click me
-            </Button>
+            <div className="flex flex-col p-2">
+                {(
+                    ["error", "warning", "success", "info"] as Array<toastStyle>
+                ).map((style) => (
+                    <Button
+                        className="mb-2"
+                        key={style}
+                        onClick={() =>
+                            toast.custom(<Toast style={style}>Toast!</Toast>, {
+                                duration: 1000000,
+                            })
+                        }
+                    >
+                        {style} me
+                    </Button>
+                ))}
+            </div>
         </Fragment>
     );
 };

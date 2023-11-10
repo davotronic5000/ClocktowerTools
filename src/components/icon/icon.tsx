@@ -18,7 +18,7 @@ const Icon: ComponentType<IconProps> = ({
 }) => {
     const iconType = icons[type];
     const sizes = {
-        xs: tw`h-4 w-4`,
+        xs: tw`h-6 w-6`,
         sm: tw`h-8 w-8`,
         md: tw`h-12 w-12`,
         lg: tw`h-16 w-16`,
@@ -33,7 +33,12 @@ const Icon: ComponentType<IconProps> = ({
             {...rest}
         >
             {title && <title>{title}</title>}
-            <path fill="currentColor" d={iconType.d} />
+            <path
+                fill="currentColor"
+                d={iconType.d}
+                fillRule={iconType.fillRule}
+                clipPath={iconType.clipRule}
+            />
         </svg>
     );
 };
