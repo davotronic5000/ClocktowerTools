@@ -1,11 +1,12 @@
 import { Header } from "@/components/header";
 import DarkBox from "@/components/simple-styles/dark-box";
+import CustomToaster from "@/components/toast/custom-toaster";
 import "@fontsource/old-standard-tt/700.css";
 import "@fontsource/raleway/400.css";
 import "@fontsource/raleway/600.css";
 import "@fontsource/raleway/700.css";
 import type { Metadata } from "next";
-import { Toaster } from "react-hot-toast";
+import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default function RootLayout({
     return (
         <html lang="en" data-theme="clocktower">
             <body>
-                <Toaster position="bottom-right" reverseOrder />
+                <CustomToaster />
                 <div className="flex h-screen flex-col justify-between">
                     <Header />
                     <main className="flex grow overflow-auto bg-gray-700">
