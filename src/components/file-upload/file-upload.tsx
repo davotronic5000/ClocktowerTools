@@ -81,11 +81,12 @@ const FileUpload = () => {
                 </Button>
             </div>
             {file && (
-                <div className="flex items-center">
-                    Selected File: {file.name}{" "}
+                <div className="flex items-center text-sm mt-1">
+                    <span className="font-bold mr-1">Selected File:</span>{" "}
+                    <span>{file.name}</span>
                     <Icon
                         type="trash"
-                        size="xs"
+                        size="xxs"
                         className="cursor-pointer mx-1 text-red-700 hover:text-red-900 transition-color duration-700"
                         title="Remove file"
                         onClick={() => updateFile(null)}
