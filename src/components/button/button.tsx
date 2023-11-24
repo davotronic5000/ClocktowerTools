@@ -5,9 +5,12 @@ interface ButtonProps
     extends SharedButtonProps,
         ButtonHTMLAttributes<HTMLButtonElement> {}
 
-const Button = ({ children, size, className, ...rest }: ButtonProps) => {
+const Button = ({ children, size, className, type, ...rest }: ButtonProps) => {
     return (
-        <button className={generateButtonStyles({ size, className })} {...rest}>
+        <button
+            className={generateButtonStyles({ size, className, type })}
+            {...rest}
+        >
             {children}
         </button>
     );
