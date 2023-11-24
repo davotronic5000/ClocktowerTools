@@ -9,11 +9,11 @@ const Header: ComponentType = () => {
     return (
         <DarkBox className="z-10">
             <header
-                className={`flex justify-between p-3 border-b-2 border-gray-600 border-solid shadow-xl shadow-gray-900/50`}
+                className={`flex justify-between border-b-2 border-solid border-gray-600 p-3 shadow-xl shadow-gray-900/50`}
             >
                 <Link
                     href="/"
-                    className="small-caps flex items-center font-serif text-3xl font-semibold"
+                    className="flex items-center font-serif text-3xl font-semibold small-caps"
                 >
                     <Icon type="clocktower" className="text-amber-500" />
                     <Heading as="h1">Clocktower Guru</Heading>

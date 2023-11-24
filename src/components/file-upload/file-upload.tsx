@@ -24,7 +24,7 @@ const FileUpload = () => {
             <div
                 className={`${
                     dragActive ? "bg-gray-200" : "bg-indigo-200"
-                } p-4 min-h-[2rem] flex flex-col items-center justify-center font-bold uppercase text-sm border-double border-indigo-800 border-8 text-indigo-800 transition-colors duration-700`}
+                } flex min-h-[2rem] flex-col items-center justify-center border-8 border-double border-indigo-800 p-4 text-sm font-bold uppercase text-indigo-800 transition-colors duration-700`}
                 onDragEnter={(event) => {
                     event.preventDefault();
                     event.stopPropagation();
@@ -81,13 +81,13 @@ const FileUpload = () => {
                 </Button>
             </div>
             {file && (
-                <div className="flex items-center text-sm mt-1">
-                    <span className="font-bold mr-1">Selected File:</span>{" "}
+                <div className="mt-1 flex items-center text-sm">
+                    <span className="mr-1 font-bold">Selected File:</span>{" "}
                     <span>{file.name}</span>
                     <Icon
                         type="trash"
                         size="xxs"
-                        className="cursor-pointer mx-1 text-red-700 hover:text-red-900 transition-color duration-700"
+                        className="transition-color mx-1 cursor-pointer text-red-700 duration-700 hover:text-red-900"
                         title="Remove file"
                         onClick={() => updateFile(null)}
                     />

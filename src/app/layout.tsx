@@ -30,7 +30,7 @@ export default function RootLayout({
                     </main>
                     <DarkBox>
                         <footer
-                            className={`p-2 text-sm border-t-2 border-gray-600 border-solid `}
+                            className={`border-t-2 border-solid border-gray-600 p-2 text-sm `}
                         >
                             This project is not affiliated with The Pandemonium
                             Institute. All roles & content are the property of

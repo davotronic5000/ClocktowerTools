@@ -1,13 +1,13 @@
-import FileUpload from "@/components/file-upload/file-upload";
 import SideBar from "@/components/sidebar/sidebar";
+import JSONUploadControls from "./json-upload-controls";
 
 const Page = () => {
     return (
         <div className="flex grow overflow-auto">
             <SideBar heading="Script Tool Options">
-                <FileUpload />
+                <JSONUploadControls />
             </SideBar>
-            <article className="overflow-auto h-full grow">
+            <article className="h-full grow overflow-auto">
                 PDF
                 <div className="h-[2000px]">Stuff</div>
             </article>

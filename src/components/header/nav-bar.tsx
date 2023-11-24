@@ -3,7 +3,7 @@ import NavBarLink from "./nav-bar-link";
 
 const NavBar: ComponentType = () => {
     return (
-        <nav className="divide-x-2 px-4 text-sm items-center flex mr-8">
+        <nav className="mr-8 flex items-center divide-x-2 px-4 text-sm">
             <NavBarLink path="/script">Script Tool</NavBarLink>
             <NavBarLink path="/token">Token Generator</NavBarLink>
         </nav>
