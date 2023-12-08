@@ -8,7 +8,7 @@ const JSONUploadControls = () => {
             <FileUpload />
             <div className="mt-4 flex justify-between border-t border-solid border-gray-200 pt-4">
                 <Button type="secondary">Reset</Button>
-                <Button disabled>Select Script</Button>
+                <Button isDisabled>Select Script</Button>
             </div>
         </Fragment>
     );

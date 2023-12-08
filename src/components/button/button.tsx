@@ -1,30 +1,35 @@
-import { ButtonHTMLAttributes } from "react";
+"use client";
+import { ReactNode } from "react";
+import {
+    Button as ButtonAria,
+    ButtonProps as ButtonAriaProps,
+} from "react-aria-components";
 import { SharedButtonProps, generateButtonStyles } from "./shared-styles";
 
 interface ButtonProps
     extends SharedButtonProps,
-        ButtonHTMLAttributes<HTMLButtonElement> {}
+        Omit<ButtonAriaProps, "className"> {
+    children: ReactNode;
+}
 
 const Button = ({
     children,
     size,
     className,
-    disabled = false,
-    type,
+    variant,
     ...rest
 }: ButtonProps) => {
     return (
-        <button
+        <ButtonAria
             className={generateButtonStyles({
                 size,
                 className,
-                type,
-                disabled,
+                variant,
             })}
             {...rest}
         >
             {children}
-        </button>
+        </ButtonAria>
     );
 };
 

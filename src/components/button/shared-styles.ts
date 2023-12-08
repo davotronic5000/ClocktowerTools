@@ -1,10 +1,10 @@
 import { tw } from "@/utilities/tailwind";
+import { ButtonRenderProps } from "react-aria-components";
 
 export interface SharedButtonProps {
     size?: "sm" | "md";
     className?: string;
-    type?: "primary" | "secondary";
-    disabled?: boolean;
+    variant?: "primary" | "secondary";
 }
 
 export const buttonStyles = {
@@ -30,12 +30,9 @@ export const buttonStyles = {
     disabled: tw`cursor-not-allowed opacity-80`,
 };
 
-export const generateButtonStyles = ({
-    size = "md",
-    type = "primary",
-    disabled = false,
-    className,
-}: SharedButtonProps) =>
-    tw`${buttonStyles.main} ${buttonStyles.type[type](disabled)} ${
-        disabled ? buttonStyles.disabled : ""
-    } ${buttonStyles.size[size]} ${className ? className : ""}`;
+export const generateButtonStyles =
+    ({ size = "md", variant = "primary", className }: SharedButtonProps) =>
+    ({ isDisabled }: ButtonRenderProps) =>
+        tw`${buttonStyles.main} ${buttonStyles.type[variant](isDisabled)} ${
+            isDisabled ? buttonStyles.disabled : ""
+        } ${buttonStyles.size[size]} ${className ? className : ""}`;
