@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useCallback, useState } from "react";
+import { Fragment, useCallback } from "react";
 import {
     DropZone,
     FileDropItem,
@@ -11,8 +11,13 @@ import { toast } from "react-toastify";
 import { Button } from "../button";
 import { Icon } from "../icon";
 
-const FileUpload = () => {
-    const [file, updateFile] = useState<File | null>(null);
+interface FileUploadProps {
+    file: File | null;
+    updateFile: (file: File) => void;
+    resetFile: () => void;
+}
+
+const FileUpload = ({ file, updateFile, resetFile }: FileUploadProps) => {
     const checkAndSaveFile = useCallback(
         (file: File) => {
             if (file.type === "application/json") {
@@ -71,7 +76,7 @@ const FileUpload = () => {
                         size="xxs"
                         className="transition-color mx-1 cursor-pointer text-red-700 duration-700 hover:text-red-900"
                         title="Remove file"
-                        onClick={() => updateFile(null)}
+                        onClick={() => resetFile()}
                     />
                 </div>
             )}

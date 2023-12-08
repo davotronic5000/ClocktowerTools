@@ -1,11 +1,14 @@
 import SideBar from "@/components/sidebar/sidebar";
+import ScriptContextProvider from "./_script-context/script-context-provider";
 import JSONUploadControls from "./json-upload-controls";
 
 const Page = () => {
     return (
         <div className="flex grow overflow-auto">
             <SideBar heading="Script Tool Options">
-                <JSONUploadControls />
+                <ScriptContextProvider>
+                    <JSONUploadControls />
+                </ScriptContextProvider>
             </SideBar>
             <article className="h-full grow overflow-auto">
                 PDF

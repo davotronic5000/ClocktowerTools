@@ -27,7 +27,7 @@ export const buttonStyles = {
                     : ""
             }`,
     },
-    disabled: tw`cursor-not-allowed opacity-80`,
+    disabled: tw`cursor-not-allowed opacity-50`,
 };
 
 export const generateButtonStyles =

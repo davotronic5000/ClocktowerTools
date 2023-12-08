@@ -1,17 +1,16 @@
-import { Button } from "@/components/button";
-import FileUpload from "@/components/file-upload/file-upload";
-import { Fragment } from "react";
+"use client";
+import { useScriptContext } from "./_script-context/use-script-context";
+import FileUploadStage from "./file-upload-stage";
 
 const JSONUploadControls = () => {
-    return (
-        <Fragment>
-            <FileUpload />
-            <div className="mt-4 flex justify-between border-t border-solid border-gray-200 pt-4">
-                <Button variant="secondary">Reset</Button>
-                <Button isDisabled>Continue</Button>
-            </div>
-        </Fragment>
-    );
+    const { stage } = useScriptContext();
+    if (stage === "upload") {
+        return <FileUploadStage />;
+    }
+    if (stage === "config") {
+        return "Blah";
+    }
+    return "Something went wrong";
 };
 
 export default JSONUploadControls;
