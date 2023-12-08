@@ -70,7 +70,7 @@ const FileUpload = () => {
                 <span className="pb-1">Or</span>
                 <Button
                     size="sm"
-                    onClick={() => {
+                    onPress={() => {
                         if (inputRef.current) {
                             inputRef.current.value = "";
                             inputRef.current.click();

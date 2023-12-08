@@ -1,20 +1,24 @@
-import Link, { LinkProps } from "next/link";
-import { AnchorHTMLAttributes, ComponentType } from "react";
+"use client";
+import { ComponentType } from "react";
+import { Link, LinkProps as LinkAriaProps } from "react-aria-components";
 import { SharedButtonProps, generateButtonStyles } from "./shared-styles";
 
 interface ButtonLinkProps
     extends SharedButtonProps,
-        LinkProps,
-        Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps> {}
+        Omit<LinkAriaProps, "className"> {}
 
 const ButtonLink: ComponentType<ButtonLinkProps> = ({
     children,
     size,
+    variant,
     className,
     ...rest
 }) => {
     return (
-        <Link className={generateButtonStyles({ size, className })} {...rest}>
+        <Link
+            className={generateButtonStyles({ size, variant, className })}
+            {...rest}
+        >
             {children}
         </Link>
     );

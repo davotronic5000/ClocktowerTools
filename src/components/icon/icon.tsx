@@ -38,7 +38,7 @@ const Icon: ComponentType<IconProps> = ({
                 fill="currentColor"
                 d={iconType.d}
                 fillRule={iconType.fillRule}
-                clipPath={iconType.clipRule}
+                clipPath={iconType.clipPath}
             />
         </svg>
     );

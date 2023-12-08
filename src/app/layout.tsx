@@ -8,6 +8,7 @@ import "@fontsource/raleway/700.css";
 import type { Metadata } from "next";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
+import AriaRouterProvider from "./router-context";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -22,22 +23,25 @@ export default function RootLayout({
     return (
         <html lang="en" data-theme="clocktower">
             <body>
-                <CustomToaster />
-                <div className="flex h-screen flex-col justify-between">
-                    <Header />
-                    <main className="flex grow overflow-auto bg-gray-700">
-                        {children}
-                    </main>
-                    <DarkBox>
-                        <footer
-                            className={`border-t-2 border-solid border-gray-600 p-2 text-sm `}
-                        >
-                            This project is not affiliated with The Pandemonium
-                            Institute. All roles & content are the property of
-                            Steven Medway and The Pandemonium Institute.
-                        </footer>
-                    </DarkBox>
-                </div>
+                <AriaRouterProvider>
+                    <CustomToaster />
+                    <div className="flex h-screen flex-col justify-between">
+                        <Header />
+                        <main className="flex grow overflow-auto bg-gray-700">
+                            {children}
+                        </main>
+                        <DarkBox>
+                            <footer
+                                className={`border-t-2 border-solid border-gray-600 p-2 text-sm `}
+                            >
+                                This project is not affiliated with The
+                                Pandemonium Institute. All roles & content are
+                                the property of Steven Medway and The
+                                Pandemonium Institute.
+                            </footer>
+                        </DarkBox>
+                    </div>
+                </AriaRouterProvider>
             </body>
         </html>
     );

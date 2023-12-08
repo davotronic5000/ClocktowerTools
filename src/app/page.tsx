@@ -10,7 +10,9 @@ const Page: ComponentType = () => {
                 <span className="px-2">OR</span>
                 <div className="h-0.5 grow bg-gray-400" />
             </div>
-            <ButtonLink href="/token">Token Generator</ButtonLink>
+            <ButtonLink href="/token" variant="secondary">
+                Token Generator
+            </ButtonLink>
         </div>
     );
 };
