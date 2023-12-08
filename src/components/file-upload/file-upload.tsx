@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useCallback, useRef, useState } from "react";
+import { Fragment, useCallback, useState } from "react";
 import {
     DropZone,
     FileDropItem,
@@ -12,9 +12,7 @@ import { Button } from "../button";
 import { Icon } from "../icon";
 
 const FileUpload = () => {
-    const [dragActive, updateDragActive] = useState<boolean>(false);
     const [file, updateFile] = useState<File | null>(null);
-    const inputRef = useRef<HTMLInputElement>(null);
     const checkAndSaveFile = useCallback(
         (file: File) => {
             if (file.type === "application/json") {
