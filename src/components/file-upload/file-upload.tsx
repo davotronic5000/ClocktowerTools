@@ -1,6 +1,12 @@
 "use client";
 
 import { Fragment, useCallback, useRef, useState } from "react";
+import {
+    DropZone,
+    FileDropItem,
+    FileTrigger,
+    Text,
+} from "react-aria-components";
 import { toast } from "react-toastify";
 import { Button } from "../button";
 import { Icon } from "../icon";
@@ -21,65 +27,43 @@ const FileUpload = () => {
     );
     return (
         <Fragment>
-            <div
-                className={`${
-                    dragActive ? "bg-gray-200" : "bg-indigo-200"
-                } flex min-h-[2rem] flex-col items-center justify-center border-8 border-double border-indigo-800 p-4 text-sm font-bold uppercase text-indigo-800 transition-colors duration-700`}
-                onDragEnter={(event) => {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    updateDragActive(true);
-                }}
-                onDragOver={(event) => {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    updateDragActive(true);
-                }}
-                onDragLeave={(event) => {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    updateDragActive(false);
-                }}
-                onDrop={(event) => {
-                    event.preventDefault();
-                    updateDragActive(false);
-                    if (
-                        event.dataTransfer.files &&
-                        event.dataTransfer.files[0]
-                    ) {
-                        const file = event.dataTransfer.files[0];
-                        checkAndSaveFile(file);
+            <DropZone
+                className={({ isDropTarget, isFocused }) =>
+                    `${
+                        isDropTarget || isFocused
+                            ? "bg-gray-200"
+                            : "bg-indigo-200"
+                    } flex min-h-[2rem] flex-col items-center justify-center border-8 border-double border-indigo-800 p-4 text-sm font-bold uppercase text-indigo-800 transition-colors duration-700`
+                }
+                onDrop={async (e) => {
+                    if (e.items) {
+                        const files = e.items.filter(
+                            (item) => item.kind === "file",
+                        ) as FileDropItem[];
+                        if (files[0]) {
+                            const file = await files[0].getFile();
+                            checkAndSaveFile(file);
+                        }
                     }
                 }}
             >
-                <input
-                    className="hidden"
-                    type="file"
-                    ref={inputRef}
-                    accept=".json"
-                    onChange={(event) => {
-                        event.stopPropagation();
-                        if (event.target.files && event.target.files[0]) {
-                            const file = event.target.files[0];
-                            checkAndSaveFile(file);
-                        }
-                    }}
-                />
-                <Icon type="arrow-down-tray" size="xs" />
-                <span className="p-1">Drag & Drop File to Upload</span>
+                <Text slot="label" className="flex flex-col items-center">
+                    <Icon type="arrow-down-tray" size="xs" />
+                    <span className="p-1">Drag & Drop File to Upload</span>
+                </Text>
                 <span className="pb-1">Or</span>
-                <Button
-                    size="sm"
-                    onPress={() => {
-                        if (inputRef.current) {
-                            inputRef.current.value = "";
-                            inputRef.current.click();
+                <FileTrigger
+                    onSelect={(e) => {
+                        if (e?.length) {
+                            const files = Array.from(e);
+                            checkAndSaveFile(files[0]);
                         }
                     }}
+                    acceptedFileTypes={["application/json"]}
                 >
-                    Click To Browse
-                </Button>
-            </div>
+                    <Button size="sm">Click To Browse</Button>
+                </FileTrigger>
+            </DropZone>
             {file && (
                 <div className="mt-1 flex items-center text-sm">
                     <span className="mr-1 font-bold">Selected File:</span>{" "}

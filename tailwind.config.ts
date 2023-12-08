@@ -16,6 +16,7 @@ const config: Config = {
     plugins: [
         require("@tailwindcss/typography"),
         require("tailwindcss-opentype"),
+        require("tailwindcss-react-aria-components"),
     ],
 };
 export default config;
