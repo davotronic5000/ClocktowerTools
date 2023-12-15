@@ -30,8 +30,18 @@ export const buttonStyles = {
 };
 
 export const generateButtonStyles =
-<RP extends ButtonRenderProps | LinkRenderProps>({ size = "md", variant = "primary", className }: SharedButtonProps & { className?: string | ((props: RP) => string) }) =>
+    <RP extends ButtonRenderProps | LinkRenderProps>({
+        size = "md",
+        variant = "primary",
+        className,
+    }: SharedButtonProps & { className?: string | ((props: RP) => string) }) =>
     (renderProps: RP) =>
-        tw`${buttonStyles.main} ${buttonStyles.type[variant](renderProps.isDisabled)} ${
-            renderProps.isDisabled ? buttonStyles.disabled : ""
-        } ${buttonStyles.size[size]} ${typeof className === 'function' ? className(renderProps) : (className || "")}`;
+        tw`${buttonStyles.main} ${buttonStyles.type[variant](
+            renderProps.isDisabled,
+        )} ${renderProps.isDisabled ? buttonStyles.disabled : ""} ${
+            buttonStyles.size[size]
+        } ${
+            typeof className === "function"
+                ? className(renderProps)
+                : className || ""
+        }`;

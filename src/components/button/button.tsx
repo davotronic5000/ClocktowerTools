@@ -6,9 +6,7 @@ import {
 } from "react-aria-components";
 import { SharedButtonProps, generateButtonStyles } from "./shared-styles";
 
-interface ButtonProps
-    extends SharedButtonProps,
-        ButtonAriaProps {
+interface ButtonProps extends SharedButtonProps, ButtonAriaProps {
     children: ReactNode;
 }
 

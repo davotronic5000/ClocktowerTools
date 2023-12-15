@@ -2,11 +2,10 @@ import { Header } from "@/components/header";
 import DarkBox from "@/components/simple-styles/dark-box";
 import CustomToaster from "@/components/toast/custom-toaster";
 import type { Metadata } from "next";
+import { Playfair_Display, Raleway } from "next/font/google";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 import AriaRouterProvider from "./router-context";
-import { Raleway } from 'next/font/google';
-import { Playfair_Display } from 'next/font/google';
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -14,16 +13,16 @@ export const metadata: Metadata = {
 };
 
 const raleway = Raleway({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-raleway',
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-raleway",
 });
 
 const playfairDisplay = Playfair_Display({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-playfair-display',
-})
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-playfair-display",
+});
 
 export default function RootLayout({
     children,
@@ -31,7 +30,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" data-theme="clocktower" className={`${raleway.variable} ${playfairDisplay.variable}`}>
+        <html
+            lang="en"
+            data-theme="clocktower"
+            className={`${raleway.variable} ${playfairDisplay.variable}`}
+        >
             <body>
                 <AriaRouterProvider>
                     <CustomToaster />

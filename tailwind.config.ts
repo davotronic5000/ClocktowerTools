@@ -8,7 +8,7 @@ const config: Config = {
     ],
     theme: {
         fontFamily: {
-            sans: ['var(--font-raleway)', "ui-sans-serif", "system-ui"],
+            sans: ["var(--font-raleway)", "ui-sans-serif", "system-ui"],
             serif: ["var(--font-playfair-display)", "ui-serif", "Georgia"],
             mono: ["ui-monospace", "SFMono-Regular"],
         },

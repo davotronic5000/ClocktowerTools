@@ -1,11 +1,11 @@
 "use client";
 import { Link } from "react-aria-components";
-import { SharedButtonProps, generateButtonStyles } from "./shared-styles";
 import { LinkProps } from "../navigation/link";
+import { SharedButtonProps, generateButtonStyles } from "./shared-styles";
 
 interface ButtonLinkProps<T extends string>
-    extends SharedButtonProps, LinkProps<T> {
-        }
+    extends SharedButtonProps,
+        LinkProps<T> {}
 
 const ButtonLink = <T extends string>({
     size,
