@@ -25,8 +25,7 @@ const ScriptContextProvider = ({ children }: ScriptContextProviderProps) => {
     >((draft, action) => {
         switch (action.type) {
             case "RESET":
-                draft = defaultState;
-                break;
+                return defaultState;
             case "SCRIPT-UPDATE":
                 draft["scriptJSON"] = action.payload;
                 break;
