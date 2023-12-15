@@ -11,6 +11,7 @@ import {
     useScriptContext,
     useScriptDispatchContext,
 } from "./_script-context/use-script-context";
+import ScriptStageNavigation from "./script-stage-navigation";
 
 const FileUploadStage = () => {
     const { scriptJSON } = useScriptContext();
@@ -34,14 +35,11 @@ const FileUploadStage = () => {
                 updateFile={updateScript}
                 resetFile={resetScript}
             />
-            <div className="mt-4 flex justify-between border-t border-solid border-gray-200 pt-4">
-                <Button variant="secondary" onPress={resetScript}>
-                    Reset
-                </Button>
+            <ScriptStageNavigation>
                 <Button isDisabled={!scriptJSON} onPress={() => moveToConfig()}>
                     Continue
                 </Button>
-            </div>
+            </ScriptStageNavigation>
         </Fragment>
     );
 };

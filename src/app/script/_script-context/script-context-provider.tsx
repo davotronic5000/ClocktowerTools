@@ -15,6 +15,11 @@ interface ScriptContextProviderProps {
 
 const defaultState = {
     scriptJSON: null,
+    stage: "upload" as stage,
+};
+
+const initialState = {
+    ...defaultState,
     stage: "config" as stage,
 };
 
@@ -33,7 +38,7 @@ const ScriptContextProvider = ({ children }: ScriptContextProviderProps) => {
                 draft["stage"] = action.payload;
                 break;
         }
-    }, defaultState);
+    }, initialState);
     return (
         <ScriptContext.Provider value={state}>
             <ScriptDispatchContext.Provider value={dispatch}>
