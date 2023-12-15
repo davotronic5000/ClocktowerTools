@@ -20,7 +20,7 @@ const Heading = ({
 }) => {
     return createElement(
         `${as}`,
-        { className: `font-serif small-caps ${fontSizes[as]} ${className}` },
+        { className: `font-serif small-caps font-normal ${fontSizes[as]} ${className}` },
         children,
     );
 };
