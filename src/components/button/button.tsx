@@ -8,7 +8,7 @@ import { SharedButtonProps, generateButtonStyles } from "./shared-styles";
 
 interface ButtonProps
     extends SharedButtonProps,
-        Omit<ButtonAriaProps, "className"> {
+        ButtonAriaProps {
     children: ReactNode;
 }
 

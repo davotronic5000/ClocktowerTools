@@ -1,9 +1,8 @@
 import { tw } from "@/utilities/tailwind";
-import { ButtonRenderProps } from "react-aria-components";
+import { ButtonRenderProps, LinkRenderProps } from "react-aria-components";
 
 export interface SharedButtonProps {
     size?: "sm" | "md";
-    className?: string;
     variant?: "primary" | "secondary";
 }
 
@@ -31,8 +30,8 @@ export const buttonStyles = {
 };
 
 export const generateButtonStyles =
-    ({ size = "md", variant = "primary", className }: SharedButtonProps) =>
-    ({ isDisabled }: ButtonRenderProps) =>
-        tw`${buttonStyles.main} ${buttonStyles.type[variant](isDisabled)} ${
-            isDisabled ? buttonStyles.disabled : ""
-        } ${buttonStyles.size[size]} ${className ? className : ""}`;
+<RP extends ButtonRenderProps | LinkRenderProps>({ size = "md", variant = "primary", className }: SharedButtonProps & { className?: string | ((props: RP) => string) }) =>
+    (renderProps: RP) =>
+        tw`${buttonStyles.main} ${buttonStyles.type[variant](renderProps.isDisabled)} ${
+            renderProps.isDisabled ? buttonStyles.disabled : ""
+        } ${buttonStyles.size[size]} ${typeof className === 'function' ? className(renderProps) : (className || "")}`;
