@@ -14,7 +14,7 @@ import {
 import ScriptStageNavigation from "./script-stage-navigation";
 
 const FileUploadStage = () => {
-    const { scriptJSON } = useScriptContext();
+    const { scriptFile } = useScriptContext();
     const dispatchScriptAction = useScriptDispatchContext();
     const resetScript = useCallback(
         () => dispatchScriptAction(scriptReset),
@@ -31,12 +31,12 @@ const FileUploadStage = () => {
     return (
         <Fragment>
             <FileUpload
-                file={scriptJSON}
+                file={scriptFile}
                 updateFile={updateScript}
                 resetFile={resetScript}
             />
             <ScriptStageNavigation>
-                <Button isDisabled={!scriptJSON} onPress={() => moveToConfig()}>
+                <Button isDisabled={!scriptFile} onPress={() => moveToConfig()}>
                     Continue
                 </Button>
             </ScriptStageNavigation>

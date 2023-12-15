@@ -5,13 +5,15 @@ import { ScriptActionTypes } from "./script-context-actions";
 export type stage = "upload" | "config";
 
 export interface ScriptContextState {
-    scriptJSON: null | File;
+    scriptFile: null | File;
+    scriptJSON: null | object;
     stage: stage;
 }
 
 export type ScriptDispatchContextState = Dispatch<ScriptActionTypes>;
 
 const defaultContext = {
+    scriptFile: null,
     scriptJSON: null,
     stage: "upload" as stage,
 };
