@@ -1,7 +1,6 @@
 "use client";
 import { ReactNode } from "react";
 import { useImmerReducer } from "use-immer";
-import IB from "../../..//Indigestion_Brewing.json";
 import {
     ScriptContext,
     ScriptContextState,
@@ -9,6 +8,7 @@ import {
     stage,
 } from "./script-context";
 import { ScriptActionTypes } from "./script-context-actions";
+import { ScriptSubmissionType } from "./script-submission-schema";
 
 interface ScriptContextProviderProps {
     children: ReactNode;
@@ -22,7 +22,12 @@ const defaultState = {
 
 const initialState = {
     scriptFile: null,
-    scriptJSON: IB,
+    scriptJSON: {
+        name: "Test",
+        colour: "orange",
+        type: "ravenswood-bluff",
+        roles: [{ id: "widow" }],
+    } as ScriptSubmissionType,
     stage: "config" as stage,
 };
 
