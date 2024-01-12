@@ -17,6 +17,7 @@ interface ScriptContextProviderProps {
 const defaultState = {
     scriptFile: null,
     scriptJSON: null,
+    scriptPDF: null,
     stage: "upload" as stage,
 };
 
@@ -28,6 +29,7 @@ const initialState = {
         type: "ravenswood-bluff",
         roles: [{ id: "widow" }],
     } as ScriptSubmissionType,
+    scriptPDF: null,
     stage: "config" as stage,
 };
 
@@ -41,6 +43,9 @@ const ScriptContextProvider = ({ children }: ScriptContextProviderProps) => {
                 return defaultState;
             case "SCRIPT-UPDATE":
                 draft["scriptFile"] = action.payload;
+                break;
+            case "SCRIPT-PDF-UPDATE":
+                draft["scriptPDF"] = action.payload;
                 break;
             case "STAGE-UPDATE":
                 draft["stage"] = action.payload;

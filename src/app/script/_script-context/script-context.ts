@@ -8,6 +8,7 @@ export type stage = "upload" | "config";
 export interface ScriptContextState {
     scriptFile: null | File;
     scriptJSON: null | ScriptSubmissionType;
+    scriptPDF: null | Uint8Array;
     stage: stage;
 }
 
@@ -16,6 +17,7 @@ export type ScriptDispatchContextState = Dispatch<ScriptActionTypes>;
 const defaultContext = {
     scriptFile: null,
     scriptJSON: null,
+    scriptPDF: null,
     stage: "upload" as stage,
 };
 

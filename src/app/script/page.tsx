@@ -1,19 +1,18 @@
+"use client";
 import SideBar from "@/components/sidebar/sidebar";
 import ScriptContextProvider from "./_script-context/script-context-provider";
 import JSONUploadControls from "./json-upload-controls";
+import PDFViewer from "./pdf-viewer";
 
 const Page = () => {
     return (
         <div className="flex grow overflow-auto">
-            <SideBar heading="Script Tool Options">
-                <ScriptContextProvider>
+            <ScriptContextProvider>
+                <SideBar heading="Script Tool Options">
                     <JSONUploadControls />
-                </ScriptContextProvider>
-            </SideBar>
-            <article className="h-full grow overflow-auto">
-                PDF
-                <div className="h-[2000px]">Stuff</div>
-            </article>
+                </SideBar>
+                <PDFViewer />
+            </ScriptContextProvider>
         </div>
     );
 };
