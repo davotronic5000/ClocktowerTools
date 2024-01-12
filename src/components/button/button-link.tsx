@@ -17,6 +17,7 @@ const ButtonLink = <T extends string>({
     return (
         <Link
             className={generateButtonStyles({ size, variant, className })}
+            href={href as string}
             {...rest}
         />
     );
