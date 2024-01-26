@@ -2,7 +2,7 @@
 import SideBar from "@/components/sidebar/sidebar";
 import ScriptContextProvider from "./_script-context/script-context-provider";
 import JSONUploadControls from "./json-upload-controls";
-import PDFViewer from "./pdf-viewer";
+import Viewer from "./viewer";
 
 const Page = () => {
     return (
@@ -11,7 +11,7 @@ const Page = () => {
                 <SideBar heading="Script Tool Options">
                     <JSONUploadControls />
                 </SideBar>
-                <PDFViewer />
+                <Viewer />
             </ScriptContextProvider>
         </div>
     );

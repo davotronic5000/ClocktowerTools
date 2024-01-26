@@ -1,6 +1,6 @@
 import { useScriptContext } from "./_script-context/use-script-context";
 
-const PDFViewer = () => {
+const Viewer = () => {
     const { scriptPDF } = useScriptContext();
     return (
         <article className="h-full grow overflow-auto">
@@ -10,4 +10,4 @@ const PDFViewer = () => {
     );
 };
 
-export default PDFViewer;
+export default Viewer;
