@@ -16,18 +16,20 @@
     // 	"description": "Log output to console"
     // }
     "New Component": {
-        "scope": "typescript",
+        "scope": "typescriptreact",
         "prefix": ["component", "comp"],
         "body": [
+            "import { ReactNode } from \"react\";",
+            "",
             "interface ${1:Page}Props {",
-            "\tchildren: React.Node",
+            "\tchildren: ReactNode",
             "}",
             "",
-            "const Page = ({ children }: ${1:Page}Props) => {",
-            "\treturn <div>${0}</div>",
-            "}",
+            "const ${1:Page} = ({ children }: ${1:Page}Props) => {",
+            "\treturn <div>${0}</div>;",
+            "};",
             "",
-            "export default ${1:Page}"
+            "export default ${1:Page};"
         ]
     }
 }
