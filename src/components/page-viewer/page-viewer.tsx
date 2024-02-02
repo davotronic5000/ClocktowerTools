@@ -1,6 +1,10 @@
-interface PageViewerProps {}
+import { ReactNode } from "react";
 
-const PageViewer = ({ children }) => {
+interface PageViewerProps {
+    children: ReactNode;
+}
+
+const PageViewer = ({ children }: PageViewerProps) => {
     return <div>{children}</div>;
 };
 
