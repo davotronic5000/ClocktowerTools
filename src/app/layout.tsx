@@ -2,7 +2,7 @@ import { Header } from "@/components/header";
 import DarkBox from "@/components/simple-styles/dark-box";
 import CustomToaster from "@/components/toast/custom-toaster";
 import type { Metadata } from "next";
-import { Playfair_Display, Raleway } from "next/font/google";
+import { Playfair_Display_SC, Raleway } from "next/font/google";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 import AriaRouterProvider from "./router-context";
@@ -18,10 +18,11 @@ const raleway = Raleway({
     variable: "--font-raleway",
 });
 
-const playfairDisplay = Playfair_Display({
+const playfairDisplay = Playfair_Display_SC({
     subsets: ["latin"],
     display: "swap",
     variable: "--font-playfair-display",
+    weight: "400",
 });
 
 export default function RootLayout({
