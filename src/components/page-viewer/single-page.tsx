@@ -21,7 +21,7 @@ const SinglePage = ({ pageSize = "a4", children }: SinglePageProps) => {
                 height: pageSizes[pageSize].height,
                 width: pageSizes[pageSize].width,
             }}
-            className="relative"
+            className="relative overflow-hidden"
         >
             <Image
                 alt="parchment"
@@ -29,6 +29,7 @@ const SinglePage = ({ pageSize = "a4", children }: SinglePageProps) => {
                 style={{ objectFit: "cover" }}
                 placeholder="blur"
                 quality={100}
+                fill
             />
             <div className="absolute bottom-0 left-0 right-0 top-0">
                 {children}

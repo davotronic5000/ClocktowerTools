@@ -22,7 +22,7 @@
             "import { ReactNode } from \"react\";",
             "",
             "interface ${1:Page}Props {",
-            "\tchildren: ReactNode",
+            "\tchildren${2:?}: ReactNode",
             "}",
             "",
             "const ${1:Page} = ({ children }: ${1:Page}Props) => {",
