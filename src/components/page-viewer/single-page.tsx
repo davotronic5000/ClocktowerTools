@@ -29,6 +29,7 @@ const SinglePage = ({ pageSize = "a4", children }: SinglePageProps) => {
                 style={{ objectFit: "cover" }}
                 placeholder="blur"
                 quality={100}
+                sizes={`${pageSizes[pageSize].width}px`}
                 fill
             />
             <div className="absolute bottom-0 left-0 right-0 top-0">
