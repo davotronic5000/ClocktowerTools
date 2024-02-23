@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export default z
+const scriptJSONValidator = z
     .array(
         z.any().superRefine((x, ctx) => {
             const schemas = [
@@ -217,3 +217,7 @@ export default z
         }),
     )
     .default([]);
+
+export type ScriptJSONFileType = z.infer<typeof scriptJSONValidator>;
+
+export default scriptJSONValidator;

@@ -1,8 +1,10 @@
 import { stage } from "./script-context";
+import { ScriptSubmissionType } from "./script-submission-schema";
 
 export type ScriptActionTypes =
     | typeof scriptReset
     | ReturnType<typeof scriptUpdateFile>
+    | ReturnType<typeof scriptUpdateJSON>
     | ReturnType<typeof scriptUpdateStage>
     | ReturnType<typeof scriptUpdatePDF>;
 
@@ -17,6 +19,13 @@ export const scriptUpdateFile = (
 ): { type: "SCRIPT-UPDATE"; payload: File } => ({
     type: "SCRIPT-UPDATE",
     payload: file,
+});
+
+export const scriptUpdateJSON = (
+    json: ScriptSubmissionType,
+): { type: "SCRIPT-JSON-UPDATE"; payload: ScriptSubmissionType } => ({
+    type: "SCRIPT-JSON-UPDATE",
+    payload: json,
 });
 
 export const scriptUpdateStage = (

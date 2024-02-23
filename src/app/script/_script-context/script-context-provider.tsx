@@ -47,6 +47,9 @@ const ScriptContextProvider = ({ children }: ScriptContextProviderProps) => {
             case "SCRIPT-PDF-UPDATE":
                 draft["scriptPDF"] = action.payload;
                 break;
+            case "SCRIPT-JSON-UPDATE":
+                draft["scriptJSON"] = action.payload;
+                break;
             case "STAGE-UPDATE":
                 draft["stage"] = action.payload;
                 break;
