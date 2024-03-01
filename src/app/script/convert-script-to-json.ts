@@ -42,9 +42,11 @@ const convertScriptToJSON = async (scriptFile: File) => {
                 return role;
             }),
         };
+        return scriptJSON;
     } else {
         console.log(validator.error.issues);
         toast.error(`Script JSON is invalid.`);
+        return null;
     }
 };
 

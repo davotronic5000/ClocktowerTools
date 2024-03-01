@@ -5,6 +5,7 @@ import { Fragment, useCallback } from "react";
 import {
     scriptReset,
     scriptUpdateFile,
+    scriptUpdateJSON,
     scriptUpdateStage,
 } from "./_script-context/script-context-actions";
 import {
@@ -23,15 +24,19 @@ const FileUploadStage = () => {
     );
     const updateScript = useCallback(
         async (file: File) => {
-            await convertScriptToJSON(file);
             dispatchScriptAction(scriptUpdateFile(file));
         },
         [dispatchScriptAction],
     );
-    const moveToConfig = useCallback(
-        () => dispatchScriptAction(scriptUpdateStage("config")),
-        [dispatchScriptAction],
-    );
+    const moveToConfig = useCallback(async () => {
+        if (scriptFile) {
+            const json = await convertScriptToJSON(scriptFile);
+            if (json) {
+                dispatchScriptAction(scriptUpdateJSON(json));
+            }
+            dispatchScriptAction(scriptUpdateStage("config"));
+        }
+    }, [dispatchScriptAction, scriptFile]);
     return (
         <Fragment>
             <FileUpload
