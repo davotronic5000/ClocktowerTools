@@ -1,4 +1,5 @@
 import { ScriptToolSchemaType } from "@/app/script/_script-context/script-submission-schema";
+import { Icon } from "@/components/icon";
 import PageViewer from "@/components/page-viewer/page-viewer";
 import SinglePage from "@/components/page-viewer/single-page";
 import originalRoles from "@/data/roles";
@@ -66,10 +67,36 @@ const ScriptLayout = ({ script, children }: ScriptLayoutProps) => {
                                 <div className="col-span-1 col-start-1 place-self-center py-4 text-base font-extrabold uppercase text-gray-200 vertical-writing-rl orientation-upright">
                                     {roleType}
                                 </div>
-                                <div className="col-start-2 flex border-b border-stone-700 last:border-b-0">
+                                <div
+                                    className="col-start-2 grid grid-cols-2 gap-y-2 border-b border-stone-700 py-3 last:border-b-0"
+                                    style={{
+                                        gridTemplateRows: `repeat(${
+                                            roles.filter(
+                                                ({ team }) => team === roleType,
+                                            ).length / 2
+                                        }, auto)`,
+                                    }}
+                                >
                                     {roles
                                         .filter(({ team }) => team === roleType)
-                                        .map((role) => role.name)}
+                                        .map((role) => (
+                                            <div
+                                                key={role.id}
+                                                className="grid grid-cols-[50px_auto] gap-x-1"
+                                            >
+                                                <div>
+                                                    <Icon type="clocktower" />
+                                                </div>
+                                                <div>
+                                                    <div className="font-semibold leading-tight">
+                                                        {role.name}
+                                                    </div>
+                                                    <div className="w-[97%] text-sm leading-tight">
+                                                        {role.ability}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
                                 </div>
                             </Fragment>
                         ))}
