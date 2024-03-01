@@ -1,9 +1,11 @@
 import { ScriptToolSchemaType } from "@/app/script/_script-context/script-submission-schema";
 import PageViewer from "@/components/page-viewer/page-viewer";
 import SinglePage from "@/components/page-viewer/single-page";
+import originalRoles from "@/data/roles";
 import Image from "next/image";
 import backPattern from "public/back-pattern.png";
 import { Fragment, ReactNode } from "react";
+import { toast } from "react-toastify";
 import oldStandard from "./old-standard-loader";
 import oswaldPro from "./oswald-loader";
 
@@ -15,7 +17,27 @@ interface ScriptLayoutProps {
 const roleTypeOrder = ["townsfolk", "outsider", "minion", "demon"];
 
 const ScriptLayout = ({ script, children }: ScriptLayoutProps) => {
-    console.log(script);
+    const roles = script.roles.map((role) => {
+        if ("team" in role) {
+            return role;
+        }
+        const roleId = role.id.replaceAll("_", "").toLowerCase();
+        if (roleId in originalRoles) {
+            return originalRoles[roleId as keyof typeof originalRoles];
+        }
+        toast.error(`UNKNOWN ROLE: ${roleId} - Not found in roles.json`);
+        return {
+            id: role.id,
+            name: "Unknown Role",
+            team: "townsfolk",
+            firstNight: 0,
+            firstNightReminder: "",
+            otherNight: 0,
+            otherNightReminder: "",
+            ability: "This role is missing a definition",
+            image: "good.png",
+        };
+    });
     return (
         <PageViewer>
             <SinglePage>
@@ -36,7 +58,7 @@ const ScriptLayout = ({ script, children }: ScriptLayoutProps) => {
                         />
                     </div>
                     <div className="col-start-2 mb-2.5 mt-1.5 justify-self-center font-title text-4xl text-amber-950">
-                        Title
+                        {script.name}
                     </div>
                     <div className="z-0 col-span-full row-start-2 grid grid-cols-[40px_1fr] grid-rows-[min-content_min-content_min-content_min-content] font-content">
                         {roleTypeOrder.map((roleType) => (
@@ -45,7 +67,7 @@ const ScriptLayout = ({ script, children }: ScriptLayoutProps) => {
                                     {roleType}
                                 </div>
                                 <div className="col-start-2 flex border-b border-stone-700 last:border-b-0">
-                                    {script.roles
+                                    {roles
                                         .filter(({ team }) => team === roleType)
                                         .map((role) => role.name)}
                                 </div>
