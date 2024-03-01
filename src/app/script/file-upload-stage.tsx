@@ -11,6 +11,7 @@ import {
     useScriptContext,
     useScriptDispatchContext,
 } from "./_script-context/use-script-context";
+import convertScriptToJSON from "./convert-script-to-json";
 import ScriptStageNavigation from "./script-stage-navigation";
 
 const FileUploadStage = () => {
@@ -21,7 +22,10 @@ const FileUploadStage = () => {
         [dispatchScriptAction],
     );
     const updateScript = useCallback(
-        (file: File) => dispatchScriptAction(scriptUpdateFile(file)),
+        async (file: File) => {
+            await convertScriptToJSON(file);
+            dispatchScriptAction(scriptUpdateFile(file));
+        },
         [dispatchScriptAction],
     );
     const moveToConfig = useCallback(

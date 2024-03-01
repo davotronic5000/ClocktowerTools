@@ -13,7 +13,7 @@ import { Icon } from "../icon";
 
 interface FileUploadProps {
     file: File | null;
-    updateFile: (file: File) => void;
+    updateFile: (file: File) => Promise<void>;
     resetFile: () => void;
 }
 
