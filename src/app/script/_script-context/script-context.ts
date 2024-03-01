@@ -1,13 +1,13 @@
 "use client";
 import { Dispatch, createContext } from "react";
 import { ScriptActionTypes } from "./script-context-actions";
-import { ScriptSubmissionType } from "./script-submission-schema";
+import { ScriptToolSchemaType } from "./script-submission-schema";
 
 export type stage = "upload" | "config";
 
 export interface ScriptContextState {
     scriptFile: null | File;
-    scriptJSON: null | ScriptSubmissionType;
+    scriptJSON: null | ScriptToolSchemaType;
     scriptPDF: null | Uint8Array;
     stage: stage;
 }

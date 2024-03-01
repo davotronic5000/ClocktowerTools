@@ -8,7 +8,7 @@ import {
     stage,
 } from "./script-context";
 import { ScriptActionTypes } from "./script-context-actions";
-import { ScriptSubmissionType } from "./script-submission-schema";
+import { ScriptToolSchemaType } from "./script-submission-schema";
 
 interface ScriptContextProviderProps {
     children: ReactNode;
@@ -28,7 +28,7 @@ const initialState = {
         colour: "orange",
         type: "ravenswood-bluff",
         roles: [{ id: "widow" }],
-    } as ScriptSubmissionType,
+    } as ScriptToolSchemaType,
     scriptPDF: null,
     stage: "config" as stage,
 };

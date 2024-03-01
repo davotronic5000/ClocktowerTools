@@ -1,5 +1,5 @@
 import { stage } from "./script-context";
-import { ScriptSubmissionType } from "./script-submission-schema";
+import { ScriptToolSchemaType } from "./script-submission-schema";
 
 export type ScriptActionTypes =
     | typeof scriptReset
@@ -22,8 +22,8 @@ export const scriptUpdateFile = (
 });
 
 export const scriptUpdateJSON = (
-    json: ScriptSubmissionType,
-): { type: "SCRIPT-JSON-UPDATE"; payload: ScriptSubmissionType } => ({
+    json: ScriptToolSchemaType,
+): { type: "SCRIPT-JSON-UPDATE"; payload: ScriptToolSchemaType } => ({
     type: "SCRIPT-JSON-UPDATE",
     payload: json,
 });

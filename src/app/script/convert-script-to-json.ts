@@ -3,7 +3,7 @@ import scriptJSONValidator, {
     metaType,
 } from "@/utilities/script-json-validator";
 import { toast } from "react-toastify";
-import { ScriptSubmissionType } from "./_script-context/script-submission-schema";
+import { ScriptToolSchemaType } from "./_script-context/script-submission-schema";
 
 const convertScriptToJSON = async (scriptFile: File) => {
     const scriptFileJSON = JSON.parse(await scriptFile.text());
@@ -22,7 +22,7 @@ const convertScriptToJSON = async (scriptFile: File) => {
             ? (json.splice(metaIndex, 1)[0] as metaType)
             : undefined;
 
-        const scriptJSON: ScriptSubmissionType = {
+        const scriptJSON: ScriptToolSchemaType = {
             name: meta?.name || "Custom Script",
             colour: meta?.colour || meta?.color || "blue",
             roles: json.map((role) => {

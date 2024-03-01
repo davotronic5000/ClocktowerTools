@@ -1,8 +1,8 @@
 "use server";
 
 import {
-    ScriptSubmissionSchema,
-    ScriptSubmissionType,
+    ScriptToolSchema,
+    ScriptToolSchemaType,
 } from "./_script-context/script-submission-schema";
 import { ScriptFormType } from "./script-config-stage";
 
@@ -14,14 +14,14 @@ const concatUintArrayArrays = (a: Uint8Array, b: Uint8Array) => {
 };
 
 export const submitScript = async (
-    scriptJSON: ScriptSubmissionType,
+    scriptJSON: ScriptToolSchemaType,
     formValues: ScriptFormType,
 ) => {
     const combinedScript = {
         ...scriptJSON,
         formValues,
     };
-    const validatedFields = ScriptSubmissionSchema.safeParse(combinedScript);
+    const validatedFields = ScriptToolSchema.safeParse(combinedScript);
     if (!validatedFields.success) {
         console.log(validatedFields.error.flatten().fieldErrors);
     } else {

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const ScriptSubmissionSchema = z.object({
+export const ScriptToolSchema = z.object({
     name: z.string(),
     colour: z.string(),
     roles: z.array(
@@ -35,4 +35,4 @@ export const ScriptSubmissionSchema = z.object({
     ),
 });
 
-export type ScriptSubmissionType = z.infer<typeof ScriptSubmissionSchema>;
+export type ScriptToolSchemaType = z.infer<typeof ScriptToolSchema>;
