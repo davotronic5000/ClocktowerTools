@@ -149,7 +149,7 @@ const ScriptLayout = ({ script, children }: ScriptLayoutProps) => {
                         }}
                         placeholder="blur"
                         quality={100}
-                        sizes="794"
+                        sizes="100%"
                         fill
                         className=" opacity-60"
                     />
