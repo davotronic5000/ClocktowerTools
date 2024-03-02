@@ -3,6 +3,27 @@ import { z } from "zod";
 export const ScriptToolSchema = z.object({
     name: z.string(),
     colour: z.string(),
+    secondaryColour: z.string().optional(),
+    colourBlendType: z
+        .enum([
+            "normal",
+            "multiply",
+            "screen",
+            "overlay",
+            "darken",
+            "lighten",
+            "color-dodge",
+            "color-burn",
+            "hard-light",
+            "soft-light",
+            "difference",
+            "exclusion",
+            "hue",
+            "saturation",
+            "color",
+            "luminosity",
+        ])
+        .optional(),
     roles: z.array(
         z.object({
             id: z.string(),

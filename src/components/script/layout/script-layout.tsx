@@ -46,16 +46,25 @@ const ScriptLayout = ({ script, children }: ScriptLayoutProps) => {
                     className={`grid h-full w-full grid-cols-[40px_1fr] grid-rows-[min-content_auto_40px] ${oswaldPro.variable} ${oldStandard.variable}`}
                 >
                     <div
-                        style={{ backgroundColor: "DarkGreen" }}
+                        style={{
+                            background: script.secondaryColour
+                                ? `linear-gradient(${script.colour}, ${script.secondaryColour})`
+                                : script.colour,
+                        }}
                         className="z-1 col-span-1 col-start-1 row-span-full border-r border-stone-700"
                     >
                         <Image
                             alt="background-texture"
                             src={backPattern}
-                            style={{ objectFit: "cover" }}
+                            style={{
+                                objectFit: "cover",
+                                mixBlendMode: script.colourBlendType
+                                    ? script.colourBlendType
+                                    : "difference",
+                            }}
                             placeholder="blur"
                             quality={100}
-                            className="h-full w-full opacity-60 mix-blend-difference"
+                            className="h-full w-full opacity-60"
                         />
                     </div>
                     <div className="col-start-2 mb-2.5 mt-1.5 justify-self-center font-title text-4xl text-amber-950">

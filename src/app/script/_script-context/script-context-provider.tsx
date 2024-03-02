@@ -26,6 +26,8 @@ const initialState = {
     scriptJSON: {
         name: "Test",
         colour: "orange",
+        secondaryColour: "purple",
+        colourBlendType: "screen",
         type: "ravenswood-bluff",
         roles: [{ id: "widow" }],
     } as ScriptToolSchemaType,
