@@ -1,5 +1,4 @@
 import { ScriptToolSchemaType } from "@/app/script/_script-context/script-submission-schema";
-import { Icon } from "@/components/icon";
 import PageViewer from "@/components/page-viewer/page-viewer";
 import SinglePage from "@/components/page-viewer/single-page";
 import originalRoles from "@/data/roles";
@@ -94,7 +93,16 @@ const ScriptLayout = ({ script, children }: ScriptLayoutProps) => {
                                                 className="grid grid-cols-[50px_auto] gap-x-1"
                                             >
                                                 <div>
-                                                    <Icon type="clocktower" />
+                                                    <Image
+                                                        alt={`role-${role.id}`}
+                                                        src={`/roles/modern/${role.id}.webp`}
+                                                        width={50}
+                                                        height={50}
+                                                        style={{
+                                                            objectFit: "cover",
+                                                        }}
+                                                        quality={100}
+                                                    />
                                                 </div>
                                                 <div>
                                                     <div className="font-semibold leading-tight">
