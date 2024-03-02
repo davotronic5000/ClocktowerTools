@@ -123,6 +123,35 @@ const ScriptLayout = ({ script, children }: ScriptLayoutProps) => {
                     </div>
                 </div>
             </SinglePage>
+            <SinglePage>
+                <div
+                    style={{
+                        background: script.secondaryColour
+                            ? `linear-gradient(${script.colour}, ${script.secondaryColour})`
+                            : script.colour,
+                    }}
+                    className={`relative flex h-full items-center justify-center overflow-hidden ${oswaldPro.variable} ${oldStandard.variable}`}
+                >
+                    <Image
+                        alt="background-texture"
+                        src={backPattern}
+                        style={{
+                            objectFit: "cover",
+                            mixBlendMode: script.colourBlendType
+                                ? script.colourBlendType
+                                : "difference",
+                        }}
+                        placeholder="blur"
+                        quality={100}
+                        sizes="794"
+                        fill
+                        className=" opacity-60"
+                    />
+                    <span className="text-center font-title text-7xl text-amber-950 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">
+                        {script.name}
+                    </span>
+                </div>
+            </SinglePage>
         </PageViewer>
     );
 };

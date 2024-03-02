@@ -27,7 +27,7 @@ const initialState = {
         name: "Indigestion Brewing",
         colour: "orange",
         secondaryColour: "purple",
-        colourBlendType: "screen",
+        colourBlendType: "difference",
         type: "ravenswood-bluff",
         roles: [
             { id: "noble" },
