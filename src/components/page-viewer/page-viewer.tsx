@@ -6,7 +6,7 @@ interface PageViewerProps {
 
 const PageViewer = ({ children }: PageViewerProps) => {
     return (
-        <article className="flex h-full grow justify-center overflow-auto">
+        <article className="flex h-full grow flex-wrap justify-center overflow-auto">
             {children}
         </article>
     );

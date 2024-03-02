@@ -76,7 +76,7 @@ const ScriptLayout = ({ script, children }: ScriptLayoutProps) => {
                                     {roleType}
                                 </div>
                                 <div
-                                    className="col-start-2 grid grid-cols-2 gap-y-2 border-b border-stone-700 py-3 last:border-b-0"
+                                    className="col-start-2 grid grid-cols-2 gap-y-1 border-b border-stone-700 py-2 last:border-b-0"
                                     style={{
                                         gridTemplateRows: `repeat(${
                                             roles.filter(

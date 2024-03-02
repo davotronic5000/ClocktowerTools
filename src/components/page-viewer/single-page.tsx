@@ -20,6 +20,8 @@ const SinglePage = ({ pageSize = "a4", children }: SinglePageProps) => {
             style={{
                 height: pageSizes[pageSize].height,
                 width: pageSizes[pageSize].width,
+                minHeight: pageSizes[pageSize].height,
+                minWidth: pageSizes[pageSize].width,
             }}
             className="relative overflow-hidden"
         >
