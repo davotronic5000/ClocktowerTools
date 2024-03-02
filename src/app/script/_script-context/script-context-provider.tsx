@@ -25,8 +25,8 @@ const initialState = {
     scriptFile: null,
     scriptJSON: {
         name: "Indigestion Brewing",
-        author: "Mozart Is Lift Music",
         colour: "orange",
+        author: "Mozart Is Lift Music",
         secondaryColour: "purple",
         colourBlendType: "difference",
         type: "ravenswood-bluff",

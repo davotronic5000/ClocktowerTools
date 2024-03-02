@@ -68,10 +68,12 @@ const ScriptLayout = ({ script, children }: ScriptLayoutProps) => {
                     </div>
                     <div className="col-start-2 mb-2.5 mt-1.5 justify-self-center font-title text-4xl text-amber-950">
                         {script.name}
-                        <span className="font-serif text-xl">
-                            {" "}
-                            by {script.author}
-                        </span>
+                        {script.author && (
+                            <span className="font-serif text-xl">
+                                {" "}
+                                by {script.author}
+                            </span>
+                        )}
                     </div>
                     <div className="z-0 col-span-full row-start-2 grid grid-cols-[40px_1fr] grid-rows-[min-content_min-content_min-content_min-content] font-content">
                         {roleTypeOrder.map((roleType) => (
