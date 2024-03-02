@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const ScriptToolSchema = z.object({
     name: z.string(),
+    author: z.string().optional(),
     colour: z.string(),
     secondaryColour: z.string().optional(),
     colourBlendType: z
