@@ -13,7 +13,7 @@ const ScriptDownloadButton = ({ script }: ScriptDownloadButtonProps) => {
     return (
         <Button
             size="sm"
-            isDisabled={fetching}
+            loading={fetching}
             onPress={async () => {
                 updateFetching(true);
                 const response = await fetch("/api/script-pdf", {
