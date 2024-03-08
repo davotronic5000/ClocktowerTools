@@ -67,13 +67,14 @@ const ScriptLayout = ({ script, noPageGap, children }: ScriptLayoutProps) => {
                             className="h-full w-full opacity-60"
                         />
                     </div>
-                    <div className="col-start-2 mb-2.5 mt-1.5 justify-self-center font-title text-4xl text-amber-950">
-                        {script.name}
+                    <div className="col-start-2 mb-2.5 mt-2.5 justify-self-center  text-amber-950">
+                        <div className="font-title text-4xl leading-none">
+                            {script.name}
+                        </div>
                         {script.author && (
-                            <span className="font-serif text-xl">
-                                {" "}
+                            <div className="text-center font-serif text-sm leading-tight">
                                 by {script.author}
-                            </span>
+                            </div>
                         )}
                     </div>
                     <div className="z-0 col-span-full row-start-2 grid grid-cols-[40px_1fr] grid-rows-[min-content_min-content_min-content_min-content] font-content">
