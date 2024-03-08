@@ -6,8 +6,10 @@ const Viewer = () => {
     const { scriptJSON } = useScriptContext();
     if (scriptJSON) {
         return (
-            <div>
-                <ScriptDownloadButton script={scriptJSON} />
+            <div className="flex flex-col items-center">
+                <div className="m-2 flex w-full justify-center">
+                    <ScriptDownloadButton script={scriptJSON} />
+                </div>
                 <ScriptLayout script={scriptJSON} />
             </div>
         );

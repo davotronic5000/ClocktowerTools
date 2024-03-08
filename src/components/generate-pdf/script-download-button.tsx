@@ -12,6 +12,7 @@ const ScriptDownloadButton = ({ script }: ScriptDownloadButtonProps) => {
     const [fetching, updateFetching] = useState(false);
     return (
         <Button
+            size="sm"
             isDisabled={fetching}
             onPress={async () => {
                 updateFetching(true);
@@ -33,7 +34,7 @@ const ScriptDownloadButton = ({ script }: ScriptDownloadButtonProps) => {
                 updateFetching(false);
             }}
         >
-            Generate PDF
+            Download PDF
         </Button>
     );
 };
