@@ -1,6 +1,6 @@
 "use server";
 
-import { ScriptToolSchemaType } from "@/app/script/_script-context/script-submission-schema";
+import { ScriptToolSchemaType } from "@/app/(site)/script/_script-context/script-submission-schema";
 
 const getPDF = async (script: ScriptToolSchemaType) => {
     // Save JSON to Database

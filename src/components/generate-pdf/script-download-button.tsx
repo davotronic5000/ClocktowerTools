@@ -1,4 +1,4 @@
-import { ScriptToolSchemaType } from "@/app/script/_script-context/script-submission-schema";
+import { ScriptToolSchemaType } from "@/app/(site)/script/_script-context/script-submission-schema";
 import { Button } from "../button";
 import getPDF from "./get-pdf";
 

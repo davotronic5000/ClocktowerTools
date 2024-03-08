@@ -1,4 +1,4 @@
-import { ScriptToolSchemaType } from "@/app/script/_script-context/script-submission-schema";
+import { ScriptToolSchemaType } from "@/app/(site)/script/_script-context/script-submission-schema";
 import PageViewer from "@/components/page-viewer/page-viewer";
 import SinglePage from "@/components/page-viewer/single-page";
 import originalRoles from "@/data/roles";
@@ -11,12 +11,13 @@ import oswaldPro from "./oswald-loader";
 
 interface ScriptLayoutProps {
     script: ScriptToolSchemaType;
+    noPageGap?: boolean;
     children?: ReactNode;
 }
 
 const roleTypeOrder = ["townsfolk", "outsider", "minion", "demon"];
 
-const ScriptLayout = ({ script, children }: ScriptLayoutProps) => {
+const ScriptLayout = ({ script, noPageGap, children }: ScriptLayoutProps) => {
     const roles = script.roles.map((role) => {
         if ("team" in role) {
             return role;
@@ -39,7 +40,7 @@ const ScriptLayout = ({ script, children }: ScriptLayoutProps) => {
         };
     });
     return (
-        <PageViewer>
+        <PageViewer noPageGap={noPageGap}>
             <SinglePage>
                 <div
                     className={`grid h-full w-full grid-cols-[40px_1fr] grid-rows-[min-content_auto_40px] ${oswaldPro.variable} ${oldStandard.variable}`}
