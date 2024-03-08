@@ -1,9 +1,13 @@
 import * as puppeteer from "puppeteer";
+import { createClient } from "redis";
 
 export async function POST(request: Request) {
     const scriptJSON = await request.json();
-    // Save JSON to Database
-    const id = "blah";
+    const client = createClient();
+    client.on("error", (err) => console.log("Redis Client Error", err));
+    await client.connect();
+    const id = crypto.randomUUID();
+    await client.set(id, JSON.stringify(scriptJSON));
     // Send Puppeteer to URL
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
@@ -15,6 +19,8 @@ export async function POST(request: Request) {
         printBackground: true,
     });
     await browser.close();
+    await client.del(id);
+    await client.disconnect();
 
     return new Response(pdf, {
         headers: {
