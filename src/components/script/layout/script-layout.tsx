@@ -103,7 +103,11 @@ const ScriptLayout = ({ script, noPageGap, children }: ScriptLayoutProps) => {
                                                 <div>
                                                     <Image
                                                         alt={`role-${role.id}`}
-                                                        src={`/roles/modern/${role.id}.webp`}
+                                                        src={
+                                                            role.image
+                                                                ? role.image
+                                                                : `/roles/modern/${role.id}.webp`
+                                                        }
                                                         width={50}
                                                         height={50}
                                                         style={{
