@@ -15,7 +15,9 @@ interface ScriptLayoutProps {
     children?: ReactNode;
 }
 
-const roleTypeOrder = ["townsfolk", "outsider", "minion", "demon"];
+const roleTypeOrder = ["townsfolk", "outsider", "minion", "demon"] as const;
+const isEvil = (roleType: (typeof roleTypeOrder)[number]) =>
+    roleType === "minion" || roleType === "demon";
 
 const ScriptLayout = ({ script, noPageGap, children }: ScriptLayoutProps) => {
     const roles = script.roles.map((role) => {
@@ -104,8 +106,15 @@ const ScriptLayout = ({ script, noPageGap, children }: ScriptLayoutProps) => {
                                                     <Image
                                                         alt={`role-${role.id}`}
                                                         src={
-                                                            role.image
-                                                                ? role.image
+                                                            "image" in role
+                                                                ? role.image ||
+                                                                  `/roles/modern/${
+                                                                      isEvil(
+                                                                          roleType,
+                                                                      )
+                                                                          ? "evil"
+                                                                          : "good"
+                                                                  }.webp`
                                                                 : `/roles/modern/${role.id}.webp`
                                                         }
                                                         width={50}
