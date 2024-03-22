@@ -6,20 +6,19 @@ import SinglePage from "@/components/page-viewer/single-page";
 import originalRoles from "@/data/roles";
 import Image from "next/image";
 import backPattern from "public/back-pattern.png";
-import { Fragment, ReactNode } from "react";
+import { Fragment } from "react";
 import { toast } from "react-toastify";
 
 interface ScriptLayoutProps {
     script: ScriptToolSchemaType;
     noPageGap?: boolean;
-    children?: ReactNode;
 }
 
 const roleTypeOrder = ["townsfolk", "outsider", "minion", "demon"] as const;
 const isEvil = (roleType: (typeof roleTypeOrder)[number]) =>
     roleType === "minion" || roleType === "demon";
 
-const ScriptLayout = ({ script, noPageGap, children }: ScriptLayoutProps) => {
+const ScriptLayout = ({ script, noPageGap }: ScriptLayoutProps) => {
     const roles = script.roles.map((role) => {
         if ("team" in role) {
             return role;
