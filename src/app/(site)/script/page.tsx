@@ -1,8 +1,12 @@
-"use client";
 import SideBar from "@/components/sidebar/sidebar";
+import { Metadata } from "next/types";
 import ScriptContextProvider from "./_script-context/script-context-provider";
 import JSONUploadControls from "./json-upload-controls";
 import Viewer from "./viewer";
+
+export const metadata: Metadata = {
+    title: "Script",
+};
 
 const Page = () => {
     return (
