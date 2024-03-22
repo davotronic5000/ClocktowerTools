@@ -1,4 +1,7 @@
+import SideBar from "@/components/sidebar/sidebar";
 import { Metadata } from "next/types";
+import ScriptContextProvider from "../script/_script-context/script-context-provider";
+import Viewer from "./viewer";
 
 export const metadata: Metadata = {
     title: "Tokens",
@@ -6,8 +9,11 @@ export const metadata: Metadata = {
 
 const Page = () => {
     return (
-        <div>
-            <h2>Token</h2>
+        <div className="flex grow overflow-auto">
+            <ScriptContextProvider>
+                <SideBar heading="Token Tool Options">Token Stuff</SideBar>
+                <Viewer />
+            </ScriptContextProvider>
         </div>
     );
 };

@@ -1,4 +1,6 @@
 import { ScriptToolSchemaType } from "@/app/(site)/script/_script-context/script-submission-schema";
+import oldStandard from "@/components/font-loader/old-standard-loader";
+import oswaldPro from "@/components/font-loader/oswald-loader";
 import PageViewer from "@/components/page-viewer/page-viewer";
 import SinglePage from "@/components/page-viewer/single-page";
 import originalRoles from "@/data/roles";
@@ -6,8 +8,6 @@ import Image from "next/image";
 import backPattern from "public/back-pattern.png";
 import { Fragment, ReactNode } from "react";
 import { toast } from "react-toastify";
-import oldStandard from "./old-standard-loader";
-import oswaldPro from "./oswald-loader";
 
 interface ScriptLayoutProps {
     script: ScriptToolSchemaType;
