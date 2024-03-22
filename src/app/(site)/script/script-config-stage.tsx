@@ -5,13 +5,11 @@ import { Fragment } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { z } from "zod";
-import { scriptUpdatePDF } from "./_script-context/script-context-actions";
 import {
     useScriptContext,
     useScriptDispatchContext,
 } from "./_script-context/use-script-context";
 import ScriptStageNavigation from "./script-stage-navigation";
-import { submitScript } from "./script-submission";
 
 export const scriptFormSchema = z.object({
     name: z.string().trim().min(1, "A script name is required"),
@@ -26,10 +24,7 @@ const ScriptConfigStage = () => {
     const dispatchScriptAction = useScriptDispatchContext();
     const onSubmit: SubmitHandler<ScriptFormType> = async (data) => {
         if (scriptJSON) {
-            const pdfResponse = await submitScript(scriptJSON, data);
-            if (pdfResponse) {
-                dispatchScriptAction(scriptUpdatePDF(pdfResponse));
-            }
+            console.log("TODO: Update Options for script");
         } else {
             toast.error("No Script JSON available");
         }
