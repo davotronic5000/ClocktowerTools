@@ -1,14 +1,14 @@
 "use client";
 import { Button } from "@/components/button";
+import {
+    useJSONContext,
+    useJSONDispatchContext,
+} from "@/components/json-upload/use-json-context";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Fragment } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { z } from "zod";
-import {
-    useScriptContext,
-    useScriptDispatchContext,
-} from "./_script-context/use-script-context";
 import ScriptStageNavigation from "./script-stage-navigation";
 
 export const scriptFormSchema = z.object({
@@ -20,10 +20,10 @@ export const scriptFormSchema = z.object({
 export type ScriptFormType = z.infer<typeof scriptFormSchema>;
 
 const ScriptConfigStage = () => {
-    const { scriptFile, scriptJSON } = useScriptContext();
-    const dispatchScriptAction = useScriptDispatchContext();
+    const { json } = useJSONContext();
+    const dispatchJSONAction = useJSONDispatchContext();
     const onSubmit: SubmitHandler<ScriptFormType> = async (data) => {
-        if (scriptJSON) {
+        if (json) {
             console.log("TODO: Update Options for script");
         } else {
             toast.error("No Script JSON available");
@@ -38,20 +38,18 @@ const ScriptConfigStage = () => {
     });
     return (
         <Fragment>
-            Script: {scriptFile?.name}
+            Script: {json?.name}
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input
-                    defaultValue={scriptJSON?.name || "Custom Script"}
+                    defaultValue={json?.name || "Custom Script"}
                     {...register("name")}
                 />
                 {errors.name && <span>{errors.name?.message}</span>}
                 <input
-                    defaultValue={scriptJSON?.colour}
+                    defaultValue={json?.scriptColourOptions?.colour}
                     {...register("colour")}
                 />
-                {errors.colour && <span>{errors.colour?.message}</span>}
-                <input type="checkbox" {...register("colourise")} />
-                {errors.colourise && <span>{errors.colourise?.message}</span>}
+                {errors.colour && <span>{errors.colour.message}</span>}
                 <ScriptStageNavigation>
                     <Button type="submit">Submit</Button>
                 </ScriptStageNavigation>

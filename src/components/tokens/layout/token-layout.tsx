@@ -1,11 +1,11 @@
 import oldStandard from "@/components/font-loader/old-standard-loader";
+import { ScriptJSONSchemaType } from "@/components/json-upload/universal-json-validator";
 import PageViewer from "@/components/page-viewer/page-viewer";
 import SinglePage from "@/components/page-viewer/single-page";
-import { TokenToolSchemaType } from "@/components/tokens/validators/token-tool-schema";
 import generateTokenPages from "./generate-token-pages";
 
 interface TokenLayoutProps {
-    tokenScript: TokenToolSchemaType;
+    tokenScript: ScriptJSONSchemaType;
     noPageGap?: boolean;
 }
 

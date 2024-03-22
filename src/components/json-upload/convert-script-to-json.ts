@@ -1,9 +1,11 @@
 import scriptJSONValidator, {
     ScriptJSONFileType,
     metaType,
-} from "@/utilities/script-json-validator";
+} from "@/components/json-upload/script-json-validator";
 import { toast } from "react-toastify";
-import { ScriptToolSchemaType } from "./_script-context/script-submission-schema";
+import convertCustomRole from "./convert-custom-role";
+import getRole from "./get-role";
+import { ScriptJSONSchemaType } from "./universal-json-validator";
 
 const convertScriptToJSON = async (scriptFile: File) => {
     const scriptFileJSON = JSON.parse(await scriptFile.text());
@@ -22,24 +24,38 @@ const convertScriptToJSON = async (scriptFile: File) => {
             ? (json.splice(metaIndex, 1)[0] as metaType)
             : undefined;
 
-        const scriptJSON: ScriptToolSchemaType = {
+        const scriptJSON: ScriptJSONSchemaType = {
             name: meta?.name || "Custom Script",
-            colour: meta?.colour || meta?.color || "blue",
+            scriptColourOptions: {
+                colour: meta?.colour || meta?.color || "blue",
+            },
+            tokenConfig: {
+                page: {
+                    height: 1123,
+                    width: 794,
+                    margin: 38,
+                },
+                tokenSizes: {
+                    role: {
+                        tokenSize: 170,
+                        tokenMargin: 4,
+                    },
+                    reminder: {
+                        tokenSize: 94.5,
+                        tokenMargin: 4,
+                    },
+                },
+            },
             roles: json.map((role) => {
                 if (typeof role === "string") {
-                    return {
-                        id: role,
-                    };
+                    return getRole(role);
                 }
                 if (role.id !== "_meta") {
-                    if ("image" in role && Array.isArray(role.image)) {
-                        return {
-                            ...role,
-                            image: role.image[0],
-                        };
+                    if ("team" in role) {
+                        return convertCustomRole(role);
                     }
                 }
-                return role;
+                return getRole(role.id);
             }),
         };
         return scriptJSON;

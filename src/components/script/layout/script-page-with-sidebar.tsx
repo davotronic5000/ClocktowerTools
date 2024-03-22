@@ -1,6 +1,6 @@
-import { ColourBlendTypeType } from "@/app/(site)/(json-upload)/script/_script-context/script-submission-schema";
 import oldStandard from "@/components/font-loader/old-standard-loader";
 import oswaldPro from "@/components/font-loader/oswald-loader";
+import { ColourBlendTypeType } from "@/components/json-upload/universal-json-validator";
 import SinglePage from "@/components/page-viewer/single-page";
 import Image from "next/image";
 import backPattern from "public/back-pattern.png";

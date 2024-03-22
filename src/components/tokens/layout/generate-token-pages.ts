@@ -1,4 +1,4 @@
-import { TokenToolSchemaType } from "../validators/token-tool-schema";
+import { ScriptJSONSchemaType } from "@/components/json-upload/universal-json-validator";
 
 export interface BaseLayoutToken {
     id: string;
@@ -21,7 +21,7 @@ export type LayoutToken = RoleLayoutToken | ReminderLayoutToken;
 
 export type PageLayout = LayoutToken[][][];
 
-const generateTokenPages = (tokenToolJSON: TokenToolSchemaType) => {
+const generateTokenPages = (tokenToolJSON: ScriptJSONSchemaType) => {
     const { reminderList, roleList } = tokenToolJSON.roles.reduce(
         (acc, curr) => {
             for (let i = 0; i < curr.count; i++) {
@@ -53,7 +53,7 @@ const generateTokenPages = (tokenToolJSON: TokenToolSchemaType) => {
         },
     );
 
-    const pageSizes = tokenToolJSON.page;
+    const pageSizes = tokenToolJSON.tokenConfig.page;
     const printableHeight = pageSizes.height - pageSizes.margin * 2;
     const printableWidth = pageSizes.width - pageSizes.margin * 2;
     let availablePageSpace = printableHeight;
@@ -64,7 +64,7 @@ const generateTokenPages = (tokenToolJSON: TokenToolSchemaType) => {
 
     const addTokenToPage = (token: LayoutToken) => {
         const type = "leaves" in token ? "role" : "reminder";
-        const tokenSizes = pageSizes.tokenSizes[type];
+        const tokenSizes = tokenToolJSON.tokenConfig.tokenSizes[type];
         const tokenSize = tokenSizes.tokenSize + tokenSizes.tokenMargin * 2;
         if (!pageLayout.length) {
             pageLayout.push([[]]);
