@@ -1,4 +1,4 @@
-import { ScriptToolSchemaType } from "@/app/(site)/script/_script-context/script-submission-schema";
+import { ScriptToolSchemaType } from "@/app/(site)/(json-upload)/script/_script-context/script-submission-schema";
 import { saveAs } from "file-saver";
 import { useState } from "react";
 import { Button } from "../button";

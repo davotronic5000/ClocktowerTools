@@ -1,4 +1,4 @@
-import { RoleType } from "@/app/(site)/script/_script-context/script-submission-schema";
+import { RoleType } from "@/app/(site)/(json-upload)/script/_script-context/script-submission-schema";
 import Image from "next/image";
 import { Fragment, ReactNode } from "react";
 

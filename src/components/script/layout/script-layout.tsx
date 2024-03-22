@@ -2,7 +2,7 @@ import {
     RoleType,
     ScriptToolSchemaType,
     TeamType,
-} from "@/app/(site)/script/_script-context/script-submission-schema";
+} from "@/app/(site)/(json-upload)/script/_script-context/script-submission-schema";
 import PageViewer from "@/components/page-viewer/page-viewer";
 import SinglePage from "@/components/page-viewer/single-page";
 import originalRoles from "@/data/roles";

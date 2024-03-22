@@ -1,4 +1,4 @@
-import { ScriptToolSchemaType } from "@/app/(site)/script/_script-context/script-submission-schema";
+import { ScriptToolSchemaType } from "@/app/(site)/(json-upload)/script/_script-context/script-submission-schema";
 import ScriptLayout from "../script/layout/script-layout";
 
 interface ScriptPDFProps {

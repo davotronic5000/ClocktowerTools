@@ -1,6 +1,6 @@
 "use server";
 
-import { ScriptToolSchemaType } from "@/app/(site)/script/_script-context/script-submission-schema";
+import { ScriptToolSchemaType } from "@/app/(site)/(json-upload)/script/_script-context/script-submission-schema";
 import { createClient } from "redis";
 
 const getScriptFromDatabase = async (
