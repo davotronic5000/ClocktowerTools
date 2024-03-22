@@ -9,6 +9,7 @@ import originalRoles from "@/data/roles";
 import { ReactNode } from "react";
 import { toast } from "react-toastify";
 import CoverPage from "./cover-page";
+import NightOrderPage from "./night-order-page";
 import PlayerPage from "./player-page";
 import ScriptPageWithSideBar from "./script-page-with-sidebar";
 
@@ -63,6 +64,13 @@ const ScriptLayout = ({ script, noPageGap }: ScriptLayoutProps) => {
                     colourBlendType={script.colourBlendType}
                 />
             </SinglePage>
+            <ScriptPageWithSideBar
+                primaryColour={script.colour}
+                secondaryColour={script.secondaryColour}
+                colourBlendType={script.colourBlendType}
+            >
+                <NightOrderPage nightType="First Night" />
+            </ScriptPageWithSideBar>
         </PageViewer>
     );
 };
