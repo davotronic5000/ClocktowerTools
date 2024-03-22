@@ -30,11 +30,7 @@ const ScriptLayout = ({ script, noPageGap }: ScriptLayoutProps) => {
             <SinglePage>
                 <CoverPage name={script.name} {...colourOptions} />
             </SinglePage>
-            <ScriptPageWithSideBar
-                primaryColour={script.colour}
-                secondaryColour={script.secondaryColour}
-                colourBlendType={script.colourBlendType}
-            >
+            <ScriptPageWithSideBar {...colourOptions}>
                 <NightOrderPage nightType="First Night" />
             </ScriptPageWithSideBar>
         </PageViewer>
