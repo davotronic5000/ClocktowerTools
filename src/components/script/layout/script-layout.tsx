@@ -2,6 +2,7 @@ import { ScriptJSONSchemaType } from "@/components/json-upload/universal-json-va
 import PageViewer from "@/components/page-viewer/page-viewer";
 import SinglePage from "@/components/page-viewer/single-page";
 import CoverPage from "./cover-page";
+import NightOrderPage from "./night-order-page";
 import PlayerPage from "./player-page";
 import ScriptPageWithSideBar from "./script-page-with-sidebar";
 
@@ -29,6 +30,13 @@ const ScriptLayout = ({ script, noPageGap }: ScriptLayoutProps) => {
             <SinglePage>
                 <CoverPage name={script.name} {...colourOptions} />
             </SinglePage>
+            <ScriptPageWithSideBar
+                primaryColour={script.colour}
+                secondaryColour={script.secondaryColour}
+                colourBlendType={script.colourBlendType}
+            >
+                <NightOrderPage nightType="First Night" />
+            </ScriptPageWithSideBar>
         </PageViewer>
     );
 };
