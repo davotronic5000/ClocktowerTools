@@ -2,9 +2,11 @@ import { ScriptJSONSchemaType } from "@/components/json-upload/universal-json-va
 
 export interface BaseLayoutToken {
     id: string;
+    image?: string;
 }
 
 export interface RoleLayoutToken extends BaseLayoutToken {
+    name: string;
     leaves: {
         firstNight: boolean;
         otherNight: boolean;
@@ -21,12 +23,26 @@ export type LayoutToken = RoleLayoutToken | ReminderLayoutToken;
 
 export type PageLayout = LayoutToken[][][];
 
+const createCircle = (cx: number, cy: number, r: number, deg: number) => {
+    var theta = (deg * Math.PI) / 180,
+        dx = r * Math.cos(theta),
+        dy = -r * Math.sin(theta);
+    return `
+        M ${cx} ${cy}
+        m ${dx},${dy}
+        a ${r},${r} 0 1,0 ${-2 * dx},${-2 * dy}
+        a ${r},${r} 0 1,0 ${2 * dx},${2 * dy}
+    `;
+};
+
 const generateTokenPages = (tokenToolJSON: ScriptJSONSchemaType) => {
     const { reminderList, roleList } = tokenToolJSON.roles.reduce(
         (acc, curr) => {
             for (let i = 0; i < curr.count; i++) {
                 acc.roleList.push({
                     id: curr.id,
+                    name: curr.name || "Unknown",
+                    image: curr.image,
                     leaves: {
                         firstNight: !!curr.firstNight,
                         otherNight: !!curr.otherNight,
@@ -41,6 +57,7 @@ const generateTokenPages = (tokenToolJSON: ScriptJSONSchemaType) => {
                 for (let p = 0; p < reminder.count; p++) {
                     acc.reminderList.push({
                         id: curr.id,
+                        image: curr.image,
                         reminderText: reminder.text,
                     });
                 }
@@ -54,7 +71,7 @@ const generateTokenPages = (tokenToolJSON: ScriptJSONSchemaType) => {
     );
 
     const pageSizes = tokenToolJSON.tokenConfig.page;
-    const printableHeight = pageSizes.height - pageSizes.margin * 2;
+    const printableHeight = pageSizes.height - 14 - pageSizes.margin * 2;
     const printableWidth = pageSizes.width - pageSizes.margin * 2;
     let availablePageSpace = printableHeight;
     let availableRowSpace = printableWidth;
@@ -91,7 +108,52 @@ const generateTokenPages = (tokenToolJSON: ScriptJSONSchemaType) => {
     };
     roleList.forEach(addTokenToPage);
     reminderList.forEach(addTokenToPage);
-    return pageLayout;
+    const roleCircleSize =
+        (tokenToolJSON.tokenConfig.tokenSizes.role.tokenSize -
+            tokenToolJSON.tokenConfig.tokenSizes.role.tokenMargin -
+            (tokenToolJSON.tokenConfig.tokenStyles.border.circleBorder
+                ? tokenToolJSON.tokenConfig.tokenStyles.border.thickness
+                : 0)) /
+        2;
+    const roleMidPoint =
+        tokenToolJSON.tokenConfig.tokenSizes.role.tokenSize / 2;
+    return {
+        printableHeight,
+        printableWidth,
+        tokenConfig: tokenToolJSON.tokenConfig,
+        generatedTokenDetails: {
+            role: {
+                circle: createCircle(
+                    roleMidPoint,
+                    roleMidPoint,
+                    roleCircleSize,
+                    135,
+                ),
+                tokenAreaSize:
+                    tokenToolJSON.tokenConfig.tokenSizes.role.tokenSize +
+                    tokenToolJSON.tokenConfig.tokenSizes.role.tokenMargin * 2,
+                tokenSquareSize:
+                    tokenToolJSON.tokenConfig.tokenSizes.role.tokenSize +
+                    (tokenToolJSON.tokenConfig.tokenStyles.border.squareBorder
+                        ? tokenToolJSON.tokenConfig.tokenStyles.border
+                              .thickness * 2
+                        : 0),
+                imageSize:
+                    tokenToolJSON.tokenConfig.tokenSizes.role.tokenSize -
+                    tokenToolJSON.tokenConfig.tokenSizes.role.tokenMargin * 2 -
+                    (tokenToolJSON.tokenConfig.tokenStyles.border.squareBorder
+                        ? tokenToolJSON.tokenConfig.tokenStyles.border
+                              .thickness * 2
+                        : 0),
+                imageMargin:
+                    tokenToolJSON.tokenConfig.tokenSizes.role.tokenMargin +
+                    (tokenToolJSON.tokenConfig.tokenStyles.border.squareBorder
+                        ? tokenToolJSON.tokenConfig.tokenStyles.border.thickness
+                        : 0),
+            },
+        },
+        pages: pageLayout,
+    };
 };
 
 export default generateTokenPages;

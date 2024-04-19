@@ -45,6 +45,32 @@ const convertScriptToJSON = async (scriptFile: File) => {
                         tokenMargin: 4,
                     },
                 },
+                tokenStyles: {
+                    fontColour: "#262626",
+                    setup: {
+                        icon: "&#10010;",
+                        colour: " #d97f3f",
+                    },
+                    firstNight: {
+                        icon: "&#10038;",
+                        colour: "#262626",
+                    },
+                    otherNight: {
+                        icon: "&#10038;",
+                        colour: "#262626",
+                    },
+                    reminder: {
+                        icon: "&#10038;",
+                        colour: "#262626",
+                    },
+                    border: {
+                        colour: "#402f03",
+                        alpha: 0.4,
+                        circleBorder: true,
+                        squareBorder: false,
+                        thickness: 5,
+                    },
+                },
             },
             roles: json.map((role) => {
                 if (typeof role === "string") {

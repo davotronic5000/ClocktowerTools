@@ -13,11 +13,32 @@ const PageSchema = z.object({
 
 export type TokenToolPageSchemaType = z.infer<typeof PageSchema>;
 
+export const symbolStringValidator = z.string().regex(/^&#\d+;$/);
+
+export const PipsConfig = z.object({
+    icon: symbolStringValidator,
+    colour: z.string(),
+});
+
 export const TokenToolSchema = z.object({
     page: PageSchema,
     tokenSizes: z.object({
         role: TokenSizeSchema,
         reminder: TokenSizeSchema,
+    }),
+    tokenStyles: z.object({
+        fontColour: z.string(),
+        setup: PipsConfig,
+        firstNight: PipsConfig,
+        otherNight: PipsConfig,
+        reminder: PipsConfig,
+        border: z.object({
+            colour: z.string(),
+            alpha: z.number(),
+            circleBorder: z.boolean(),
+            squareBorder: z.boolean(),
+            thickness: z.number(),
+        }),
     }),
 });
 
