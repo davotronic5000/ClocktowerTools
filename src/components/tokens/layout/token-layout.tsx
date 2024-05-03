@@ -355,9 +355,8 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                     </defs>
                                                                     <text className="token-text name">
                                                                         <textPath
-                                                                            // startOffset="37.5%"
                                                                             startOffset="75%"
-                                                                            text-anchor="middle"
+                                                                            textAnchor="middle"
                                                                             xlinkHref="#layout-circle-reminder"
                                                                         >
                                                                             {"reminderText" in
