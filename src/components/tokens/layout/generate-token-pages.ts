@@ -72,6 +72,7 @@ const generateTokenSizes = (
 };
 
 const generateTokenPages = (tokenToolJSON: ScriptJSONSchemaType) => {
+    console.log(tokenToolJSON);
     const { reminderList, roleList } = tokenToolJSON.roles.reduce(
         (acc, curr) => {
             for (let i = 0; i < curr.count; i++) {

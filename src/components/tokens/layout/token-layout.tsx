@@ -1,4 +1,5 @@
 import oldStandard from "@/components/font-loader/old-standard-loader";
+import getBackupRoleImage from "@/components/images/get-role-image";
 import { ScriptJSONSchemaType } from "@/components/json-upload/universal-json-validator";
 import PageViewer from "@/components/page-viewer/page-viewer";
 import SinglePage from "@/components/page-viewer/single-page";
@@ -120,7 +121,7 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                         <text className="token-text name">
                                                                             <textPath
                                                                                 startOffset="75%"
-                                                                                text-anchor="middle"
+                                                                                textAnchor="middle"
                                                                                 xlinkHref="#layout-circle-role"
                                                                             >
                                                                                 {"name" in
@@ -131,7 +132,7 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                         </text>
                                                                         <text className="token-text reminder-pips">
                                                                             <textPath
-                                                                                text-anchor="middle"
+                                                                                textAnchor="middle"
                                                                                 startOffset="25%"
                                                                                 xlinkHref="#layout-circle-role"
                                                                                 fill={
@@ -163,7 +164,7 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                         </text>
                                                                         <text className="token-text first-night-pip">
                                                                             <textPath
-                                                                                text-anchor="middle"
+                                                                                textAnchor="middle"
                                                                                 startOffset="50%"
                                                                                 xlinkHref="#layout-circle-role"
                                                                                 fill={
@@ -195,7 +196,7 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                         </text>
                                                                         <text className="token-text other-night-pip">
                                                                             <textPath
-                                                                                text-anchor="middle"
+                                                                                textAnchor="middle"
                                                                                 startOffset="0"
                                                                                 xlinkHref="#layout-circle-role"
                                                                                 fill={
@@ -227,7 +228,7 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                         </text>
                                                                         <text className="token-text setup-pip">
                                                                             <textPath
-                                                                                text-anchor="middle"
+                                                                                textAnchor="middle"
                                                                                 startOffset="12.5%"
                                                                                 xlinkHref="#layout-circle-role"
                                                                                 fill={
@@ -344,14 +345,14 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                     viewBox={`0 0 ${pageLayout.tokenConfig.tokenSizes.reminder.tokenSize} ${pageLayout.tokenConfig.tokenSizes.reminder.tokenSize}`}
                                                                     xmlns="http://www.w3.org/2000/svg"
                                                                 >
-                                                                    {/* <defs> */}
-                                                                    <path
-                                                                        d={`${pageLayout.generatedTokenDetails.reminder.circle}`}
-                                                                        fill="transparent"
-                                                                        stroke="black"
-                                                                        id="layout-circle-reminder"
-                                                                    />
-                                                                    {/* </defs> */}
+                                                                    <defs>
+                                                                        <path
+                                                                            d={`${pageLayout.generatedTokenDetails.reminder.circle}`}
+                                                                            fill="transparent"
+                                                                            stroke="black"
+                                                                            id="layout-circle-reminder"
+                                                                        />
+                                                                    </defs>
                                                                     <text className="token-text name">
                                                                         <textPath
                                                                             // startOffset="37.5%"
@@ -367,7 +368,8 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                     </text>
                                                                     <image
                                                                         href={
-                                                                            token.image
+                                                                            token.image ||
+                                                                            getBackupRoleImage()
                                                                         }
                                                                         width={`${pageLayout.generatedTokenDetails.reminder.imageSize}px`}
                                                                         height={`${pageLayout.generatedTokenDetails.reminder.imageSize}px`}

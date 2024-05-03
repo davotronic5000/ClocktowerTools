@@ -84,6 +84,7 @@ const convertScriptToJSON = async (scriptFile: File) => {
                 return getRole(role.id);
             }),
         };
+        console.log(scriptJSON);
         return scriptJSON;
     } else {
         console.log(validator.error.issues);

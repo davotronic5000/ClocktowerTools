@@ -5,7 +5,10 @@ import { RoleType, TeamType } from "./universal-json-validator";
 const getRole = (id: string): RoleType => {
     const roleId = id.replaceAll(/[-_]/g, "").toLowerCase();
     if (roleId in originalRoles) {
-        return originalRoles[roleId as keyof typeof originalRoles] as RoleType;
+        return {
+            ...originalRoles[roleId as keyof typeof originalRoles],
+            image: `/roles/modern/${id}.webp`,
+        } as RoleType;
     }
     toast.error(`UNKNOWN ROLE: ${roleId} - Not found in roles.json`);
     return {
@@ -17,7 +20,7 @@ const getRole = (id: string): RoleType => {
         otherNight: 0,
         otherNightReminder: "",
         ability: "This role is missing a definition",
-        image: "good.png",
+        image: "good.webp",
         setup: false,
         count: 1,
         reminders: [],

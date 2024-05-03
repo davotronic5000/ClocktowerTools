@@ -1,3 +1,4 @@
+import getBackupRoleImage from "../images/get-role-image";
 import { customCharacterType } from "./script-json-validator";
 import { RoleType } from "./universal-json-validator";
 
@@ -10,7 +11,7 @@ const convertCustomRole = ({
     const roleImage = Array.isArray(image) ? image[0] : image;
     return {
         ...rest,
-        image: roleImage,
+        image: roleImage || getBackupRoleImage(rest.team),
         count: 1,
         reminders: reminders
             .map((text) => ({ text, count: 1 }))

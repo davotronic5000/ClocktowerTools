@@ -1,3 +1,4 @@
+import getBackupRoleImage from "@/components/images/get-role-image";
 import { RoleType } from "@/components/json-upload/universal-json-validator";
 import Image from "next/image";
 import { Fragment, ReactNode } from "react";
@@ -10,8 +11,6 @@ interface PlayerPageProps {
 }
 
 const roleTypeOrder = ["townsfolk", "outsider", "minion", "demon"] as const;
-const isEvil = (roleType: (typeof roleTypeOrder)[number]) =>
-    roleType === "minion" || roleType === "demon";
 
 const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
     return (
@@ -51,14 +50,8 @@ const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
                                             <Image
                                                 alt={`role-${role.id}`}
                                                 src={
-                                                    "image" in role
-                                                        ? role.image ||
-                                                          `/roles/modern/${
-                                                              isEvil(roleType)
-                                                                  ? "evil"
-                                                                  : "good"
-                                                          }.webp`
-                                                        : `/roles/modern/${role.id}.webp`
+                                                    role.image ||
+                                                    getBackupRoleImage()
                                                 }
                                                 width={50}
                                                 height={50}
