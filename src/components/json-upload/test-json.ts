@@ -4,10 +4,7 @@ const testJSON: ScriptJSONSchemaType = {
     name: "Indigestion Brewing",
     scriptColourOptions: {
         colour: "orange",
-        secondaryColour: "green",
-        colourBlendType: "difference",
     },
-    author: "Mozart Is Lift Music",
     tokenConfig: {
         page: {
             height: 1123,
@@ -71,6 +68,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "You start knowing 3 players, 1 and only 1 of which is evil.",
             count: 1,
+            image: "/roles/modern/noble.webp",
         },
         {
             id: "clockmaker",
@@ -86,6 +84,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "You start knowing how many steps from the Demon to its nearest Minion.",
             count: 1,
+            image: "/roles/modern/clockmaker.webp",
         },
         {
             id: "grandmother",
@@ -107,6 +106,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "You start knowing a good player & their character. If the Demon kills them, you die too.",
             count: 1,
+            image: "/roles/modern/grandmother.webp",
         },
         {
             id: "pixie",
@@ -131,6 +131,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "You start knowing 1 in-play Townsfolk. If you were mad that you were this character, you gain their ability when they die.",
             count: 1,
+            image: "/roles/modern/pixie.webp",
         },
         {
             id: "sailor",
@@ -152,6 +153,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night, choose an alive player: either you or they are drunk until dusk. You can't die.",
             count: 1,
+            image: "/roles/modern/sailor.webp",
         },
         {
             id: "cultleader",
@@ -168,6 +170,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night, you become the alignment of an alive neighbour. If all good players choose to join your cult, your team wins.",
             count: 1,
+            image: "/roles/modern/cult_leader.webp",
         },
         {
             id: "snakecharmer",
@@ -189,6 +192,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night, choose an alive player: a chosen Demon swaps characters & alignments with you & is then poisoned.",
             count: 1,
+            image: "/roles/modern/snake_charmer.webp",
         },
         {
             id: "innkeeper",
@@ -213,6 +217,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night*, choose 2 players: they can't die tonight, but 1 is drunk until dusk.",
             count: 1,
+            image: "/roles/modern/innkeeper.webp",
         },
         {
             id: "professor",
@@ -237,6 +242,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Once per game, at night*, choose a dead player: if they are a Townsfolk, they are resurrected.",
             count: 1,
+            image: "/roles/modern/professor.webp",
         },
         {
             id: "amnesiac",
@@ -258,6 +264,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "You do not know what your ability is. Each day, privately guess what it is: you learn how accurate you are.",
             count: 1,
+            image: "/roles/modern/amnesiac.webp",
         },
         {
             id: "tealady",
@@ -276,6 +283,7 @@ const testJSON: ScriptJSONSchemaType = {
             setup: false,
             ability: "If both your alive neighbours are good, they can't die.",
             count: 1,
+            image: "/roles/modern/tea_lady.webp",
         },
         {
             id: "farmer",
@@ -291,6 +299,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "If you die at night, an alive good player becomes a Farmer.",
             count: 4,
+            image: "/roles/modern/farmer.webp",
         },
         {
             id: "cannibal",
@@ -314,6 +323,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "You have the ability of the recently killed executee. If they are evil, you are poisoned until a good player dies by execution.",
             count: 1,
+            image: "/roles/modern/cannibal.webp",
         },
         {
             id: "goon",
@@ -333,6 +343,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night, the 1st player to choose you with their ability is drunk until dusk. You become their alignment.",
             count: 1,
+            image: "/roles/modern/goon.webp",
         },
         {
             id: "snitch",
@@ -347,6 +358,7 @@ const testJSON: ScriptJSONSchemaType = {
             setup: false,
             ability: "Minions start knowing 3 not-in-play characters.",
             count: 1,
+            image: "/roles/modern/snitch.webp",
         },
         {
             id: "klutz",
@@ -361,6 +373,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "When you learn that you died, publicly choose 1 alive player: if they are evil, your team loses.",
             count: 1,
+            image: "/roles/modern/klutz.webp",
         },
         {
             id: "puzzlemaster",
@@ -384,6 +397,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "1 player is drunk, even if you die. If you guess (once) who it is, learn the Demon player, but guess wrong & get false info.",
             count: 1,
+            image: "/roles/modern/puzzlemaster.webp",
         },
         {
             id: "godfather",
@@ -408,6 +422,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "You start knowing which Outsiders are in play. If 1 died today, choose a player tonight: they die. [−1 or +1 Outsider]",
             count: 1,
+            image: "/roles/modern/godfather.webp",
         },
         {
             id: "cerenovus",
@@ -429,6 +444,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night, choose a player & a good character: they are “mad” they are this character tomorrow, or might be executed.",
             count: 1,
+            image: "/roles/modern/cerenovus.webp",
         },
         {
             id: "devilsadvocate",
@@ -450,6 +466,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night, choose a living player (different to last night): if executed tomorrow, they don't die.",
             count: 1,
+            image: "/roles/modern/devils_advocate.webp",
         },
         {
             id: "widow",
@@ -474,6 +491,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "On your 1st night, look at the Grimoire and choose a player: they are poisoned. 1 good player knows a Widow is in play.",
             count: 1,
+            image: "/roles/modern/widow.webp",
         },
         {
             id: "lilmonsta",
@@ -499,6 +517,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night, Minions choose who babysits Lil' Monsta's token & \"is the Demon\". A player dies each night*. [+1 Minion]",
             count: 1,
+            image: "/roles/modern/lil_monsta.webp",
         },
         {
             id: "fanggu",
@@ -523,6 +542,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night*, choose a player: they die. The 1st Outsider this kills becomes an evil Fang Gu & you die instead. [+1 Outsider]",
             count: 2,
+            image: "/roles/modern/fang_gu.webp",
         },
         {
             id: "lleech",
@@ -548,6 +568,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night*, choose a player: they die. You start by choosing an alive player: they are poisoned - you die if & only if they die.",
             count: 1,
+            image: "/roles/modern/lleech.webp",
         },
         {
             id: "legion",
@@ -571,7 +592,9 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night*, a player might die. Executions fail if only evil voted. You register as a Minion too. [Most players are Legion]",
             count: 12,
+            image: "/roles/modern/legion.webp",
         },
     ],
 };
+
 export default testJSON;
