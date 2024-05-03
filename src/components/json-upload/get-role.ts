@@ -7,7 +7,7 @@ const getRole = (id: string): RoleType => {
     if (roleId in originalRoles) {
         return {
             ...originalRoles[roleId as keyof typeof originalRoles],
-            image: `/roles/modern/${id}.webp`,
+            image: `/roles/modern/${roleId}.webp`,
         } as RoleType;
     }
     toast.error(`UNKNOWN ROLE: ${roleId} - Not found in roles.json`);

@@ -170,7 +170,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night, you become the alignment of an alive neighbour. If all good players choose to join your cult, your team wins.",
             count: 1,
-            image: "/roles/modern/cult_leader.webp",
+            image: "/roles/modern/cultleader.webp",
         },
         {
             id: "snakecharmer",
@@ -192,7 +192,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night, choose an alive player: a chosen Demon swaps characters & alignments with you & is then poisoned.",
             count: 1,
-            image: "/roles/modern/snake_charmer.webp",
+            image: "/roles/modern/snakecharmer.webp",
         },
         {
             id: "innkeeper",
@@ -283,7 +283,7 @@ const testJSON: ScriptJSONSchemaType = {
             setup: false,
             ability: "If both your alive neighbours are good, they can't die.",
             count: 1,
-            image: "/roles/modern/tea_lady.webp",
+            image: "/roles/modern/tealady.webp",
         },
         {
             id: "farmer",
@@ -466,7 +466,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night, choose a living player (different to last night): if executed tomorrow, they don't die.",
             count: 1,
-            image: "/roles/modern/devils_advocate.webp",
+            image: "/roles/modern/devilsadvocate.webp",
         },
         {
             id: "widow",
@@ -517,7 +517,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night, Minions choose who babysits Lil' Monsta's token & \"is the Demon\". A player dies each night*. [+1 Minion]",
             count: 1,
-            image: "/roles/modern/lil_monsta.webp",
+            image: "/roles/modern/lilmonsta.webp",
         },
         {
             id: "fanggu",
@@ -542,7 +542,7 @@ const testJSON: ScriptJSONSchemaType = {
             ability:
                 "Each night*, choose a player: they die. The 1st Outsider this kills becomes an evil Fang Gu & you die instead. [+1 Outsider]",
             count: 2,
-            image: "/roles/modern/fang_gu.webp",
+            image: "/roles/modern/fanggu.webp",
         },
         {
             id: "lleech",
