@@ -39,14 +39,21 @@ const convertScriptToJSON = async (scriptFile: File) => {
                     role: {
                         tokenSize: 170,
                         tokenMargin: 4,
+                        tokenImageBMargin: 0,
                     },
                     reminder: {
                         tokenSize: 94.5,
                         tokenMargin: 4,
+                        tokenImageBMargin: 4,
                     },
+                    tokenSpacerMargin: 4,
                 },
                 tokenStyles: {
                     fontColour: "#262626",
+                    fontSize: {
+                        role: "text-lg",
+                        reminder: "text-sm",
+                    },
                     setup: {
                         icon: "&#10010;",
                         colour: " #d97f3f",

@@ -21,10 +21,10 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                 return (
                     <SinglePage key={i}>
                         <div
-                            className={`h-full w-full ${oldStandard.variable} flex flex-col items-center justify-center text-center font-serif text-sm font-bold uppercase`}
+                            className={`h-full w-full ${oldStandard.variable} flex flex-col items-center justify-center text-center font-serif font-bold uppercase`}
                         >
-                            <h4 className="m-0 leading-none">
-                                {tokenScript.name} - Page: {i}
+                            <h4 className="m-0 text-sm leading-none">
+                                {tokenScript.name} - Page: {i + 1}
                             </h4>
                             <div
                                 style={{
@@ -41,7 +41,7 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                     return (
                                                         <div
                                                             key={i}
-                                                            className="flex items-center justify-center"
+                                                            className={`flex items-center justify-center ${pageLayout.tokenConfig.tokenStyles.fontSize.role}`}
                                                             style={{
                                                                 width: `${pageLayout.generatedTokenDetails.role.tokenAreaSize}px`,
                                                                 height: `${pageLayout.generatedTokenDetails.role.tokenAreaSize}px`,
@@ -118,7 +118,7 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                                 id="layout-circle-role"
                                                                             />
                                                                         </defs>
-                                                                        <text className="token-text name">
+                                                                        <text className="tracking-widest">
                                                                             <textPath
                                                                                 startOffset="75%"
                                                                                 textAnchor="middle"
@@ -130,7 +130,7 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                                     : "Unknown"}
                                                                             </textPath>
                                                                         </text>
-                                                                        <text className="token-text reminder-pips">
+                                                                        <text>
                                                                             <textPath
                                                                                 textAnchor="middle"
                                                                                 startOffset="25%"
@@ -162,7 +162,7 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                                 )}
                                                                             </textPath>
                                                                         </text>
-                                                                        <text className="token-text first-night-pip">
+                                                                        <text>
                                                                             <textPath
                                                                                 textAnchor="middle"
                                                                                 startOffset="50%"
@@ -194,7 +194,7 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                                 )}
                                                                             </textPath>
                                                                         </text>
-                                                                        <text className="token-text other-night-pip">
+                                                                        <text>
                                                                             <textPath
                                                                                 textAnchor="middle"
                                                                                 startOffset="0"
@@ -226,7 +226,7 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                                 )}
                                                                             </textPath>
                                                                         </text>
-                                                                        <text className="token-text setup-pip">
+                                                                        <text>
                                                                             <textPath
                                                                                 textAnchor="middle"
                                                                                 startOffset="12.5%"
@@ -264,8 +264,8 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                             }
                                                                             width={`${pageLayout.generatedTokenDetails.role.imageSize}px`}
                                                                             height={`${pageLayout.generatedTokenDetails.role.imageSize}px`}
-                                                                            x={`${pageLayout.generatedTokenDetails.role.imageMargin}`}
-                                                                            y={`${pageLayout.generatedTokenDetails.role.imageMargin}`}
+                                                                            x={`${pageLayout.generatedTokenDetails.role.imageMarginX}`}
+                                                                            y={`${pageLayout.generatedTokenDetails.role.imageMarginY}`}
                                                                         />
                                                                     </svg>
                                                                 </div>
@@ -276,7 +276,7 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                 return (
                                                     <div
                                                         key={i}
-                                                        className="flex items-center justify-center"
+                                                        className={`flex items-center justify-center ${pageLayout.tokenConfig.tokenStyles.fontSize.reminder}`}
                                                         style={{
                                                             width: `${pageLayout.generatedTokenDetails.reminder.tokenAreaSize}px`,
                                                             height: `${pageLayout.generatedTokenDetails.reminder.tokenAreaSize}px`,
@@ -353,9 +353,9 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                             id="layout-circle-reminder"
                                                                         />
                                                                     </defs>
-                                                                    <text className="token-text name">
+                                                                    <text className="tracking-widest">
                                                                         <textPath
-                                                                            startOffset="75%"
+                                                                            startOffset="50%"
                                                                             textAnchor="middle"
                                                                             xlinkHref="#layout-circle-reminder"
                                                                         >
@@ -372,8 +372,8 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                                                                         }
                                                                         width={`${pageLayout.generatedTokenDetails.reminder.imageSize}px`}
                                                                         height={`${pageLayout.generatedTokenDetails.reminder.imageSize}px`}
-                                                                        x={`${pageLayout.generatedTokenDetails.reminder.imageMargin}`}
-                                                                        y={`${pageLayout.generatedTokenDetails.reminder.imageMargin}`}
+                                                                        x={`${pageLayout.generatedTokenDetails.reminder.imageMarginX}`}
+                                                                        y={`${pageLayout.generatedTokenDetails.reminder.imageMarginY}`}
                                                                     />
                                                                 </svg>
                                                             </div>

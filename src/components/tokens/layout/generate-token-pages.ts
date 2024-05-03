@@ -53,10 +53,15 @@ const generateTokenSizes = (
         : 0;
 
     return {
-        circle: createCircle(roleMidPoint, roleMidPoint, textCircleSize, 0),
+        circle: createCircle(
+            roleMidPoint,
+            roleMidPoint,
+            textCircleSize,
+            type === "reminder" ? 90 : 0,
+        ),
         tokenAreaSize:
             tokenSizeConfig.tokenSize +
-            tokenSizeConfig.tokenMargin * 2 +
+            tokenToolJSON.tokenConfig.tokenSizes.tokenSpacerMargin * 2 +
             circleBorderThickness,
         totalTokenSize: tokenSizeConfig.tokenSize + circleBorderThickness,
         tokenSquareSize:
@@ -66,8 +71,10 @@ const generateTokenSizes = (
         imageSize:
             tokenSizeConfig.tokenSize -
             tokenSizeConfig.tokenMargin * 2 -
-            squareBorderThickness,
-        imageMargin: tokenSizeConfig.tokenMargin + squareBorderThickness,
+            tokenSizeConfig.tokenImageBMargin,
+        imageMarginX:
+            tokenSizeConfig.tokenMargin + tokenSizeConfig.tokenImageBMargin / 2,
+        imageMarginY: tokenSizeConfig.tokenMargin,
     };
 };
 
@@ -121,7 +128,7 @@ const generateTokenPages = (tokenToolJSON: ScriptJSONSchemaType) => {
         const tokenSizes = tokenToolJSON.tokenConfig.tokenSizes[type];
         const tokenSize =
             tokenSizes.tokenSize +
-            tokenSizes.tokenMargin * 2 +
+            tokenToolJSON.tokenConfig.tokenSizes.tokenSpacerMargin * 2 +
             (tokenToolJSON.tokenConfig.tokenStyles.border.circleBorder
                 ? tokenToolJSON.tokenConfig.tokenStyles.border.thickness * 2
                 : 0);
