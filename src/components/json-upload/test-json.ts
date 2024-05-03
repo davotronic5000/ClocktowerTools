@@ -51,7 +51,7 @@ const testJSON: ScriptJSONSchemaType = {
                 alpha: 0.4,
                 circleBorder: true,
                 squareBorder: false,
-                thickness: 5,
+                thickness: 4,
             },
         },
     },

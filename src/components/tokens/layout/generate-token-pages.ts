@@ -51,6 +51,12 @@ const generateTokenSizes = (
     const squareBorderThickness = tokenStyleConfig.border.squareBorder
         ? tokenStyleConfig.border.thickness * 2
         : 0;
+    const marginSpacer =
+        tokenToolJSON.tokenConfig.tokenSizes.tokenSpacerMargin * 2;
+
+    const tokenSize = tokenSizeConfig.tokenSize + circleBorderThickness;
+    const tokenSquareSize = tokenSize + squareBorderThickness;
+    const tokenAreaSize = tokenSquareSize + marginSpacer;
 
     return {
         circle: createCircle(
@@ -59,15 +65,9 @@ const generateTokenSizes = (
             textCircleSize,
             type === "reminder" ? 90 : 0,
         ),
-        tokenAreaSize:
-            tokenSizeConfig.tokenSize +
-            tokenToolJSON.tokenConfig.tokenSizes.tokenSpacerMargin * 2 +
-            circleBorderThickness,
-        totalTokenSize: tokenSizeConfig.tokenSize + circleBorderThickness,
-        tokenSquareSize:
-            tokenSizeConfig.tokenSize +
-            squareBorderThickness +
-            circleBorderThickness,
+        tokenSize,
+        tokenSquareSize,
+        tokenAreaSize,
         imageSize:
             tokenSizeConfig.tokenSize -
             tokenSizeConfig.tokenMargin * 2 -
@@ -79,7 +79,6 @@ const generateTokenSizes = (
 };
 
 const generateTokenPages = (tokenToolJSON: ScriptJSONSchemaType) => {
-    console.log(tokenToolJSON);
     const { reminderList, roleList } = tokenToolJSON.roles.reduce(
         (acc, curr) => {
             for (let i = 0; i < curr.count; i++) {
@@ -115,7 +114,7 @@ const generateTokenPages = (tokenToolJSON: ScriptJSONSchemaType) => {
     );
 
     const pageSizes = tokenToolJSON.tokenConfig.page;
-    const printableHeight = pageSizes.height - 14 - pageSizes.margin * 2;
+    const printableHeight = pageSizes.height - 20 - pageSizes.margin * 2;
     const printableWidth = pageSizes.width - pageSizes.margin * 2;
     let availablePageSpace = printableHeight;
     let availableRowSpace = printableWidth;
@@ -123,15 +122,15 @@ const generateTokenPages = (tokenToolJSON: ScriptJSONSchemaType) => {
     let currentRow = 0;
     const pageLayout: PageLayout = [];
 
+    const generatedTokenDetails = {
+        role: generateTokenSizes(tokenToolJSON, "role"),
+        reminder: generateTokenSizes(tokenToolJSON, "reminder"),
+    };
+
     const addTokenToPage = (token: LayoutToken) => {
         const type = "leaves" in token ? "role" : "reminder";
-        const tokenSizes = tokenToolJSON.tokenConfig.tokenSizes[type];
-        const tokenSize =
-            tokenSizes.tokenSize +
-            tokenToolJSON.tokenConfig.tokenSizes.tokenSpacerMargin * 2 +
-            (tokenToolJSON.tokenConfig.tokenStyles.border.circleBorder
-                ? tokenToolJSON.tokenConfig.tokenStyles.border.thickness * 2
-                : 0);
+        const tokenSizes = generatedTokenDetails[type];
+        const tokenSize = tokenSizes.tokenAreaSize;
         if (!pageLayout.length) {
             pageLayout.push([[]]);
             availablePageSpace -= tokenSize;
@@ -162,10 +161,7 @@ const generateTokenPages = (tokenToolJSON: ScriptJSONSchemaType) => {
         printableHeight,
         printableWidth,
         tokenConfig: tokenToolJSON.tokenConfig,
-        generatedTokenDetails: {
-            role: generateTokenSizes(tokenToolJSON, "role"),
-            reminder: generateTokenSizes(tokenToolJSON, "reminder"),
-        },
+        generatedTokenDetails,
         pages: pageLayout,
     };
 };
