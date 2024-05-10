@@ -4,6 +4,7 @@ const testJSON: ScriptJSONSchemaType = {
     name: "Indigestion Brewing",
     scriptColourOptions: {
         colour: "#FFA500",
+        colourBlendType: "difference",
     },
     tokenConfig: {
         page: {

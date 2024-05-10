@@ -14,9 +14,13 @@ interface SelectProps<T extends object> extends BaseSelectProps<T> {
     label: string;
 }
 
-const Select = <T extends object>({ options, label }: SelectProps<T>) => {
+const Select = <T extends object>({
+    options,
+    label,
+    ...rest
+}: SelectProps<T>) => {
     return (
-        <BaseSelect className="flex flex-col">
+        <BaseSelect className="flex flex-col" {...rest}>
             <FieldLabel>{label}</FieldLabel>
             <Button className="flex justify-between border border-gray-600 bg-gray-900 p-2 invalid:border-red-500">
                 <SelectValue />

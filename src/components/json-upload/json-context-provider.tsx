@@ -36,6 +36,9 @@ const JSONContextProvider = ({ children }: JSONContextProviderProps) => {
                         if (action.payload.colour)
                             draft["json"].scriptColourOptions.colour =
                                 action.payload.colour;
+                        if (action.payload.blendMode)
+                            draft["json"].scriptColourOptions.colourBlendType =
+                                action.payload.blendMode;
                         break;
                     }
             }

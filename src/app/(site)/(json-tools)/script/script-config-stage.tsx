@@ -94,7 +94,7 @@ const ScriptConfigStage = () => {
                             onChange={onChange}
                             onBlur={onBlur}
                             isInvalid={invalid}
-                            ref={ref}
+                            inputRef={ref}
                             errorMessage={error?.message}
                             label="Name"
                         />

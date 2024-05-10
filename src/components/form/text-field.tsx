@@ -8,12 +8,17 @@ import { RefCallBack } from "react-hook-form";
 import FieldLabel from "./field-label";
 
 interface TextFieldProps extends BaseTextFieldProps {
-    ref: RefCallBack;
+    inputRef: RefCallBack;
     label: string;
     errorMessage?: string;
 }
 
-const TextField = ({ ref, errorMessage, label, ...rest }: TextFieldProps) => {
+const TextField = ({
+    inputRef,
+    errorMessage,
+    label,
+    ...rest
+}: TextFieldProps) => {
     return (
         <BaseTextField
             {...rest}
@@ -22,7 +27,7 @@ const TextField = ({ ref, errorMessage, label, ...rest }: TextFieldProps) => {
         >
             <FieldLabel>{label}</FieldLabel>
             <Input
-                ref={ref}
+                ref={inputRef}
                 className="border border-gray-600 bg-gray-900 p-2 invalid:border-red-500"
             />
             <FieldError>{errorMessage}</FieldError>
