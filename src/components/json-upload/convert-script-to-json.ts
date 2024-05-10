@@ -44,7 +44,7 @@ const convertScriptToJSON = async (scriptFile: File) => {
                     reminder: {
                         tokenSize: 94.5,
                         tokenMargin: 4,
-                        tokenImageBMargin: 4,
+                        tokenImageBMargin: 12,
                     },
                     tokenSpacerMargin: 4,
                 },
@@ -75,7 +75,7 @@ const convertScriptToJSON = async (scriptFile: File) => {
                         alpha: 0.4,
                         circleBorder: true,
                         squareBorder: false,
-                        thickness: 5,
+                        thickness: 4,
                     },
                 },
             },
