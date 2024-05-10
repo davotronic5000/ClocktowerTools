@@ -6,7 +6,6 @@ import {
     ColorPickerProps,
     ColorSlider,
     ColorSwatch,
-    ColorThumb,
     Dialog,
     DialogTrigger,
     Input,
@@ -15,6 +14,7 @@ import {
     SliderOutput,
     SliderTrack,
 } from "react-aria-components";
+import ColourThumbPicker from "./colour-thumb-picker";
 import FieldLabel from "./field-label";
 
 interface ColourPickerProps extends ColorPickerProps {
@@ -50,7 +50,7 @@ const ColourPicker = ({ label, name, ...rest }: ColourPickerProps) => {
                                         xChannel="saturation"
                                         yChannel="brightness"
                                     >
-                                        <ColorThumb className="shadow-ring-outline h-[20px] w-[20px] rounded-full border-2 border-white shadow-black focus-visible:h-[24px] focus-visible:w-[24px]" />
+                                        <ColourThumbPicker />
                                     </ColorArea>
                                     <ColorSlider
                                         colorSpace="hsb"
@@ -60,7 +60,7 @@ const ColourPicker = ({ label, name, ...rest }: ColourPickerProps) => {
                                         <Label />
                                         <SliderOutput className="text-right" />
                                         <SliderTrack className="col-span-2 h-[28px] rounded-sm">
-                                            <ColorThumb className="shadow-ring-outline top-[50%] h-[20px] w-[20px] rounded-full border-2 border-white shadow-black focus-visible:h-[24px] focus-visible:w-[24px]" />
+                                            <ColourThumbPicker className="top-[50%]" />
                                         </SliderTrack>
                                     </ColorSlider>
                                     <ColorField
