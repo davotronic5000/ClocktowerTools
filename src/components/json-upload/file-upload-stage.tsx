@@ -2,9 +2,9 @@
 import { Button } from "@/components/button";
 import FileUpload from "@/components/file-upload/file-upload";
 import { Fragment, useCallback } from "react";
-import ScriptStageNavigation from "../../app/(site)/(json-tools)/script/script-stage-navigation";
 import convertScriptToJSON from "./convert-script-to-json";
 import { reset, updateFile, updateJSON } from "./json-upload-actions";
+import ScriptStageNavigation from "./stage-navigation";
 import { useJSONContext, useJSONDispatchContext } from "./use-json-context";
 
 const FileUploadStage = () => {

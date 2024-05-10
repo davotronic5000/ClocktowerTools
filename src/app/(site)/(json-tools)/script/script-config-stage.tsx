@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/button";
+import StageNavigation from "@/components/json-upload/stage-navigation";
 import {
     useJSONContext,
     useJSONDispatchContext,
@@ -9,7 +10,6 @@ import { Fragment } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { z } from "zod";
-import ScriptStageNavigation from "./script-stage-navigation";
 
 export const scriptFormSchema = z.object({
     name: z.string().trim().min(1, "A script name is required"),
@@ -50,9 +50,9 @@ const ScriptConfigStage = () => {
                     {...register("colour")}
                 />
                 {errors.colour && <span>{errors.colour.message}</span>}
-                <ScriptStageNavigation>
+                <StageNavigation>
                     <Button type="submit">Submit</Button>
-                </ScriptStageNavigation>
+                </StageNavigation>
             </form>
         </Fragment>
     );
