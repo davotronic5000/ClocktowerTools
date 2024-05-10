@@ -11,7 +11,6 @@ interface TokenLayoutProps {
 }
 
 const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
-    console.log(tokenScript);
     const pageLayout = generateTokenPages(tokenScript);
     return (
         <PageViewer noPageGap={noPageGap}>
