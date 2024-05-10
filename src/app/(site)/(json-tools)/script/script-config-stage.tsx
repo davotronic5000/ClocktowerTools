@@ -1,13 +1,14 @@
 "use client";
 import { Button } from "@/components/button";
+import ColourPicker from "@/components/form/colour-picker";
+import FieldError from "@/components/form/field-error";
+import FieldLabel from "@/components/form/field-label";
 import StageNavigation from "@/components/json-upload/stage-navigation";
-import {
-    useJSONContext,
-    useJSONDispatchContext,
-} from "@/components/json-upload/use-json-context";
+import { useJSONContext } from "@/components/json-upload/use-json-context";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Fragment } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { Form, Input, TextField } from "react-aria-components";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { z } from "zod";
 
@@ -21,7 +22,6 @@ export type ScriptFormType = z.infer<typeof scriptFormSchema>;
 
 const ScriptConfigStage = () => {
     const { json } = useJSONContext();
-    const dispatchJSONAction = useJSONDispatchContext();
     const onSubmit: SubmitHandler<ScriptFormType> = async (data) => {
         if (json) {
             console.log("TODO: Update Options for script");
@@ -32,28 +32,68 @@ const ScriptConfigStage = () => {
     const {
         register,
         handleSubmit,
+        control,
         formState: { errors },
     } = useForm<ScriptFormType>({
+        mode: "onBlur",
         resolver: zodResolver(scriptFormSchema),
+        defaultValues: {
+            name: json?.name || "Custom Script",
+            colour: "#f4f4f4",
+        },
     });
     return (
         <Fragment>
-            Script: {json?.name}
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input
-                    defaultValue={json?.name || "Custom Script"}
-                    {...register("name")}
+            <Form onSubmit={handleSubmit(onSubmit)}>
+                <Controller
+                    control={control}
+                    name="name"
+                    render={({
+                        field: { name, value, onChange, onBlur, ref },
+                        fieldState: { invalid, error },
+                    }) => (
+                        <TextField
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            onBlur={onBlur}
+                            validationBehavior="aria"
+                            isInvalid={invalid}
+                            className="flex flex-col"
+                        >
+                            <FieldLabel>Name</FieldLabel>
+                            <Input
+                                ref={ref}
+                                className="border border-gray-600 bg-gray-900 p-2 invalid:border-red-500"
+                            />
+                            <FieldError>{error?.message}</FieldError>
+                        </TextField>
+                    )}
                 />
-                {errors.name && <span>{errors.name?.message}</span>}
-                <input
-                    defaultValue={json?.scriptColourOptions?.colour}
-                    {...register("colour")}
+                <Controller
+                    control={control}
+                    name="colour"
+                    render={({
+                        field: { name, value, onChange, onBlur, ref },
+                        fieldState: { invalid, error },
+                    }) => (
+                        <Fragment>
+                            <ColourPicker
+                                label="Colour"
+                                name={name}
+                                value={value}
+                                onChange={onChange}
+                                // onBlur={onBlur}
+                                // validationBehavior="aria"
+                                // isInvalid={invalid}
+                            />
+                        </Fragment>
+                    )}
                 />
-                {errors.colour && <span>{errors.colour.message}</span>}
                 <StageNavigation>
                     <Button type="submit">Submit</Button>
                 </StageNavigation>
-            </form>
+            </Form>
         </Fragment>
     );
 };

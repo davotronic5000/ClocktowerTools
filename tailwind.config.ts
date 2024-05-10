@@ -20,6 +20,9 @@ const config: Config = {
                     "system-ui",
                 ],
             },
+            boxShadow: {
+                "ring-outline": "0 0 0 1px black, inset 0 0 0 1px black",
+            },
         },
     },
     plugins: [
