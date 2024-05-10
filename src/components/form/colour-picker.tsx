@@ -17,16 +17,25 @@ import {
 import ColourThumbPicker from "./colour-thumb-picker";
 import FieldLabel from "./field-label";
 
-interface ColourPickerProps extends ColorPickerProps {
+interface ColourPickerProps extends Omit<ColorPickerProps, "onChange"> {
     label: string;
     name: string;
+    onChange: (value: string) => void;
 }
 
-const ColourPicker = ({ label, name, ...rest }: ColourPickerProps) => {
+const ColourPicker = ({
+    label,
+    name,
+    onChange,
+    ...rest
+}: ColourPickerProps) => {
     return (
         <div className="flex flex-col">
             <FieldLabel>{label}</FieldLabel>
-            <ColorPicker {...rest}>
+            <ColorPicker
+                onChange={(value) => onChange(value.toString("hex"))}
+                {...rest}
+            >
                 <DialogTrigger>
                     <Button>
                         <ColorSwatch

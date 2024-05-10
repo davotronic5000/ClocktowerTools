@@ -57,9 +57,11 @@ export const RoleType = z.object({
         .optional(),
 });
 
+export const hexCode = z.string().regex(/^#(?:[0-9a-fA-F]{3}){1,2}$/);
+
 export const ScriptColourOptions = z.object({
-    colour: z.string(),
-    secondaryColour: z.string().optional(),
+    colour: hexCode,
+    secondaryColour: hexCode.optional(),
     colourBlendType: ColourBlendType.optional(),
 });
 

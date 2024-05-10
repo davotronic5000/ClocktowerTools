@@ -4,6 +4,7 @@ import ColourPicker from "@/components/form/colour-picker";
 import FieldError from "@/components/form/field-error";
 import FieldLabel from "@/components/form/field-label";
 import StageNavigation from "@/components/json-upload/stage-navigation";
+import { hexCode } from "@/components/json-upload/universal-json-validator";
 import { useJSONContext } from "@/components/json-upload/use-json-context";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Fragment } from "react";
@@ -14,8 +15,7 @@ import { z } from "zod";
 
 export const scriptFormSchema = z.object({
     name: z.string().trim().min(1, "A script name is required"),
-    colour: z.string().trim().min(1),
-    colourise: z.boolean().optional(),
+    colour: hexCode,
 });
 
 export type ScriptFormType = z.infer<typeof scriptFormSchema>;
@@ -30,7 +30,6 @@ const ScriptConfigStage = () => {
         }
     };
     const {
-        register,
         handleSubmit,
         control,
         formState: { errors },
@@ -39,7 +38,7 @@ const ScriptConfigStage = () => {
         resolver: zodResolver(scriptFormSchema),
         defaultValues: {
             name: json?.name || "Custom Script",
-            colour: "#f4f4f4",
+            colour: "#0524ED",
         },
     });
     return (
@@ -74,7 +73,7 @@ const ScriptConfigStage = () => {
                     control={control}
                     name="colour"
                     render={({
-                        field: { name, value, onChange, onBlur, ref },
+                        field: { name, value, onChange },
                         fieldState: { invalid, error },
                     }) => (
                         <Fragment>
@@ -83,10 +82,8 @@ const ScriptConfigStage = () => {
                                 name={name}
                                 value={value}
                                 onChange={onChange}
-                                // onBlur={onBlur}
-                                // validationBehavior="aria"
-                                // isInvalid={invalid}
                             />
+                            {error && error.message}
                         </Fragment>
                     )}
                 />
