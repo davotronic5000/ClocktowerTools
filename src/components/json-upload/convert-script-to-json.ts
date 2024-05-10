@@ -27,7 +27,10 @@ const convertScriptToJSON = async (scriptFile: File) => {
         const scriptJSON: ScriptJSONSchemaType = {
             name: meta?.name || "Custom Script",
             scriptColourOptions: {
-                colour: meta?.colour || meta?.color || "blue",
+                colour: meta?.scriptColourOptions?.colour || "#0524ED",
+                secondaryColour: meta?.scriptColourOptions?.secondaryColour,
+                colourBlendType:
+                    meta?.scriptColourOptions?.colourBlendType || "difference",
             },
             tokenConfig: {
                 page: {

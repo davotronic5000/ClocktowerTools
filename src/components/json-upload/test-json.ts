@@ -3,7 +3,7 @@ import { ScriptJSONSchemaType } from "./universal-json-validator";
 const testJSON: ScriptJSONSchemaType = {
     name: "Indigestion Brewing",
     scriptColourOptions: {
-        colour: "orange",
+        colour: "#FFA500",
     },
     tokenConfig: {
         page: {

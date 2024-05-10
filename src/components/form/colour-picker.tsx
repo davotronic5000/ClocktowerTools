@@ -10,10 +10,10 @@ import {
     DialogTrigger,
     Input,
     Label,
-    Popover,
     SliderOutput,
     SliderTrack,
 } from "react-aria-components";
+import Popover from "../popover/popover";
 import ColourThumbPicker from "./colour-thumb-picker";
 import FieldLabel from "./field-label";
 
@@ -30,7 +30,7 @@ const ColourPicker = ({
     ...rest
 }: ColourPickerProps) => {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col items-start">
             <FieldLabel>{label}</FieldLabel>
             <ColorPicker
                 onChange={(value) => onChange(value.toString("hex"))}
@@ -39,17 +39,14 @@ const ColourPicker = ({
                 <DialogTrigger>
                     <Button>
                         <ColorSwatch
-                            className="h-8 w-8"
+                            className="h-8 w-8 border border-gray-600"
                             style={({ color }) => ({
                                 background: `linear-gradient(${color}, ${color}),
           repeating-conic-gradient(#CCC 0% 25%, white 0% 50%) 50% / 16px 16px`,
                             })}
                         />
                     </Button>
-                    <Popover
-                        placement="bottom start"
-                        className="border border-gray-600 bg-gray-900 p-4 text-gray-50 "
-                    >
+                    <Popover placement="bottom start">
                         <Dialog className="outline-none">
                             {
                                 <>

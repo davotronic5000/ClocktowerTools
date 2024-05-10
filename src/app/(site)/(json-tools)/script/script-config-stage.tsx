@@ -1,14 +1,21 @@
 "use client";
 import { Button } from "@/components/button";
 import ColourPicker from "@/components/form/colour-picker";
-import FieldError from "@/components/form/field-error";
-import FieldLabel from "@/components/form/field-label";
+import Select from "@/components/form/select";
+import TextField from "@/components/form/text-field";
+import { updateScriptConfig } from "@/components/json-upload/json-upload-actions";
 import StageNavigation from "@/components/json-upload/stage-navigation";
-import { hexCode } from "@/components/json-upload/universal-json-validator";
-import { useJSONContext } from "@/components/json-upload/use-json-context";
+import {
+    ColourBlendType,
+    hexCode,
+} from "@/components/json-upload/universal-json-validator";
+import {
+    useJSONContext,
+    useJSONDispatchContext,
+} from "@/components/json-upload/use-json-context";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Fragment } from "react";
-import { Form, Input, TextField } from "react-aria-components";
+import { Fragment, useEffect } from "react";
+import { Form } from "react-aria-components";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { z } from "zod";
@@ -16,12 +23,34 @@ import { z } from "zod";
 export const scriptFormSchema = z.object({
     name: z.string().trim().min(1, "A script name is required"),
     colour: hexCode,
+    secondaryColour: hexCode.optional(),
+    blendMode: ColourBlendType,
 });
+
+const colourBlendOptions = [
+    { id: "normal", name: "Normal" },
+    { id: "multiply", name: "Multiply" },
+    { id: "screen", name: "Screen" },
+    { id: "overlay", name: "Overlay" },
+    { id: "darken", name: "Darken" },
+    { id: "lighten", name: "Lighten" },
+    { id: "color-dodge", name: "Colour Dodge" },
+    { id: "color-burn", name: "Colour Burn" },
+    { id: "hard-light", name: "Hard Light" },
+    { id: "soft-light", name: "Soft Light" },
+    { id: "difference", name: "Difference" },
+    { id: "exclusion", name: "Exclusion" },
+    { id: "hue", name: "Hue" },
+    { id: "saturation", name: "Saturation" },
+    { id: "color", name: "Colour" },
+    { id: "luminosity", name: "Luminosity" },
+];
 
 export type ScriptFormType = z.infer<typeof scriptFormSchema>;
 
 const ScriptConfigStage = () => {
     const { json } = useJSONContext();
+    const dispatchJSONAction = useJSONDispatchContext();
     const onSubmit: SubmitHandler<ScriptFormType> = async (data) => {
         if (json) {
             console.log("TODO: Update Options for script");
@@ -33,17 +62,25 @@ const ScriptConfigStage = () => {
         handleSubmit,
         control,
         formState: { errors },
+        watch,
     } = useForm<ScriptFormType>({
         mode: "onBlur",
         resolver: zodResolver(scriptFormSchema),
         defaultValues: {
             name: json?.name || "Custom Script",
-            colour: "#0524ED",
+            colour: json?.scriptColourOptions.colour || "#0524ED",
+            blendMode: json?.scriptColourOptions.colourBlendType,
         },
     });
+
+    useEffect(() => {
+        watch((data) => {
+            dispatchJSONAction(updateScriptConfig(data));
+        });
+    }, [watch, dispatchJSONAction]);
     return (
         <Fragment>
-            <Form onSubmit={handleSubmit(onSubmit)}>
+            <Form onSubmit={handleSubmit(onSubmit)} className="space-y-2">
                 <Controller
                     control={control}
                     name="name"
@@ -56,17 +93,11 @@ const ScriptConfigStage = () => {
                             value={value}
                             onChange={onChange}
                             onBlur={onBlur}
-                            validationBehavior="aria"
                             isInvalid={invalid}
-                            className="flex flex-col"
-                        >
-                            <FieldLabel>Name</FieldLabel>
-                            <Input
-                                ref={ref}
-                                className="border border-gray-600 bg-gray-900 p-2 invalid:border-red-500"
-                            />
-                            <FieldError>{error?.message}</FieldError>
-                        </TextField>
+                            ref={ref}
+                            errorMessage={error?.message}
+                            label="Name"
+                        />
                     )}
                 />
                 <Controller
@@ -74,17 +105,33 @@ const ScriptConfigStage = () => {
                     name="colour"
                     render={({
                         field: { name, value, onChange },
-                        fieldState: { invalid, error },
+                        fieldState: { error },
                     }) => (
                         <Fragment>
                             <ColourPicker
-                                label="Colour"
+                                label="Primary Colour"
                                 name={name}
                                 value={value}
                                 onChange={onChange}
                             />
                             {error && error.message}
                         </Fragment>
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="blendMode"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Select
+                            name={name}
+                            selectedKey={value}
+                            onSelectionChange={onChange}
+                            options={colourBlendOptions}
+                            label="Blend Mode"
+                        />
                     )}
                 />
                 <StageNavigation>

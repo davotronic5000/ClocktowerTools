@@ -1,10 +1,9 @@
 import { z } from "zod";
+import { ScriptColourOptions } from "./universal-json-validator";
 
 const meta = z.object({
     id: z.literal("_meta"),
     name: z.string(),
-    colour: z.string().optional(),
-    color: z.string().optional(),
     author: z.string().optional(),
     logo: z.string().url().optional(),
     background: z.string().url().optional(),
@@ -20,6 +19,7 @@ const meta = z.object({
             "A custom other night order for this script can be provided in the form of an array here, with optional special entries for 'dusk' and 'dawn'.",
         )
         .optional(),
+    scriptColourOptions: ScriptColourOptions.optional(),
 });
 
 export type metaType = z.infer<typeof meta>;

@@ -29,6 +29,15 @@ const JSONContextProvider = ({ children }: JSONContextProviderProps) => {
                 case "UPDATE-JSON":
                     draft["json"] = action.payload;
                     break;
+                case "UPDATE-SCRIPT-CONFIG":
+                    if (draft["json"]) {
+                        if (action.payload.name)
+                            draft["json"].name = action.payload.name;
+                        if (action.payload.colour)
+                            draft["json"].scriptColourOptions.colour =
+                                action.payload.colour;
+                        break;
+                    }
             }
         },
         { ...defaultContext, json: testJSON },
