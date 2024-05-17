@@ -2414,6 +2414,20 @@ const originalRoles = {
         "You start knowing a secret phrase. For each time you said it publicly today, a player might die.",
         count: 1,
     },
+    kazali: {
+        id: "kazali",
+        name: "Kazali",
+        team: "demon",
+        firstNight: 2.1,
+        firstNightReminder: "The Kazali points to a player and a Minion on the character sheet. They do this for as many Minions as should be in play. Change those players' tokens to the chosen Minion tokens in the Grim. Wake those players, show them the 'You Are' card, the Minions they have become, and a thumbs down.",
+        otherNight: 35.2,
+        otherNightReminder: "The Kazali points to a player. That player dies",
+        reminders: [{text: "Dead", count: 1}],
+        setup: true,
+        ability:
+        "Each night*, choose a player: they die. [You choose which players are Minions. -? to +? Outsiders]",
+        count: 1,
+    },
 };
 
 export default originalRoles;
