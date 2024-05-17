@@ -2071,8 +2071,6 @@ const originalRoles = {
             { text: "1", count: 1 },
             { text: "2", count: 1 },
             { text: "3", count: 1 },
-            { text: "Chose death", count: 3 },
-            { text: "Chose life", count: 3 },
         ],
         setup: false,
         ability:
