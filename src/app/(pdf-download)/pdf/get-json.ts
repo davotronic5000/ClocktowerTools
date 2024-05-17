@@ -3,7 +3,7 @@
 import { ScriptJSONSchemaType } from "@/components/json-upload/universal-json-validator";
 import { createClient } from "redis";
 
-const getScriptFromDatabase = async (
+const getJSONFromDatabase = async (
     id: string,
 ): Promise<ScriptJSONSchemaType | null> => {
     const client = createClient();
@@ -18,4 +18,4 @@ const getScriptFromDatabase = async (
     return null;
 };
 
-export default getScriptFromDatabase;
+export default getJSONFromDatabase;
