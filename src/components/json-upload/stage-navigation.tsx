@@ -1,14 +1,15 @@
+"use client";
 import { Button } from "@/components/button";
+import { reset } from "@/components/json-upload/json-upload-actions";
+import { useJSONDispatchContext } from "@/components/json-upload/use-json-context";
 import ButtonNavigation from "@/components/sidebar/button-navigation";
 import { ReactNode, useCallback } from "react";
-import { scriptReset } from "./_script-context/script-context-actions";
-import { useScriptDispatchContext } from "./_script-context/use-script-context";
 
-const ScriptStageNavigation = ({ children }: { children: ReactNode }) => {
-    const dispatchScriptAction = useScriptDispatchContext();
+const StageNavigation = ({ children }: { children?: ReactNode }) => {
+    const dispatchJSONAction = useJSONDispatchContext();
     const resetScript = useCallback(
-        () => dispatchScriptAction(scriptReset),
-        [dispatchScriptAction],
+        () => dispatchJSONAction(reset),
+        [dispatchJSONAction],
     );
     return (
         <ButtonNavigation>
@@ -20,4 +21,4 @@ const ScriptStageNavigation = ({ children }: { children: ReactNode }) => {
     );
 };
 
-export default ScriptStageNavigation;
+export default StageNavigation;

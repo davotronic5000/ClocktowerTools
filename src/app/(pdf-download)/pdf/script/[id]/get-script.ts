@@ -1,11 +1,11 @@
 "use server";
 
-import { ScriptToolSchemaType } from "@/app/(site)/script/_script-context/script-submission-schema";
+import { ScriptJSONSchemaType } from "@/components/json-upload/universal-json-validator";
 import { createClient } from "redis";
 
 const getScriptFromDatabase = async (
     id: string,
-): Promise<ScriptToolSchemaType | null> => {
+): Promise<ScriptJSONSchemaType | null> => {
     const client = createClient();
     client.on("error", (err) => console.log("Redis Client Error", err));
     await client.connect();

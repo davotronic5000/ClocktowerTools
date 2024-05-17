@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { TokenToolSchema } from "../tokens/validators/token-tool-schema";
 
 export const ColourBlendType = z.enum([
     "normal",
@@ -19,8 +20,7 @@ export const ColourBlendType = z.enum([
     "luminosity",
 ]);
 
-export const TeamType =  z
-.enum([
+export const TeamType = z.enum([
     "townsfolk",
     "outsider",
     "minion",
@@ -32,13 +32,20 @@ export const TeamType =  z
 export const RoleType = z.object({
     id: z.string(),
     name: z.string().optional(),
-    team: TeamType
-        .optional(),
+    team: TeamType.optional(),
     firstNight: z.number().optional(),
     otherNight: z.number().optional(),
     image: z.string().url().optional(),
     firstNightReminder: z.string().optional(),
     otherNightReminder: z.string().optional(),
+    reminders: z.array(
+        z.object({
+            text: z.string(),
+            count: z.number(),
+        }),
+    ),
+    setup: z.boolean(),
+    count: z.number(),
     ability: z.string().optional(),
     hatred: z
         .array(
@@ -50,19 +57,24 @@ export const RoleType = z.object({
         .optional(),
 });
 
-export const ScriptToolSchema = z.object({
-    name: z.string(),
-    author: z.string().optional(),
-    colour: z.string(),
-    secondaryColour: z.string().optional(),
-    colourBlendType: ColourBlendType
-        .optional(),
-    roles: z.array(
-        RoleType
-    ),
+export const hexCode = z.string().regex(/^#(?:[0-9a-fA-F]{3}){1,2}$/);
+
+export const ScriptColourOptions = z.object({
+    colour: hexCode,
+    secondaryColour: hexCode.optional(),
+    colourBlendType: ColourBlendType.optional(),
 });
 
-export type ScriptToolSchemaType = z.infer<typeof ScriptToolSchema>;
+export const ScriptJSONSchema = z.object({
+    name: z.string(),
+    author: z.string().optional(),
+    roles: z.array(RoleType),
+    scriptColourOptions: ScriptColourOptions,
+    tokenConfig: TokenToolSchema,
+});
+
+export type ScriptJSONSchemaType = z.infer<typeof ScriptJSONSchema>;
 export type ColourBlendTypeType = z.infer<typeof ColourBlendType>;
 export type RoleType = z.infer<typeof RoleType>;
 export type TeamType = z.infer<typeof TeamType>;
+export type ScriptColourOptions = z.infer<typeof ScriptColourOptions>;

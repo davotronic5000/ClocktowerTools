@@ -1,8 +1,8 @@
-import { ScriptToolSchemaType } from "@/app/(site)/script/_script-context/script-submission-schema";
+import { ScriptJSONSchemaType } from "@/components/json-upload/universal-json-validator";
 import ScriptLayout from "../script/layout/script-layout";
 
 interface ScriptPDFProps {
-    scriptJSON: ScriptToolSchemaType;
+    scriptJSON: ScriptJSONSchemaType;
 }
 
 const ScriptPDF = ({ scriptJSON }: ScriptPDFProps) => {
