@@ -61,6 +61,7 @@ export const hexCode = z.string().regex(/^#(?:[0-9a-fA-F]{3}){1,2}$/);
 
 export const ScriptColourOptions = z.object({
     colour: hexCode,
+    useGradient: z.boolean().optional(),
     secondaryColour: hexCode.optional(),
     colourBlendType: ColourBlendType.optional(),
 });

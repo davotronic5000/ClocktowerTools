@@ -119,6 +119,24 @@ const ScriptConfigStage = () => {
                 />
                 <Controller
                     control={control}
+                    name="secondaryColour"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Fragment>
+                            <ColourPicker
+                                label="Secondary Colour"
+                                name={name}
+                                value={value}
+                                onChange={onChange}
+                            />
+                            {error && error.message}
+                        </Fragment>
+                    )}
+                />
+                <Controller
+                    control={control}
                     name="blendMode"
                     render={({
                         field: { name, value, onChange },
