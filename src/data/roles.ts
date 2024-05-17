@@ -1189,8 +1189,8 @@ const originalRoles = {
             "Each night, choose a player & a good character: they are “mad” they are this character tomorrow, or might be executed.",
         count: 1,
     },
-    "pit-hag": {
-        id: "pit-hag",
+    "pithag": {
+        id: "pithag",
         name: "Pit-Hag",
         team: "minion",
         firstNight: 0,
