@@ -8,7 +8,6 @@ import {
     defaultContext,
 } from "./json-context";
 import { JSONUploadActionTypes } from "./json-upload-actions";
-import testJSON from "./test-json";
 
 interface JSONContextProviderProps {
     children: ReactNode;
@@ -43,7 +42,7 @@ const JSONContextProvider = ({ children }: JSONContextProviderProps) => {
                     }
             }
         },
-        { ...defaultContext, json: testJSON },
+        { ...defaultContext, json: null },
     );
     return (
         <JSONContext.Provider value={state}>
