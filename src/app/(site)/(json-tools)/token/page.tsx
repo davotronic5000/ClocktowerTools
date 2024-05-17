@@ -1,4 +1,5 @@
 import JSONUploadControls from "@/components/json-upload/json-upload-controls";
+import StageNavigation from "@/components/json-upload/stage-navigation";
 import SideBar from "@/components/sidebar/sidebar";
 import { Metadata } from "next/types";
 import { Fragment } from "react";
@@ -12,7 +13,10 @@ const Page = () => {
     return (
         <Fragment>
             <SideBar heading="Token Tool Options">
-                <JSONUploadControls>Add a form</JSONUploadControls>
+                <JSONUploadControls>
+                    Customisation Options Coming Soon!
+                    <StageNavigation />
+                </JSONUploadControls>
             </SideBar>
             <TokenViewer />
         </Fragment>

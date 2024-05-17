@@ -20,7 +20,7 @@ const getRole = (id: string): RoleType => {
         otherNight: 0,
         otherNightReminder: "",
         ability: "This role is missing a definition",
-        image: "good.webp",
+        image: "/roles/modern/good.webp",
         setup: false,
         count: 1,
         reminders: [],

@@ -1,5 +1,4 @@
 "use client";
-import { Button } from "@/components/button";
 import ColourPicker from "@/components/form/colour-picker";
 import Select from "@/components/form/select";
 import TextField from "@/components/form/text-field";
@@ -134,9 +133,7 @@ const ScriptConfigStage = () => {
                         />
                     )}
                 />
-                <StageNavigation>
-                    <Button type="submit">Submit</Button>
-                </StageNavigation>
+                <StageNavigation />
             </Form>
         </Fragment>
     );
