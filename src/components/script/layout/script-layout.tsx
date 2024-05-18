@@ -39,6 +39,7 @@ const ScriptLayout = ({ script, noPageGap }: ScriptLayoutProps) => {
                     name={script.name}
                     author={script.author}
                     nightType="First Night"
+                    roles={script.roles}
                 />
             </ScriptPageWithSideBar>
         </PageViewer>

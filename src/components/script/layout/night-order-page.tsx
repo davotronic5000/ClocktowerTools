@@ -1,9 +1,13 @@
+import getBackupRoleImage from "@/components/images/get-role-image";
+import { RoleType } from "@/components/json-upload/universal-json-validator";
+import Image from "next/image";
 import { Fragment, ReactNode } from "react";
 
 interface NightOrderPageProps {
     name: string;
     author?: string;
     nightType: "First Night" | "Other Night";
+    roles: RoleType[];
     children?: ReactNode;
 }
 
@@ -11,6 +15,7 @@ const NightOrderPage = ({
     name,
     author,
     nightType,
+    roles,
     children,
 }: NightOrderPageProps) => {
     return (
@@ -26,8 +31,48 @@ const NightOrderPage = ({
                         </div>
                     )}
                 </div>
-                <div className="col-span-1 col-start-1 row-start-2 row-end-3 place-self-center whitespace-nowrap py-4 text-base font-extrabold uppercase text-gray-200 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] vertical-writing-rl orientation-upright">
+                <div className="col-span-1 col-start-1 row-span-full row-start-2 place-self-center whitespace-nowrap py-4 text-base font-extrabold uppercase text-gray-200 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] vertical-writing-rl orientation-upright">
                     {nightType}
+                </div>
+                <div
+                    className="col-start-2 grid grid-flow-row"
+                    style={{
+                        gridTemplateRows: `repeat(${
+                            roles.filter(({ firstNight }) => firstNight).length
+                        }, auto)`,
+                    }}
+                >
+                    {roles
+                        .filter(
+                            ({ firstNight }) =>
+                                firstNight && firstNight !== undefined,
+                        )
+                        .sort((a, b) => a.firstNight! - b.firstNight!)
+                        .map((role) => (
+                            <div
+                                key={role.id}
+                                className="grid grid-cols-[35px_auto_1fr] gap-x-1"
+                            >
+                                <div className="col-span-1 col-start-1">
+                                    <Image
+                                        alt={`role-${role.id}`}
+                                        src={role.image || getBackupRoleImage()}
+                                        width={35}
+                                        height={35}
+                                        style={{
+                                            objectFit: "cover",
+                                        }}
+                                        quality={100}
+                                    />
+                                </div>
+                                <div className="col-span-1 col-start-2 font-semibold leading-tight">
+                                    {role.name}
+                                </div>
+                                <div className="col-span-1 col-start-3 text-sm leading-tight">
+                                    {role.firstNightReminder}
+                                </div>
+                            </div>
+                        ))}
                 </div>
             </div>
         </Fragment>
