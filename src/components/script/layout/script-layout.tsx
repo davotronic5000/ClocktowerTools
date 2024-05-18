@@ -42,6 +42,18 @@ const ScriptLayout = ({ script, noPageGap }: ScriptLayoutProps) => {
                     roles={script.roles}
                 />
             </ScriptPageWithSideBar>
+            <ScriptPageWithSideBar
+                primaryColour={colourOptions.primaryColour}
+                secondaryColour={colourOptions.secondaryColour}
+                colourBlendType={colourOptions.colourBlendType}
+            >
+                <NightOrderPage
+                    name={script.name}
+                    author={script.author}
+                    nightType="Other Night"
+                    roles={script.roles}
+                />
+            </ScriptPageWithSideBar>
         </PageViewer>
     );
 };

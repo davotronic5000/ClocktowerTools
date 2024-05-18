@@ -38,16 +38,25 @@ const NightOrderPage = ({
                     className="col-start-2 grid grid-flow-row grid-cols-[35px_auto_1fr] gap-x-1 gap-y-1"
                     style={{
                         gridTemplateRows: `repeat(${
-                            roles.filter(({ firstNight }) => firstNight).length
+                            nightType === "First Night"
+                                ? roles.filter(({ firstNight }) => firstNight)
+                                      .length
+                                : roles.filter(({ otherNight }) => otherNight)
+                                      .length
                         }, auto)`,
                     }}
                 >
                     {roles
-                        .filter(
-                            ({ firstNight }) =>
-                                firstNight && firstNight !== undefined,
+                        .filter(({ firstNight, otherNight }) =>
+                            nightType === "First Night"
+                                ? firstNight && firstNight !== undefined
+                                : otherNight && otherNight !== undefined,
                         )
-                        .sort((a, b) => a.firstNight! - b.firstNight!)
+                        .sort((a, b) =>
+                            nightType === "First Night"
+                                ? a.firstNight! - b.firstNight!
+                                : a.otherNight! - b.otherNight!,
+                        )
                         .map((role) => (
                             <Fragment key={role.id}>
                                 <div className="col-span-1 col-start-1 content-center">
@@ -66,7 +75,9 @@ const NightOrderPage = ({
                                     {role.name}
                                 </div>
                                 <div className="col-span-1 col-start-3 content-center text-sm leading-tight">
-                                    {role.firstNightReminder}
+                                    {nightType === "First Night"
+                                        ? role.firstNightReminder
+                                        : role.otherNightReminder}
                                 </div>
                             </Fragment>
                         ))}
