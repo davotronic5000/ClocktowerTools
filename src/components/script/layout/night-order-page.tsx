@@ -35,7 +35,7 @@ const NightOrderPage = ({
                     {nightType}
                 </div>
                 <div
-                    className="col-start-2 grid grid-flow-row"
+                    className="col-start-2 grid grid-flow-row grid-cols-[35px_auto_1fr] gap-x-1 gap-y-1"
                     style={{
                         gridTemplateRows: `repeat(${
                             roles.filter(({ firstNight }) => firstNight).length
@@ -49,11 +49,8 @@ const NightOrderPage = ({
                         )
                         .sort((a, b) => a.firstNight! - b.firstNight!)
                         .map((role) => (
-                            <div
-                                key={role.id}
-                                className="grid grid-cols-[35px_auto_1fr] gap-x-1"
-                            >
-                                <div className="col-span-1 col-start-1">
+                            <Fragment key={role.id}>
+                                <div className="col-span-1 col-start-1 content-center">
                                     <Image
                                         alt={`role-${role.id}`}
                                         src={role.image || getBackupRoleImage()}
@@ -65,13 +62,13 @@ const NightOrderPage = ({
                                         quality={100}
                                     />
                                 </div>
-                                <div className="col-span-1 col-start-2 font-semibold leading-tight">
+                                <div className="col-span-1 col-start-2 content-center font-semibold leading-tight">
                                     {role.name}
                                 </div>
-                                <div className="col-span-1 col-start-3 text-sm leading-tight">
+                                <div className="col-span-1 col-start-3 content-center text-sm leading-tight">
                                     {role.firstNightReminder}
                                 </div>
-                            </div>
+                            </Fragment>
                         ))}
                 </div>
             </div>
