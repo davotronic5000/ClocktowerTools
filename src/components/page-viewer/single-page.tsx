@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 
 interface SinglePageProps {
     pageSize?: "a4";
+    lowInk?: boolean;
     children?: ReactNode;
 }
 
@@ -14,7 +15,11 @@ const pageSizes = {
     },
 };
 
-const SinglePage = ({ pageSize = "a4", children }: SinglePageProps) => {
+const SinglePage = ({
+    pageSize = "a4",
+    lowInk = false,
+    children,
+}: SinglePageProps) => {
     return (
         <div
             style={{
@@ -23,17 +28,19 @@ const SinglePage = ({ pageSize = "a4", children }: SinglePageProps) => {
                 minHeight: pageSizes[pageSize].height,
                 minWidth: pageSizes[pageSize].width,
             }}
-            className="relative overflow-hidden"
+            className="relative overflow-hidden bg-white"
         >
-            <Image
-                alt="parchment"
-                src={parchment}
-                style={{ objectFit: "cover" }}
-                placeholder="blur"
-                quality={100}
-                sizes={`${pageSizes[pageSize].width}px`}
-                fill
-            />
+            {!lowInk && (
+                <Image
+                    alt="parchment"
+                    src={parchment}
+                    style={{ objectFit: "cover" }}
+                    placeholder="blur"
+                    quality={100}
+                    sizes={`${pageSizes[pageSize].width}px`}
+                    fill
+                />
+            )}
             <div className="absolute bottom-0 left-0 right-0 top-0">
                 {children}
             </div>
