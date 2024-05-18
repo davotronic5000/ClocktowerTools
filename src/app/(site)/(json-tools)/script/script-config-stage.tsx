@@ -21,6 +21,7 @@ import { z } from "zod";
 
 export const scriptFormSchema = z.object({
     name: z.string().trim().min(1, "A script name is required"),
+    author: z.string().optional(),
     colour: hexCode,
     secondaryColour: hexCode.optional(),
     blendMode: ColourBlendType,
@@ -67,6 +68,7 @@ const ScriptConfigStage = () => {
         resolver: zodResolver(scriptFormSchema),
         defaultValues: {
             name: json?.name || "Custom Script",
+            author: json?.author,
             colour: json?.scriptColourOptions.colour || "#0524ED",
             blendMode: json?.scriptColourOptions.colourBlendType,
         },
@@ -96,6 +98,25 @@ const ScriptConfigStage = () => {
                             inputRef={ref}
                             errorMessage={error?.message}
                             label="Name"
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="author"
+                    render={({
+                        field: { name, value, onChange, onBlur, ref },
+                        fieldState: { invalid, error },
+                    }) => (
+                        <TextField
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            onBlur={onBlur}
+                            isInvalid={invalid}
+                            inputRef={ref}
+                            errorMessage={error?.message}
+                            label="Author"
                         />
                     )}
                 />
