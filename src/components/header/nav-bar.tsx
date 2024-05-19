@@ -6,6 +6,7 @@ const NavBar: ComponentType = () => {
         <nav className="mr-8 flex items-center divide-x-2 px-4 text-sm">
             <NavBarLink path="/script">Script Tool</NavBarLink>
             <NavBarLink path="/token">Token Generator</NavBarLink>
+            <NavBarLink path="/jinx">Jinx List</NavBarLink>
         </nav>
     );
 };
