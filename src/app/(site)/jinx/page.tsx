@@ -5,13 +5,8 @@ import GetRole from "@/components/json-upload/get-role";
 import jinxes from "@/data/jinx";
 import roles from "@/data/roles";
 import Image from "next/image";
-import { ReactNode } from "react";
 
-interface PageProps {
-    children?: ReactNode;
-}
-
-const Page = ({}: PageProps) => {
+const Page = () => {
     return (
         <div
             className={`grid h-full w-full grid-cols-3 ${oswaldPro.variable} ${oldStandard.variable}`}
