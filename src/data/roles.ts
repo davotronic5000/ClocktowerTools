@@ -1,4 +1,10 @@
-const originalRoles = {
+import { RoleType } from "@/components/json-upload/universal-json-validator";
+
+type Roles = {
+    [key: string] : RoleType
+}
+
+const originalRoles : Roles = {
     washerwoman: {
         id: "washerwoman",
         name: "Washerwoman",
@@ -1731,6 +1737,7 @@ const originalRoles = {
         setup: false,
         name: "Shugenja",
         team: "townsfolk",
+        reminders: [],
         ability:
             "You start knowing if your closest evil player is clockwise or anti-clockwise. If equidistant, this info is arbitrary.",
         count: 1,
@@ -2140,6 +2147,7 @@ const originalRoles = {
         reminders: [{ text: "Dead", count: 1 }],
         name: "Ojo",
         team: "demon",
+        setup: false,
         ability:
             "Each night*, choose a character: they die. If they are not in play, the Storyteller chooses who dies.",
         count: 1,
@@ -2340,9 +2348,9 @@ const originalRoles = {
         reminders: [{ text: "I am Spartacus!", count: 1 }],
         name: "I Am Spartacus!",
         team: "fabled",
+        setup: false,
         ability:
             "Each day, up to half the living players (rounded up & Travellers don’t count) may publicly claim to be Spartacus.",
-        flavor: "I am Spartacus!",
         count: 1,
     },
     banshee: {
