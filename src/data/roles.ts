@@ -1,4 +1,10 @@
-const originalRoles = {
+import { RoleType } from "@/components/json-upload/universal-json-validator";
+
+type Roles = {
+    [key: string] : RoleType
+}
+
+const originalRoles : Roles = {
     washerwoman: {
         id: "washerwoman",
         name: "Washerwoman",
@@ -1189,8 +1195,8 @@ const originalRoles = {
             "Each night, choose a player & a good character: they are “mad” they are this character tomorrow, or might be executed.",
         count: 1,
     },
-    "pit-hag": {
-        id: "pit-hag",
+    "pithag": {
+        id: "pithag",
         name: "Pit-Hag",
         team: "minion",
         firstNight: 0,
@@ -1731,6 +1737,7 @@ const originalRoles = {
         setup: false,
         name: "Shugenja",
         team: "townsfolk",
+        reminders: [],
         ability:
             "You start knowing if your closest evil player is clockwise or anti-clockwise. If equidistant, this info is arbitrary.",
         count: 1,
@@ -2140,6 +2147,7 @@ const originalRoles = {
         reminders: [{ text: "Dead", count: 1 }],
         name: "Ojo",
         team: "demon",
+        setup: false,
         ability:
             "Each night*, choose a character: they die. If they are not in play, the Storyteller chooses who dies.",
         count: 1,
@@ -2340,9 +2348,92 @@ const originalRoles = {
         reminders: [{ text: "I am Spartacus!", count: 1 }],
         name: "I Am Spartacus!",
         team: "fabled",
+        setup: false,
         ability:
             "Each day, up to half the living players (rounded up & Travellers don’t count) may publicly claim to be Spartacus.",
-        flavor: "I am Spartacus!",
+        count: 1,
+    },
+    banshee: {
+        id: "banshee",
+        name: "Banshee",
+        team: "townsfolk",
+        firstNight: 0,
+        firstNightReminder: "",
+        otherNight: 42.1,
+        otherNightReminder: "Announce that the Banshee has died.",
+        reminders: [{text: "Has Ability", count: 1}],
+        setup: false,
+        ability:
+            "If the Demon kills you, all players learn this. From now on, you may nominate twice per day and vote twice per nomination.",
+        count: 1,
+    },
+    villageidiot: {
+        id: "villageidiot",
+        name: "Village Idiot",
+        team: "townsfolk",
+        firstNight: 45.2,
+        firstNightReminder: "The Village Idiot points to a player; give a thumbs up if that player is good or a thumbs down if that player is evil.",
+        otherNight: 62.1,
+        otherNightReminder: "The Village Idiot points to a player; give a thumbs up if that player is good or a thumbs down if that player is evil.",
+        reminders: [{text: "Drunk", count: 1}],
+        setup: true,
+        ability: "Each night, choose a player: you learn their alignment. [+0 to +2 Village Idiots. 1 of the extras is drunk]",
+        count: 1,
+    },
+    hatter: {
+        id: "hatter",
+        name: "Hatter",
+        team: "outsider",
+        firstNight: 0,
+        firstNightReminder: "",
+        otherNight: 39.1,
+        otherNightReminder: "If the Hatter died today: Wake the Minions and Demon. Show them the 'This Character Selected You' info token, then the Hatter token. Each player either shakes their head no or points to another character of the same type as their current character.  If a second player would end up with the same character as another player, shake your head no and gesture for them to choose again. Put them to sleep. Change each player to the character they chose.",
+        reminders: [{text: "Tea Party Tonight", count: 1}],
+        setup: false,
+        ability:
+        "If you died today or tonight, the Minion & Demon players may choose new Minion & Demon characters to be.",
+        count: 1,
+    },
+    summoner: {
+        id: "summoner",
+        name: "Summoner",
+        team: "minion",
+        firstNight: 8.1,
+        firstNightReminder: "Show the 'These characters are not in play' card. Show 3 character tokens of good characters not in play.",
+        otherNight: 19.1,
+        otherNightReminder: "If it is the 3rd night, wake the Summoner. They point to a player and a Demon on the character sheet - that player becomes that Demon.",
+        reminders: [{text: "Night 1", count: 1}, {text: "Night 2", count: 1}, {text: "Night 3", count: 1}],
+        setup: true,
+        ability:
+        "You get 3 bluffs. On the 3rd night, choose a player: they become an evil Demon of your choice. [No Demon]",
+        count: 1,
+    },
+    yaggababble: {
+        id: "yaggababble",
+        name: "Yaggababble",
+        team: "demon",
+        firstNight: 2.2,
+        firstNightReminder: "Show the Yaggababble their secret phrase.",
+        otherNight: 35.1,
+        otherNightReminder: "Choose a number of players up to the total number of times the Yaggababble said their secret phrase publicly, those players die.",
+        reminders: [{text: "Dead", count: 1}],
+        setup: false,
+        ability:
+        "You start knowing a secret phrase. For each time you said it publicly today, a player might die.",
+        count: 1,
+    },
+    kazali: {
+        id: "kazali",
+        name: "Kazali",
+        team: "demon",
+        firstNight: 2.1,
+        firstNightReminder: "The Kazali points to a player and a Minion on the character sheet. They do this for as many Minions as should be in play. Change those players' tokens to the chosen Minion tokens in the Grim. Wake those players, show them the 'You Are' card, the Minions they have become, and a thumbs down.",
+        otherNight: 35.2,
+        otherNightReminder: "The Kazali points to a player. That player dies",
+        reminders: [{text: "Dead", count: 1}],
+        setup: true,
+        ability:
+        "Each night*, choose a player: they die. [You choose which players are Minions. -? to +? Outsiders]",
         count: 1,
     },
 };

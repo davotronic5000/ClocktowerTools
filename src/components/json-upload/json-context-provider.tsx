@@ -38,6 +38,8 @@ const JSONContextProvider = ({ children }: JSONContextProviderProps) => {
                         if (action.payload.blendMode)
                             draft["json"].scriptColourOptions.colourBlendType =
                                 action.payload.blendMode;
+                        if (action.payload.author)
+                            draft["json"].author = action.payload.author;
                         break;
                     }
             }

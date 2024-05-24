@@ -45,8 +45,8 @@ dependencies:
     specifier: ^4.6.13
     version: 4.6.13
   tailwindcss-react-aria-components:
-    specifier: 1.0.0-rc.0
-    version: 1.0.0-rc.0(tailwindcss@3.3.3)
+    specifier: 1.1.2
+    version: 1.1.2(tailwindcss@3.3.3)
   use-immer:
     specifier: ^0.9.0
     version: 0.9.0(immer@10.0.3)(react@18.2.0)
@@ -4762,8 +4762,8 @@ packages:
       tailwindcss: 3.3.3
     dev: true
 
-  /tailwindcss-react-aria-components@1.0.0-rc.0(tailwindcss@3.3.3):
-    resolution: {integrity: sha512-D97XoGI52QcFdENBuQE0I2g0XIkgAQUIzEWPMX9wOf2vRaO9AmNojTFdSMDCa7UKXBM5tg5vvlZMuJjORqdhUw==}
+  /tailwindcss-react-aria-components@1.1.2(tailwindcss@3.3.3):
+    resolution: {integrity: sha512-ncaATYWdc/zIp3hQO24y4vGH58GeCWr0P49pSfY9r5p/wZLYXJC40iIL59kx5mPVYKsKwFjFYkhIQqq3hA2H5w==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
