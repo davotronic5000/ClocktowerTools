@@ -4,6 +4,7 @@ import CustomToaster from "@/components/toast/custom-toaster";
 import type { Metadata } from "next";
 import { Playfair_Display_SC, Raleway } from "next/font/google";
 import "react-toastify/dist/ReactToastify.css";
+import config from "../../../package.json";
 import "../globals.css";
 import AriaRouterProvider from "../router-context";
 
@@ -55,6 +56,9 @@ export default function RootLayout({
                                 Pandemonium Institute. All roles & content are
                                 the property of Steven Medway and The
                                 Pandemonium Institute.
+                                <span className="float-right">
+                                    {config.version}
+                                </span>
                             </footer>
                         </DarkBox>
                     </div>

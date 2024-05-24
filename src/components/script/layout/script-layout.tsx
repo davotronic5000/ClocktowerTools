@@ -17,6 +17,7 @@ const ScriptLayout = ({ script, noPageGap }: ScriptLayoutProps) => {
         primaryColour: script.scriptColourOptions.colour,
         secondaryColour: script.scriptColourOptions.secondaryColour,
         colourBlendType: script.scriptColourOptions.colourBlendType,
+        useGradient: script.scriptColourOptions.useGradient,
     };
     return (
         <PageViewer noPageGap={noPageGap}>
@@ -31,7 +32,20 @@ const ScriptLayout = ({ script, noPageGap }: ScriptLayoutProps) => {
                 <CoverPage name={script.name} {...colourOptions} />
             </SinglePage>
             <ScriptPageWithSideBar {...colourOptions}>
-                <NightOrderPage nightType="First Night" />
+                <NightOrderPage
+                    name={script.name}
+                    author={script.author}
+                    nightType="First Night"
+                    roles={script.roles}
+                />
+            </ScriptPageWithSideBar>
+            <ScriptPageWithSideBar {...colourOptions}>
+                <NightOrderPage
+                    name={script.name}
+                    author={script.author}
+                    nightType="Other Night"
+                    roles={script.roles}
+                />
             </ScriptPageWithSideBar>
         </PageViewer>
     );

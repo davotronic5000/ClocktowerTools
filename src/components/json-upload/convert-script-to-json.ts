@@ -26,9 +26,11 @@ const convertScriptToJSON = async (scriptFile: File) => {
 
         const scriptJSON: ScriptJSONSchemaType = {
             name: meta?.name || "Custom Script",
+            author: meta?.author,
             scriptColourOptions: {
                 colour: meta?.scriptColourOptions?.colour || "#0524ED",
                 secondaryColour: meta?.scriptColourOptions?.secondaryColour,
+                useGradient: meta?.scriptColourOptions?.useGradient || false,
                 colourBlendType:
                     meta?.scriptColourOptions?.colourBlendType || "difference",
             },

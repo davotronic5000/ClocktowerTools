@@ -1,4 +1,4 @@
-import ScriptPDF from "@/components/generate-pdf/script-pdf";
+import TokenPDF from "@/components/generate-pdf/token-pdf";
 import getJSON from "../../get-json";
 
 interface PageProps {
@@ -10,7 +10,7 @@ interface PageProps {
 const Page = async ({ params }: PageProps) => {
     const script = await getJSON(params.id);
     if (script) {
-        return <ScriptPDF scriptJSON={script} />;
+        return <TokenPDF scriptJSON={script} />;
     }
     return <div>No script data available</div>;
 };

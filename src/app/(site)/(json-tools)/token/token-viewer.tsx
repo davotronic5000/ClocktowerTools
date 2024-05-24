@@ -8,8 +8,8 @@ const TokenViewer = () => {
     if (json) {
         return (
             <PDFViewer
-                fileName={json.name}
-                apiRoute="/api/script-pdf"
+                fileName={`${json.name}-tokens`}
+                apiRoute="/api/token-pdf"
                 data={json}
             >
                 <TokenLayout tokenScript={json} />

@@ -1,6 +1,7 @@
 "use client";
 import ColourPicker from "@/components/form/colour-picker";
 import Select from "@/components/form/select";
+import Switch from "@/components/form/switch";
 import TextField from "@/components/form/text-field";
 import { updateScriptConfig } from "@/components/json-upload/json-upload-actions";
 import StageNavigation from "@/components/json-upload/stage-navigation";
@@ -21,8 +22,10 @@ import { z } from "zod";
 
 export const scriptFormSchema = z.object({
     name: z.string().trim().min(1, "A script name is required"),
+    author: z.string().optional(),
     colour: hexCode,
     secondaryColour: hexCode.optional(),
+    useGradient: z.boolean(),
     blendMode: ColourBlendType,
 });
 
@@ -67,7 +70,8 @@ const ScriptConfigStage = () => {
         resolver: zodResolver(scriptFormSchema),
         defaultValues: {
             name: json?.name || "Custom Script",
-            colour: json?.scriptColourOptions.colour || "#0524ED",
+            author: json?.author,
+            colour: json?.scriptColourOptions.colour,
             blendMode: json?.scriptColourOptions.colourBlendType,
         },
     });
@@ -101,6 +105,25 @@ const ScriptConfigStage = () => {
                 />
                 <Controller
                     control={control}
+                    name="author"
+                    render={({
+                        field: { name, value, onChange, onBlur, ref },
+                        fieldState: { invalid, error },
+                    }) => (
+                        <TextField
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            onBlur={onBlur}
+                            isInvalid={invalid}
+                            inputRef={ref}
+                            errorMessage={error?.message}
+                            label="Author"
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
                     name="colour"
                     render={({
                         field: { name, value, onChange },
@@ -109,6 +132,40 @@ const ScriptConfigStage = () => {
                         <Fragment>
                             <ColourPicker
                                 label="Primary Colour"
+                                name={name}
+                                value={value}
+                                onChange={onChange}
+                            />
+                            {error && error.message}
+                        </Fragment>
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="useGradient"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Switch
+                            name={name}
+                            label="Two Colour Gradient"
+                            onChange={onChange}
+                            isSelected={value}
+                            errorMessage={error?.message}
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="secondaryColour"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Fragment>
+                            <ColourPicker
+                                label="Secondary Colour"
                                 name={name}
                                 value={value}
                                 onChange={onChange}
