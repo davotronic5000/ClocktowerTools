@@ -17,6 +17,7 @@ const ScriptLayout = ({ script, noPageGap }: ScriptLayoutProps) => {
         primaryColour: script.scriptColourOptions.colour,
         secondaryColour: script.scriptColourOptions.secondaryColour,
         colourBlendType: script.scriptColourOptions.colourBlendType,
+        useGradient: script.scriptColourOptions.useGradient,
     };
     return (
         <PageViewer noPageGap={noPageGap}>
