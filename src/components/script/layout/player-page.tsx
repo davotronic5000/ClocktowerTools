@@ -62,8 +62,13 @@ const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
                                             />
                                         </div>
                                         <div>
-                                            <div className="font-semibold leading-tight">
-                                                {role.name}
+                                            <div className="flex gap-2">
+                                                <div className="font-semibold leading-tight">
+                                                    {role.name}
+                                                </div>
+                                                <div className="">
+                                                    loop out jinxes here
+                                                </div>
                                             </div>
                                             <div className="w-[97%] text-sm leading-tight">
                                                 {role.ability}
