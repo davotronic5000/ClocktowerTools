@@ -20,14 +20,18 @@ const Select = <T extends object>({
     ...rest
 }: SelectProps<T>) => {
     return (
-        <BaseSelect className="flex flex-col" {...rest}>
+        <BaseSelect className="flex flex-col text-sm" {...rest}>
             <FieldLabel>{label}</FieldLabel>
-            <Button className="flex justify-between border border-gray-600 bg-gray-900 p-2 invalid:border-red-500">
+            <Button className="flex justify-between border border-gray-600 bg-gray-900 px-2 py-1 invalid:border-red-500">
                 <SelectValue />
                 <span aria-hidden="true">▼</span>
             </Button>
-            <Popover placement="bottom">
-                <ListBox items={options} selectionMode="single">
+            <Popover placement="bottom" className="!p-2 text-sm">
+                <ListBox
+                    items={options}
+                    selectionMode="single"
+                    className="text-sm"
+                >
                     {(item) => <ListBoxItem>{item.name}</ListBoxItem>}
                 </ListBox>
             </Popover>

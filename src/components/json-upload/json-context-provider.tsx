@@ -43,8 +43,15 @@ const JSONContextProvider = ({ children }: JSONContextProviderProps) => {
                             action.payload.secondaryColour;
                         draft["json"].scriptColourOptions.useGradient =
                             action.payload.useGradient;
-                        break;
                     }
+                    break;
+                case "UPDATE-TOKEN-CONFIG":
+                    if (draft["json"]) {
+                        console.log(action.payload);
+                        if (action.payload.name)
+                            draft["json"].name = action.payload.name;
+                    }
+                    break;
             }
         },
         { ...defaultContext, json: null },
