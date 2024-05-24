@@ -6,7 +6,7 @@ interface FieldLabelProps {
 }
 
 const FieldLabel = ({ children }: FieldLabelProps) => {
-    return <Label className="text-sm">{children}</Label>;
+    return <Label className="text-sm font-bold">{children}</Label>;
 };
 
 export default FieldLabel;

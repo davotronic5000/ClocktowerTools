@@ -1,6 +1,7 @@
 "use client";
 import ColourPicker from "@/components/form/colour-picker";
 import Select from "@/components/form/select";
+import Switch from "@/components/form/switch";
 import TextField from "@/components/form/text-field";
 import { updateScriptConfig } from "@/components/json-upload/json-upload-actions";
 import StageNavigation from "@/components/json-upload/stage-navigation";
@@ -24,6 +25,7 @@ export const scriptFormSchema = z.object({
     author: z.string().optional(),
     colour: hexCode,
     secondaryColour: hexCode.optional(),
+    useGradient: z.boolean(),
     blendMode: ColourBlendType,
 });
 
@@ -69,7 +71,7 @@ const ScriptConfigStage = () => {
         defaultValues: {
             name: json?.name || "Custom Script",
             author: json?.author,
-            colour: json?.scriptColourOptions.colour || "#0524ED",
+            colour: json?.scriptColourOptions.colour,
             blendMode: json?.scriptColourOptions.colourBlendType,
         },
     });
@@ -136,6 +138,22 @@ const ScriptConfigStage = () => {
                             />
                             {error && error.message}
                         </Fragment>
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="useGradient"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Switch
+                            name={name}
+                            label="Two Colour Gradient"
+                            onChange={onChange}
+                            isSelected={value}
+                            errorMessage={error?.message}
+                        />
                     )}
                 />
                 <Controller
