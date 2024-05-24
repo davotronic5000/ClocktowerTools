@@ -10,6 +10,7 @@ interface CoverPageProps {
     primaryColour: string;
     secondaryColour?: string;
     colourBlendType?: ColourBlendTypeType;
+    useGradient?: boolean;
     children?: ReactNode;
 }
 
@@ -17,12 +18,13 @@ const CoverPage = ({
     name,
     primaryColour,
     secondaryColour,
+    useGradient = false,
     colourBlendType,
 }: CoverPageProps) => {
     return (
         <div
             style={{
-                background: secondaryColour
+                background: useGradient
                     ? `linear-gradient(${primaryColour}, ${secondaryColour})`
                     : primaryColour,
             }}

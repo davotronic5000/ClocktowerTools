@@ -40,6 +40,10 @@ const JSONContextProvider = ({ children }: JSONContextProviderProps) => {
                                 action.payload.blendMode;
                         if (action.payload.author)
                             draft["json"].author = action.payload.author;
+                        draft["json"].scriptColourOptions.secondaryColour =
+                            action.payload.secondaryColour;
+                        draft["json"].scriptColourOptions.useGradient =
+                            action.payload.useGradient;
                         break;
                     }
             }
