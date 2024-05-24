@@ -2436,6 +2436,20 @@ const originalRoles : Roles = {
         "Each night*, choose a player: they die. [You choose which players are Minions. -? to +? Outsiders]",
         count: 1,
     },
+    ogre: {
+        id: "ogre",
+        name: "Ogre",
+        team: "outsider",
+        firstNight: 49.1,
+        firstNightReminder: "The Ogre points to a player (not themselves) and becomes their alignment.",
+        otherNight: 0,
+        otherNightReminder: "",
+        reminders: [{text: "Dead", count: 1}],
+        setup: true,
+        ability:
+        "On your 1st night, choose a player (not yourself): you become their alignment (you don't know which) even if drunk or poisoned.",
+        count: 1,
+    },
 };
 
 export default originalRoles;
