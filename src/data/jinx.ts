@@ -31,15 +31,6 @@ const jinxes : Jinxes = {
           }
         ]
       },
-    butler: {
-        "id": "butler",
-        "jinx": [
-          {
-            "id": "cannibal",
-            "reason": "If the Cannibal gains the Butler ability, the Cannibal learns this."
-          }
-        ]
-      },
     lunatic:   {
         "id": "lunatic",
         "jinx": [
@@ -75,6 +66,10 @@ const jinxes : Jinxes = {
           {
             "id": "goon",
             "reason": "If the Pit-Hag turns an evil player into the Goon, they can't turn good due to their own ability."
+          },
+          {
+            "id": "ogre",
+            "reason": "If the Pit-Hag turns an evil player into the Ogre, they can't turn good due to their own ability."
           }
         ]
       },
@@ -231,6 +226,10 @@ const jinxes : Jinxes = {
           {
             "id": "heretic",
             "reason": "Only 1 jinxed character can be in play."
+          },
+          {
+            "id": "ogre",
+            "reason": "The Spy registers as evil to the Ogre."
           }
         ]
       },
@@ -643,6 +642,28 @@ const jinxes : Jinxes = {
           {
             "id": "banshee",
             "reason": "If the Vortox is in play and the Demon kills the Banshee, the players still learn that the Banshee has died."
+          }
+        ]
+      },
+      cannibal: {
+        "id": "cannibal",
+        "jinx" : [
+          {
+            "id": "butler",
+            "reason": 	"If the Cannibal gains the Butler ability, the Cannibal learns this."
+          },
+          {
+            "id": "juggler",
+            "reason": "If the Juggler guesses on their first day and dies by execution, tonight the living Cannibal learns how many guesses the Juggler got correct."
+          }
+        ]
+      },
+      ogre: {
+        "id": "ogre",
+        "jinx": [
+          {
+            "id": "recluse",
+            "reason": "If the Recluse registers as evil to the Ogre, the Ogre learns that they are evil."
           }
         ]
       }
