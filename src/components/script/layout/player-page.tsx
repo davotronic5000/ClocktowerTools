@@ -1,5 +1,7 @@
 import getBackupRoleImage from "@/components/images/get-role-image";
+import GetRole from "@/components/json-upload/get-role";
 import { RoleType } from "@/components/json-upload/universal-json-validator";
+import jinxes from "@/data/jinx";
 import Image from "next/image";
 import { Fragment, ReactNode } from "react";
 
@@ -66,8 +68,41 @@ const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
                                                 <div className="font-semibold leading-tight">
                                                     {role.name}
                                                 </div>
-                                                <div className="">
-                                                    loop out jinxes here
+                                                <div className="flex">
+                                                    {jinxes[role.id]?.jinx
+                                                        .filter((jinx) =>
+                                                            roles.some(
+                                                                (e) =>
+                                                                    e.id ===
+                                                                    jinx.id,
+                                                            ),
+                                                        )
+                                                        .slice(0, 8)
+                                                        .map((jinx) => (
+                                                            <Image
+                                                                key={jinx.id}
+                                                                alt={`jinx-${jinx.id}`}
+                                                                src={
+                                                                    GetRole(
+                                                                        jinx.id,
+                                                                    ).image ||
+                                                                    getBackupRoleImage()
+                                                                }
+                                                                width={20}
+                                                                height={20}
+                                                                style={{
+                                                                    objectFit:
+                                                                        "cover",
+                                                                }}
+                                                                quality={100}
+                                                            />
+                                                        ))}
+                                                </div>
+                                                <div className="font-semibold leading-tight ">
+                                                    {jinxes[role.id]?.jinx
+                                                        .length >= 8
+                                                        ? "..."
+                                                        : null}
                                                 </div>
                                             </div>
                                             <div className="w-[97%] text-sm leading-tight">

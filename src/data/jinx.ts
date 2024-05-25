@@ -579,7 +579,7 @@ const jinxes : Jinxes = {
           {
             "id": "mastermind",
             "reason": "Only 1 jinxed character can be in play. Evil players start knowing which player and character it is."
-          }
+          }          
         ]
       },
       organgrinder:   {
