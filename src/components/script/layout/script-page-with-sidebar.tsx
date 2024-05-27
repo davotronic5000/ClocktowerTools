@@ -10,6 +10,7 @@ interface ScriptPageWithSideBarProps {
     primaryColour: string;
     secondaryColour?: string;
     colourBlendType?: ColourBlendTypeType;
+    useGradient?: boolean;
     children?: ReactNode;
 }
 
@@ -17,6 +18,7 @@ const ScriptPageWithSideBar = ({
     primaryColour,
     secondaryColour,
     colourBlendType,
+    useGradient = false,
     children,
 }: ScriptPageWithSideBarProps) => {
     return (
@@ -26,7 +28,7 @@ const ScriptPageWithSideBar = ({
             >
                 <div
                     style={{
-                        background: secondaryColour
+                        background: useGradient
                             ? `linear-gradient(${primaryColour}, ${secondaryColour})`
                             : primaryColour,
                     }}

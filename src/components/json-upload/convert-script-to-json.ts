@@ -30,6 +30,7 @@ const convertScriptToJSON = async (scriptFile: File) => {
             scriptColourOptions: {
                 colour: meta?.scriptColourOptions?.colour || "#0524ED",
                 secondaryColour: meta?.scriptColourOptions?.secondaryColour,
+                useGradient: meta?.scriptColourOptions?.useGradient || false,
                 colourBlendType:
                     meta?.scriptColourOptions?.colourBlendType || "difference",
             },
