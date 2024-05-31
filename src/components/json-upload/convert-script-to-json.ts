@@ -62,7 +62,7 @@ const convertScriptToJSON = async (scriptFile: File) => {
                     },
                     setup: {
                         icon: "&#10010;",
-                        colour: " #D97F3F",
+                        colour: "#D97F3F",
                     },
                     firstNight: {
                         icon: "&#10038;",
