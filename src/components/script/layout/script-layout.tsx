@@ -2,6 +2,7 @@ import { ScriptJSONSchemaType } from "@/components/json-upload/universal-json-va
 import PageViewer from "@/components/page-viewer/page-viewer";
 import SinglePage from "@/components/page-viewer/single-page";
 import CoverPage from "./cover-page";
+import NightJinx from "./night-order-jinx";
 import NightOrderPage from "./night-order-page";
 import PlayerPage from "./player-page";
 import ScriptPageWithSideBar from "./script-page-with-sidebar";
@@ -34,7 +35,6 @@ const ScriptLayout = ({ script, noPageGap }: ScriptLayoutProps) => {
             <ScriptPageWithSideBar {...colourOptions}>
                 <NightOrderPage
                     name={script.name}
-                    author={script.author}
                     nightType="First Night"
                     roles={script.roles}
                 />
@@ -42,10 +42,11 @@ const ScriptLayout = ({ script, noPageGap }: ScriptLayoutProps) => {
             <ScriptPageWithSideBar {...colourOptions}>
                 <NightOrderPage
                     name={script.name}
-                    author={script.author}
                     nightType="Other Night"
                     roles={script.roles}
-                />
+                >
+                    <NightJinx roles={script.roles} />
+                </NightOrderPage>
             </ScriptPageWithSideBar>
         </PageViewer>
     );

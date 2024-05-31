@@ -1,13 +1,13 @@
-type Jinxes = {
+export type Jinxes = {
     [key: string] : Jinx
 }
 
-interface Jinx  {
+export interface Jinx  {
   id: string;
   jinx: JinxContent[]
 }
 
-interface JinxContent {
+export interface JinxContent {
   id: string;
   reason: string
 }
@@ -579,7 +579,7 @@ const jinxes : Jinxes = {
           {
             "id": "mastermind",
             "reason": "Only 1 jinxed character can be in play. Evil players start knowing which player and character it is."
-          }
+          }          
         ]
       },
       organgrinder:   {
