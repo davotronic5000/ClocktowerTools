@@ -4,7 +4,7 @@ import FileUpload from "@/components/file-upload/file-upload";
 import { Fragment, useCallback } from "react";
 import convertScriptToJSON from "./convert-script-to-json";
 import { reset, updateFile, updateJSON } from "./json-upload-actions";
-import ScriptStageNavigation from "./stage-navigation";
+import StageNavigation from "./stage-navigation";
 import { useJSONContext, useJSONDispatchContext } from "./use-json-context";
 
 const FileUploadStage = () => {
@@ -31,11 +31,11 @@ const FileUploadStage = () => {
     return (
         <Fragment>
             <FileUpload file={file} updateFile={update} resetFile={resetFile} />
-            <ScriptStageNavigation>
+            <StageNavigation>
                 <Button isDisabled={!file} onPress={() => moveToConfig()}>
                     Continue
                 </Button>
-            </ScriptStageNavigation>
+            </StageNavigation>
         </Fragment>
     );
 };

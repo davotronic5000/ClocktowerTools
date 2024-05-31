@@ -51,9 +51,10 @@ const convertScriptToJSON = async (scriptFile: File) => {
                         tokenMargin: 4,
                         tokenImageBMargin: 12,
                     },
-                    tokenSpacerMargin: 4,
+                    tokenSpacerMargin: 8,
                 },
                 tokenStyles: {
+                    tokenBackground: true,
                     fontColour: "#262626",
                     fontSize: {
                         role: "text-lg",
@@ -61,7 +62,7 @@ const convertScriptToJSON = async (scriptFile: File) => {
                     },
                     setup: {
                         icon: "&#10010;",
-                        colour: " #d97f3f",
+                        colour: "#D97F3F",
                     },
                     firstNight: {
                         icon: "&#10038;",

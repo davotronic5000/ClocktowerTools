@@ -1,32 +1,33 @@
+import { pageSizes } from "@/utilities/page-sizes";
 import Image from "next/image";
 import parchment from "public/parchment.jpg";
 import { ReactNode } from "react";
 
 interface SinglePageProps {
-    pageSize?: "a4";
+    pageSize?: "a4" | { height: number; width: number };
     lowInk?: boolean;
     children?: ReactNode;
 }
-
-const pageSizes = {
-    a4: {
-        height: 1123,
-        width: 794,
-    },
-};
 
 const SinglePage = ({
     pageSize = "a4",
     lowInk = false,
     children,
 }: SinglePageProps) => {
+    const pSize =
+        typeof pageSize === "object"
+            ? pageSize
+            : {
+                  height: pageSizes[pageSize].height,
+                  width: pageSizes[pageSize].width,
+              };
     return (
         <div
             style={{
-                height: pageSizes[pageSize].height,
-                width: pageSizes[pageSize].width,
-                minHeight: pageSizes[pageSize].height,
-                minWidth: pageSizes[pageSize].width,
+                height: pSize.height,
+                width: pSize.width,
+                minHeight: pSize.height,
+                minWidth: pSize.width,
             }}
             className="relative overflow-hidden bg-white"
         >
@@ -37,7 +38,7 @@ const SinglePage = ({
                     style={{ objectFit: "cover" }}
                     placeholder="blur"
                     quality={100}
-                    sizes={`${pageSizes[pageSize].width}px`}
+                    sizes={`${pSize.width}px`}
                     fill
                 />
             )}

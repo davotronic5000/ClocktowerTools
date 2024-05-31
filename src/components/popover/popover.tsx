@@ -9,10 +9,10 @@ interface PopoverProps extends BasePopoverProps {
     children?: ReactNode;
 }
 
-const Popover = ({ children, ...rest }: PopoverProps) => {
+const Popover = ({ children, className = "", ...rest }: PopoverProps) => {
     return (
         <BasePopover
-            className="group overflow-auto border border-gray-600 bg-gray-900 p-4 text-gray-50"
+            className={`group overflow-auto border border-gray-600 bg-gray-900 p-4 text-gray-50 ${className}`}
             containerPadding={25}
             {...rest}
         >

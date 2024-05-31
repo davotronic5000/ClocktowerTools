@@ -27,7 +27,10 @@ const TokenSVG = ({ pageLayout, token }: TokenSVGProps) => {
                     id={layoutCircle}
                 />
             </defs>
-            <text className="tracking-widest">
+            <text
+                className="tracking-widest"
+                fill={pageLayout.tokenConfig.tokenStyles.fontColour}
+            >
                 <textPath
                     startOffset={type === "role" ? "75%" : "50%"}
                     textAnchor="middle"
