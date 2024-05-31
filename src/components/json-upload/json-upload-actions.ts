@@ -1,5 +1,5 @@
 import { ScriptFormType } from "@/app/(site)/(json-tools)/script/script-config-stage";
-import { TokenFormType } from "@/app/(site)/(json-tools)/token/token-config-stage";
+import { TokenFormType } from "@/app/(site)/(json-tools)/token/token-config-form";
 import { Optional } from "@/utilities/optional-type";
 import { ScriptJSONSchemaType } from "./universal-json-validator";
 

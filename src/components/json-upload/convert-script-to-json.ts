@@ -51,7 +51,7 @@ const convertScriptToJSON = async (scriptFile: File) => {
                         tokenMargin: 4,
                         tokenImageBMargin: 12,
                     },
-                    tokenSpacerMargin: 4,
+                    tokenSpacerMargin: 8,
                 },
                 tokenStyles: {
                     tokenBackground: true,

@@ -139,6 +139,27 @@ const TokenConfigForm = ({ json }: TokenConfigFormProps) => {
                         />
                     )}
                 />
+                <Controller
+                    control={control}
+                    name="tokenSpacerMargin"
+                    render={({
+                        field: { name, value, onChange, onBlur, ref },
+                        fieldState: { invalid, error },
+                    }) => (
+                        <NumberField
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            onBlur={onBlur}
+                            isInvalid={invalid}
+                            inputRef={ref}
+                            errorMessage={error?.message}
+                            label="Token Spacer Margin (px)"
+                            isRequired
+                            minValue={0}
+                        />
+                    )}
+                />
                 <Heading as="h4">Advanced Role Token Options</Heading>
                 <Controller
                     control={control}
@@ -178,7 +199,7 @@ const TokenConfigForm = ({ json }: TokenConfigFormProps) => {
                             errorMessage={error?.message}
                             label="Token Role Margin (px)"
                             isRequired
-                            minValue={1}
+                            minValue={0}
                         />
                     )}
                 />
@@ -199,7 +220,71 @@ const TokenConfigForm = ({ json }: TokenConfigFormProps) => {
                             errorMessage={error?.message}
                             label="Token Role Image Margin (px)"
                             isRequired
+                            minValue={0}
+                        />
+                    )}
+                />
+                <Heading as="h4">Advanced Reminder Token Options</Heading>
+                <Controller
+                    control={control}
+                    name="tokenReminderSize"
+                    render={({
+                        field: { name, value, onChange, onBlur, ref },
+                        fieldState: { invalid, error },
+                    }) => (
+                        <NumberField
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            onBlur={onBlur}
+                            isInvalid={invalid}
+                            inputRef={ref}
+                            errorMessage={error?.message}
+                            label="Token Reminder Size (px)"
+                            isRequired
                             minValue={1}
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="tokenRoleMargin"
+                    render={({
+                        field: { name, value, onChange, onBlur, ref },
+                        fieldState: { invalid, error },
+                    }) => (
+                        <NumberField
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            onBlur={onBlur}
+                            isInvalid={invalid}
+                            inputRef={ref}
+                            errorMessage={error?.message}
+                            label="Token Reminder Margin (px)"
+                            isRequired
+                            minValue={0}
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="tokenRoleImageBMargin"
+                    render={({
+                        field: { name, value, onChange, onBlur, ref },
+                        fieldState: { invalid, error },
+                    }) => (
+                        <NumberField
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            onBlur={onBlur}
+                            isInvalid={invalid}
+                            inputRef={ref}
+                            errorMessage={error?.message}
+                            label="Token Reminder Image Margin (px)"
+                            isRequired
+                            minValue={0}
                         />
                     )}
                 />
