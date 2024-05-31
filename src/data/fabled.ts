@@ -156,15 +156,6 @@ const fabled = [
         ability:
             "One role from off the script will be in play, it can be either a player or a demon bluff.",
     },
-    {
-        id: "iamspartacusfallofrome",
-        reminders: ["I am Spartacus!"],
-        name: "I Am Spartacus!",
-        team: "fabled",
-        ability:
-            "Each day, up to half the living players (rounded up & Travellers don\u2019t count) may publicly claim to be Spartacus.",
-        flavor: "I am Spartacus!",
-    },
 ];
 
 module.exports = fabled;

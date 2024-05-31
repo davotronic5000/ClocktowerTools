@@ -1,5 +1,7 @@
 import getBackupRoleImage from "@/components/images/get-role-image";
+import GetRole from "@/components/json-upload/get-role";
 import { RoleType } from "@/components/json-upload/universal-json-validator";
+import jinxes from "@/data/jinx";
 import Image from "next/image";
 import { Fragment, ReactNode } from "react";
 
@@ -14,8 +16,8 @@ const roleTypeOrder = ["townsfolk", "outsider", "minion", "demon"] as const;
 
 const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
     return (
-        <Fragment>
-            <div className="col-start-2 mb-2.5 mt-2.5 justify-self-center  text-amber-950">
+        <div className="col-span-full row-span-full grid grid-rows-[min-content_1fr]">
+            <div className="col-start-1 mb-1 mt-2.5 justify-self-center  text-amber-950">
                 <div className="font-title text-4xl leading-none">{name}</div>
                 {author && (
                     <div className="text-center font-serif text-sm leading-tight">
@@ -23,7 +25,7 @@ const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
                     </div>
                 )}
             </div>
-            <div className="z-0 col-span-full row-start-2 grid grid-cols-[40px_1fr] grid-rows-[min-content_min-content_min-content_min-content] font-content">
+            <div className="z-0 col-span-full row-span-full row-start-2 grid grid-cols-[40px_1fr] grid-rows-[min-content_min-content_min-content_min-content] font-content">
                 {roleTypeOrder.map((roleType) => (
                     <Fragment key={roleType}>
                         <div className="col-span-1 col-start-1 place-self-center py-4 text-base font-extrabold uppercase text-gray-200 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] vertical-writing-rl orientation-upright">
@@ -62,8 +64,46 @@ const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
                                             />
                                         </div>
                                         <div>
-                                            <div className="font-semibold leading-tight">
-                                                {role.name}
+                                            <div className="flex gap-2">
+                                                <div className="font-semibold leading-tight">
+                                                    {role.name}
+                                                </div>
+                                                <div className="flex">
+                                                    {jinxes[role.id]?.jinx
+                                                        .filter((jinx) =>
+                                                            roles.some(
+                                                                (e) =>
+                                                                    e.id ===
+                                                                    jinx.id,
+                                                            ),
+                                                        )
+                                                        .slice(0, 8)
+                                                        .map((jinx) => (
+                                                            <Image
+                                                                key={jinx.id}
+                                                                alt={`jinx-${jinx.id}`}
+                                                                src={
+                                                                    GetRole(
+                                                                        jinx.id,
+                                                                    ).image ||
+                                                                    getBackupRoleImage()
+                                                                }
+                                                                width={20}
+                                                                height={20}
+                                                                style={{
+                                                                    objectFit:
+                                                                        "cover",
+                                                                }}
+                                                                quality={100}
+                                                            />
+                                                        ))}
+                                                </div>
+                                                <div className="font-semibold leading-tight ">
+                                                    {jinxes[role.id]?.jinx
+                                                        .length >= 8
+                                                        ? "..."
+                                                        : null}
+                                                </div>
                                             </div>
                                             <div className="w-[97%] text-sm leading-tight">
                                                 {role.ability}
@@ -75,10 +115,10 @@ const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
                     </Fragment>
                 ))}
             </div>
-            <div className="col-start-2 self-end justify-self-center font-title text-lg">
+            <div className="absolute bottom-0 left-0 right-0 col-start-1 justify-self-center text-center font-title text-lg">
                 *Not The First Night
             </div>
-        </Fragment>
+        </div>
     );
 };
 
