@@ -40,7 +40,7 @@ export default function RootLayout({
             data-theme="clocktower"
             className={`${raleway.variable} ${playfairDisplay.variable} overflow-hidden`}
         >
-            <body>
+            <body className="bg-gray-950">
                 <AriaRouterProvider>
                     <CustomToaster />
                     <div className="flex h-screen max-h-screen flex-col justify-between">
