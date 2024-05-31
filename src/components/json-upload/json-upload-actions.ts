@@ -1,5 +1,6 @@
 import { ScriptFormType } from "@/app/(site)/(json-tools)/script/script-config-stage";
 import { TokenFormType } from "@/app/(site)/(json-tools)/token/token-config-stage";
+import { Optional } from "@/utilities/optional-type";
 import { ScriptJSONSchemaType } from "./universal-json-validator";
 
 export const reset = {
@@ -24,7 +25,9 @@ export const updateScriptConfig = (scriptConfig: Partial<ScriptFormType>) =>
         payload: scriptConfig,
     }) as const;
 
-export const updateTokenConfig = (tokenConfig: Partial<TokenFormType>) =>
+export const updateTokenConfig = (
+    tokenConfig: Optional<TokenFormType, "name">,
+) =>
     ({
         type: "UPDATE-TOKEN-CONFIG",
         payload: tokenConfig,

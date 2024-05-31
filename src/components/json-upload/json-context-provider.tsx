@@ -8,6 +8,7 @@ import {
     defaultContext,
 } from "./json-context";
 import { JSONUploadActionTypes } from "./json-upload-actions";
+import testJSON from "./test-json";
 
 interface JSONContextProviderProps {
     children: ReactNode;
@@ -47,23 +48,47 @@ const JSONContextProvider = ({ children }: JSONContextProviderProps) => {
                     break;
                 case "UPDATE-TOKEN-CONFIG":
                     if (draft["json"]) {
-                        console.log(action.payload);
                         if (action.payload.name)
                             draft["json"].name = action.payload.name;
-                        if (
-                            typeof action.payload.tokenBackground !==
-                            "undefined"
-                        ) {
-                            draft[
-                                "json"
-                            ].tokenConfig.tokenStyles.tokenBackground =
-                                action.payload.tokenBackground;
-                        }
+
+                        draft["json"].tokenConfig.page.height =
+                            action.payload.pageHeight;
+                        draft["json"].tokenConfig.page.width =
+                            action.payload.pageWidth;
+                        draft["json"].tokenConfig.page.margin =
+                            action.payload.pageMargin;
+
+                        draft["json"].tokenConfig.tokenSizes.role.tokenSize =
+                            action.payload.tokenRoleSize;
+                        draft["json"].tokenConfig.tokenSizes.role.tokenMargin =
+                            action.payload.tokenRoleMargin;
+                        draft[
+                            "json"
+                        ].tokenConfig.tokenSizes.role.tokenImageBMargin =
+                            action.payload.tokenRoleImageBMargin;
+
+                        draft[
+                            "json"
+                        ].tokenConfig.tokenSizes.reminder.tokenSize =
+                            action.payload.tokenReminderSize;
+                        draft[
+                            "json"
+                        ].tokenConfig.tokenSizes.reminder.tokenMargin =
+                            action.payload.tokenReminderMargin;
+                        draft[
+                            "json"
+                        ].tokenConfig.tokenSizes.reminder.tokenImageBMargin =
+                            action.payload.tokenReminderImageBMargin;
+
+                        draft["json"].tokenConfig.tokenStyles.tokenBackground =
+                            action.payload.tokenBackground;
+                        draft["json"].tokenConfig.tokenSizes.tokenSpacerMargin =
+                            action.payload.tokenSpacerMargin;
                     }
                     break;
             }
         },
-        { ...defaultContext, json: null },
+        { ...defaultContext, json: testJSON },
     );
     return (
         <JSONContext.Provider value={state}>
