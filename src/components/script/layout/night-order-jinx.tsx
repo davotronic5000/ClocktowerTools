@@ -39,7 +39,7 @@ const NightJinx = ({ children, roles }: NightJinxProps) => {
             [] as { id1: string; id2: string; reason: string }[][],
         );
 
-    return onScriptJinxes ? (
+    return onScriptJinxes.length > 0 ? (
         <Fragment>
             <div className="col-span-1 col-start-1 row-span-1 row-start-2 place-self-center py-4 font-content text-base font-extrabold uppercase text-gray-200 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] vertical-writing-rl orientation-upright">
                 Jinxes
