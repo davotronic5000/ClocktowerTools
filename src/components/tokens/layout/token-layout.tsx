@@ -28,7 +28,8 @@ const TokenLayout = ({ noPageGap, tokenScript }: TokenLayoutProps) => {
                             className={`h-full w-full ${oldStandard.variable} flex flex-col items-center justify-center text-center font-serif font-bold uppercase`}
                         >
                             <h4 className="mb-[6px] text-sm leading-none">
-                                {tokenScript.name} - Page: {i + 1}
+                                {tokenScript.name} - Page: {i + 1} /
+                                {pageLayout.pages.length}
                             </h4>
                             <div
                                 style={{
