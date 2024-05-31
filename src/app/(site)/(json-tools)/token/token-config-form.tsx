@@ -220,7 +220,6 @@ const TokenConfigForm = ({ json }: TokenConfigFormProps) => {
                             label="Border Thickness (px)"
                             isRequired
                             minValue={0}
-                            maxValue={1}
                             step={0.5}
                         />
                     )}
