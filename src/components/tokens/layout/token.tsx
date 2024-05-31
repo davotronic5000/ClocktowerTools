@@ -51,7 +51,6 @@ const Token = ({ token, pageLayout }: TokenProps) => {
                         ? generatedBorderStyles
                         : undefined),
                 }}
-                hidden={true}
             >
                 <div
                     className="flex h-full w-full flex-col items-center justify-start rounded-[50%] border-solid"
