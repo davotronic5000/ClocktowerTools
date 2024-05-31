@@ -3,6 +3,7 @@ import StageNavigation from "@/components/json-upload/stage-navigation";
 import SideBar from "@/components/sidebar/sidebar";
 import { Metadata } from "next/types";
 import { Fragment } from "react";
+import TokenConfig from "./token-config-stage";
 import TokenViewer from "./token-viewer";
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ const Page = () => {
         <Fragment>
             <SideBar heading="Token Tool Options">
                 <JSONUploadControls>
-                    Customisation Options Coming Soon!
+                    <TokenConfig />
                     <StageNavigation />
                 </JSONUploadControls>
             </SideBar>

@@ -23,12 +23,12 @@ const TextField = ({
         <BaseTextField
             {...rest}
             validationBehavior="aria"
-            className="flex flex-col"
+            className="flex flex-col text-sm"
         >
             <FieldLabel>{label}</FieldLabel>
             <Input
                 ref={inputRef}
-                className="border border-gray-600 bg-gray-900 p-2 invalid:border-red-500"
+                className="border border-gray-600 bg-gray-900 px-2 py-1 invalid:border-red-500"
             />
             <FieldError>{errorMessage}</FieldError>
         </BaseTextField>

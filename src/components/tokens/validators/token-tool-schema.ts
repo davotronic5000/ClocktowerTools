@@ -1,15 +1,15 @@
 import { z } from "zod";
 
 const TokenSizeSchema = z.object({
-    tokenSize: z.number(),
-    tokenMargin: z.number(),
-    tokenImageBMargin: z.number(),
+    tokenSize: z.number().min(1),
+    tokenMargin: z.number().min(0),
+    tokenImageBMargin: z.number().min(0),
 });
 
 const PageSchema = z.object({
-    height: z.number(),
-    width: z.number(),
-    margin: z.number(),
+    height: z.number().min(1),
+    width: z.number().min(1),
+    margin: z.number().min(0),
 });
 
 export type TokenToolPageSchemaType = z.infer<typeof PageSchema>;
@@ -61,6 +61,7 @@ export const TokenToolSchema = z.object({
             squareBorder: z.boolean(),
             thickness: z.number(),
         }),
+        tokenBackground: z.boolean(),
     }),
 });
 

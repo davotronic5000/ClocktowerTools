@@ -30,7 +30,7 @@ const ColourPicker = ({
     ...rest
 }: ColourPickerProps) => {
     return (
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col items-start text-sm">
             <FieldLabel>{label}</FieldLabel>
             <ColorPicker
                 onChange={(value) => onChange(value.toString("hex"))}
@@ -71,10 +71,10 @@ const ColourPicker = ({
                                     </ColorSlider>
                                     <ColorField
                                         name={name}
-                                        className="flex flex-col"
+                                        className="flex flex-col text-sm"
                                     >
                                         <FieldLabel>Hex</FieldLabel>
-                                        <Input className="w-40 border border-gray-600 bg-gray-900 p-2 invalid:border-red-500" />
+                                        <Input className="w-40 border border-gray-600 bg-gray-900 px-2 py-1 invalid:border-red-500" />
                                     </ColorField>
                                 </>
                             }
