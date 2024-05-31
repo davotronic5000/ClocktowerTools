@@ -19,7 +19,7 @@ const NightOrderPage = ({
 }: NightOrderPageProps) => {
     return (
         <div className="col-span-full row-span-full grid grid-rows-[min-content_1fr]">
-            <div className="col-start-1 mb-2.5 mt-2.5 justify-self-center text-amber-950">
+            <div className="col-start-1 mb-1 mt-2.5 justify-self-center text-amber-950">
                 <div className="font-title text-4xl leading-none">{name}</div>
             </div>
             <div className="z-0 col-span-full row-start-2 grid grid-cols-[40px_1fr] grid-rows-[min-content_minmax(0,1fr)] overflow-hidden font-content">

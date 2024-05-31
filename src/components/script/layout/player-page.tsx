@@ -17,7 +17,7 @@ const roleTypeOrder = ["townsfolk", "outsider", "minion", "demon"] as const;
 const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
     return (
         <div className="col-span-full row-span-full grid grid-rows-[min-content_1fr]">
-            <div className="col-start-1 mb-2.5 mt-2.5 justify-self-center  text-amber-950">
+            <div className="col-start-1 mb-1 mt-2.5 justify-self-center  text-amber-950">
                 <div className="font-title text-4xl leading-none">{name}</div>
                 {author && (
                     <div className="text-center font-serif text-sm leading-tight">
@@ -115,7 +115,7 @@ const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
                     </Fragment>
                 ))}
             </div>
-            <div className="col-start-1 self-end justify-self-center font-title text-lg">
+            <div className="absolute bottom-0 left-0 right-0 col-start-1 justify-self-center text-center font-title text-lg">
                 *Not The First Night
             </div>
         </div>
