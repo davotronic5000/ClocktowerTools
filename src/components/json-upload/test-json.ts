@@ -34,7 +34,7 @@ const testJSON: ScriptJSONSchemaType = {
             },
             setup: {
                 icon: "&#10010;",
-                colour: " #d97f3f",
+                colour: " #D97F3F",
             },
             firstNight: {
                 icon: "&#10038;",

@@ -1,4 +1,6 @@
+import ColourPicker from "@/components/form/colour-picker";
 import NumberField from "@/components/form/number-field";
+import Select from "@/components/form/select";
 import Switch from "@/components/form/switch";
 import TextField from "@/components/form/text-field";
 import { Icon } from "@/components/icon";
@@ -54,10 +56,27 @@ export const tokenFormSchema = z.object({
     tokenBackground: z.boolean(),
 });
 
+const fontSizeOptions = [
+    { id: "text-xs", name: "Extra Small" },
+    { id: "text-sm", name: "Small" },
+    { id: "text-base", name: "Medium" },
+    { id: "text-lg", name: "Large" },
+    { id: "text-xl", name: "Extra Large" },
+    { id: "text-2xl", name: "2XL" },
+    { id: "text-3xl", name: "3XL" },
+    { id: "text-4xl", name: "4XL" },
+    { id: "text-5xl", name: "5XL" },
+    { id: "text-6xl", name: "6XL" },
+    { id: "text-7xl", name: "7XL" },
+    { id: "text-8xl", name: "8XL" },
+    { id: "text-9xl", name: "9XL" },
+];
+
 export type TokenFormType = z.infer<typeof tokenFormSchema>;
 
 const TokenConfigForm = ({ json }: TokenConfigFormProps) => {
     const dispatchjsonAction = useJSONDispatchContext();
+    console.log(json);
     const { control, watch } = useForm<TokenFormType>({
         mode: "onBlur",
         resolver: zodResolver(tokenFormSchema),
@@ -160,6 +179,120 @@ const TokenConfigForm = ({ json }: TokenConfigFormProps) => {
                         />
                     )}
                 />
+                <Controller
+                    control={control}
+                    name="alpha"
+                    render={({
+                        field: { name, value, onChange, onBlur, ref },
+                        fieldState: { invalid, error },
+                    }) => (
+                        <NumberField
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            onBlur={onBlur}
+                            isInvalid={invalid}
+                            inputRef={ref}
+                            errorMessage={error?.message}
+                            label="Border Alpha"
+                            isRequired
+                            minValue={0}
+                            maxValue={1}
+                            step={0.1}
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="borderThickness"
+                    render={({
+                        field: { name, value, onChange, onBlur, ref },
+                        fieldState: { invalid, error },
+                    }) => (
+                        <NumberField
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            onBlur={onBlur}
+                            isInvalid={invalid}
+                            inputRef={ref}
+                            errorMessage={error?.message}
+                            label="Border Thickness (px)"
+                            isRequired
+                            minValue={0}
+                            maxValue={1}
+                            step={0.5}
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="squareBorder"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Switch
+                            name={name}
+                            label="Square Border"
+                            onChange={onChange}
+                            isSelected={value}
+                            errorMessage={error?.message}
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="circleBorder"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Switch
+                            name={name}
+                            label="Circle Border"
+                            onChange={onChange}
+                            isSelected={value}
+                            errorMessage={error?.message}
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="borderColour"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Fragment>
+                            <ColourPicker
+                                label="Border Colour"
+                                name={name}
+                                value={value}
+                                onChange={onChange}
+                            />
+                            {error && error.message}
+                        </Fragment>
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="fontColour"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Fragment>
+                            <ColourPicker
+                                label="Font Colour"
+                                name={name}
+                                value={value}
+                                onChange={onChange}
+                            />
+                            {error && error.message}
+                        </Fragment>
+                    )}
+                />
                 <Heading as="h4">Advanced Role Token Options</Heading>
                 <Controller
                     control={control}
@@ -224,6 +357,22 @@ const TokenConfigForm = ({ json }: TokenConfigFormProps) => {
                         />
                     )}
                 />
+                <Controller
+                    control={control}
+                    name="fontSizeRole"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Select
+                            name={name}
+                            selectedKey={value}
+                            onSelectionChange={onChange}
+                            options={fontSizeOptions}
+                            label="Role Text Font Size"
+                        />
+                    )}
+                />
                 <Heading as="h4">Advanced Reminder Token Options</Heading>
                 <Controller
                     control={control}
@@ -285,6 +434,22 @@ const TokenConfigForm = ({ json }: TokenConfigFormProps) => {
                             label="Token Reminder Image Margin (px)"
                             isRequired
                             minValue={0}
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="fontSizeReminder"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Select
+                            name={name}
+                            selectedKey={value}
+                            onSelectionChange={onChange}
+                            options={fontSizeOptions}
+                            label="Reminder Text Font Size"
                         />
                     )}
                 />
@@ -358,6 +523,136 @@ const TokenConfigForm = ({ json }: TokenConfigFormProps) => {
                             label="Page Margin (px)"
                             isRequired
                             minValue={1}
+                        />
+                    )}
+                />
+                <Heading as="h4">Reminder Pip Options</Heading>
+                <Controller
+                    control={control}
+                    name="setupColour"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Fragment>
+                            <ColourPicker
+                                label="Setup Icon Colour"
+                                name={name}
+                                value={value}
+                                onChange={onChange}
+                            />
+                            {error && error.message}
+                        </Fragment>
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="remColour"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Fragment>
+                            <ColourPicker
+                                label="Reminder Icon Colour"
+                                name={name}
+                                value={value}
+                                onChange={onChange}
+                            />
+                            {error && error.message}
+                        </Fragment>
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="remIcon"
+                    render={({
+                        field: { name, value, onChange, onBlur, ref },
+                        fieldState: { invalid, error },
+                    }) => (
+                        <TextField
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            onBlur={onBlur}
+                            isInvalid={invalid}
+                            inputRef={ref}
+                            errorMessage={error?.message}
+                            label="ReminderIcon"
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="fnColour"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Fragment>
+                            <ColourPicker
+                                label="First Night Icon Colour"
+                                name={name}
+                                value={value}
+                                onChange={onChange}
+                            />
+                            {error && error.message}
+                        </Fragment>
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="fnIcon"
+                    render={({
+                        field: { name, value, onChange, onBlur, ref },
+                        fieldState: { invalid, error },
+                    }) => (
+                        <TextField
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            onBlur={onBlur}
+                            isInvalid={invalid}
+                            inputRef={ref}
+                            errorMessage={error?.message}
+                            label="First Night Icon"
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="onColour"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Fragment>
+                            <ColourPicker
+                                label="Other Night Icon Colour"
+                                name={name}
+                                value={value}
+                                onChange={onChange}
+                            />
+                            {error && error.message}
+                        </Fragment>
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="onIcon"
+                    render={({
+                        field: { name, value, onChange, onBlur, ref },
+                        fieldState: { invalid, error },
+                    }) => (
+                        <TextField
+                            name={name}
+                            value={value}
+                            onChange={onChange}
+                            onBlur={onBlur}
+                            isInvalid={invalid}
+                            inputRef={ref}
+                            errorMessage={error?.message}
+                            label="Other Night Icon"
                         />
                     )}
                 />
