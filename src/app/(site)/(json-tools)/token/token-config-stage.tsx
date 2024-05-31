@@ -1,5 +1,6 @@
 "use client";
 import NumberField from "@/components/form/number-field";
+import Switch from "@/components/form/switch";
 import TextField from "@/components/form/text-field";
 import { updateTokenConfig } from "@/components/json-upload/json-upload-actions";
 import { hexCode } from "@/components/json-upload/universal-json-validator";
@@ -45,6 +46,7 @@ export const tokenFormSchema = z.object({
     circleBorder: z.boolean(),
     squareBorder: z.boolean(),
     borderThickness: z.number().min(0),
+    tokenBackground: z.boolean(),
 });
 
 export type TokenFormType = z.infer<typeof tokenFormSchema>;
@@ -92,6 +94,7 @@ const TokenConfig = ({}: TokenConfigProps) => {
             circleBorder: json?.tokenConfig.tokenStyles.border.circleBorder,
             squareBorder: json?.tokenConfig.tokenStyles.border.squareBorder,
             borderThickness: json?.tokenConfig.tokenStyles.border.thickness,
+            tokenBackground: json?.tokenConfig.tokenStyles.tokenBackground,
         },
     });
 
@@ -140,6 +143,22 @@ const TokenConfig = ({}: TokenConfigProps) => {
                             label="Height"
                             isRequired
                             minValue={1}
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="tokenBackground"
+                    render={({
+                        field: { name, value, onChange, onBlur, ref },
+                        fieldState: { invalid, error },
+                    }) => (
+                        <Switch
+                            name={name}
+                            label="Token Background"
+                            onChange={onChange}
+                            isSelected={value}
+                            errorMessage={error?.message}
                         />
                     )}
                 />

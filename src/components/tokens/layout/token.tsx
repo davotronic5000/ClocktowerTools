@@ -29,17 +29,19 @@ const Token = ({ token, pageLayout }: TokenProps) => {
                 height: `${tokenAreaSize}px`,
             }}
         >
-            <Image
-                alt="parchment"
-                src={parchment}
-                style={{
-                    objectFit: "cover",
-                }}
-                placeholder="blur"
-                quality={100}
-                sizes={`${tokenAreaSize}px`}
-                fill
-            />
+            {pageLayout.tokenConfig.tokenStyles.tokenBackground && (
+                <Image
+                    alt="parchment"
+                    src={parchment}
+                    style={{
+                        objectFit: "cover",
+                    }}
+                    placeholder="blur"
+                    quality={100}
+                    sizes={`${tokenAreaSize}px`}
+                    fill
+                />
+            )}
             <div
                 className="z-10"
                 style={{

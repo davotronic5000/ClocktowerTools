@@ -54,6 +54,7 @@ const convertScriptToJSON = async (scriptFile: File) => {
                     tokenSpacerMargin: 4,
                 },
                 tokenStyles: {
+                    tokenBackground: true,
                     fontColour: "#262626",
                     fontSize: {
                         role: "text-lg",

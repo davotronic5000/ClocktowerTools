@@ -50,6 +50,15 @@ const JSONContextProvider = ({ children }: JSONContextProviderProps) => {
                         console.log(action.payload);
                         if (action.payload.name)
                             draft["json"].name = action.payload.name;
+                        if (
+                            typeof action.payload.tokenBackground !==
+                            "undefined"
+                        ) {
+                            draft[
+                                "json"
+                            ].tokenConfig.tokenStyles.tokenBackground =
+                                action.payload.tokenBackground;
+                        }
                     }
                     break;
             }
