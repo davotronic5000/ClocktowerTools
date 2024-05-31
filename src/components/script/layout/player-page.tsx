@@ -16,7 +16,7 @@ const roleTypeOrder = ["townsfolk", "outsider", "minion", "demon"] as const;
 
 const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
     return (
-        <div className="col-span-full row-span-full grid">
+        <div className="col-span-full row-span-full grid grid-rows-[min-content_1fr]">
             <div className="col-start-1 mb-2.5 mt-2.5 justify-self-center  text-amber-950">
                 <div className="font-title text-4xl leading-none">{name}</div>
                 {author && (
@@ -25,7 +25,7 @@ const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
                     </div>
                 )}
             </div>
-            <div className="z-0 col-span-full row-start-2 grid grid-cols-[40px_1fr] grid-rows-[min-content_min-content_min-content_min-content] font-content">
+            <div className="z-0 col-span-full row-span-full row-start-2 grid grid-cols-[40px_1fr] grid-rows-[min-content_min-content_min-content_min-content] font-content">
                 {roleTypeOrder.map((roleType) => (
                     <Fragment key={roleType}>
                         <div className="col-span-1 col-start-1 place-self-center py-4 text-base font-extrabold uppercase text-gray-200 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] vertical-writing-rl orientation-upright">

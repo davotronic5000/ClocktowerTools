@@ -24,7 +24,7 @@ const ScriptPageWithSideBar = ({
     return (
         <SinglePage>
             <div
-                className={`grid h-full w-full grid-cols-[40px_1fr] grid-rows-[1fr] ${oswaldPro.variable} ${oldStandard.variable}`}
+                className={`grid h-full w-full grid-cols-[40px_1fr] grid-rows-[minmax(0,1fr)] ${oswaldPro.variable} ${oldStandard.variable}`}
             >
                 <div
                     style={{
