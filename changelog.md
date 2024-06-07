@@ -1,4 +1,8 @@
 # Changelog
+### 1.1.1
+- Adding jinxes to night order
+- configuration form for tokens
+
 ### 1.1.0
 - Updating latest jinxes
 - Adding gradient functionality to script tool
