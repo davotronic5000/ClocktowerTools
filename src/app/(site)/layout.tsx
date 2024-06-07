@@ -1,12 +1,13 @@
+import ChangeLog from "@/components/changelog/changelog";
 import { Header } from "@/components/header";
 import DarkBox from "@/components/simple-styles/dark-box";
 import CustomToaster from "@/components/toast/custom-toaster";
 import type { Metadata } from "next";
 import { Playfair_Display_SC, Raleway } from "next/font/google";
 import "react-toastify/dist/ReactToastify.css";
-import config from "../../../package.json";
 import "../globals.css";
 import AriaRouterProvider from "../router-context";
+import ChangelogModal from "./change-log";
 
 export const metadata: Metadata = {
     title: {
@@ -50,15 +51,17 @@ export default function RootLayout({
                         </main>
                         <DarkBox>
                             <footer
-                                className={`border-t-2 border-solid border-gray-600 p-2 text-sm `}
+                                className={`flex justify-between border-t-2 border-solid border-gray-600 p-2 text-sm`}
                             >
-                                This project is not affiliated with The
-                                Pandemonium Institute. All roles & content are
-                                the property of Steven Medway and The
-                                Pandemonium Institute.
-                                <span className="float-right">
-                                    {config.version}
+                                <span>
+                                    This project is not affiliated with The
+                                    Pandemonium Institute. All roles & content
+                                    are the property of Steven Medway and The
+                                    Pandemonium Institute.
                                 </span>
+                                <ChangelogModal>
+                                    <ChangeLog />
+                                </ChangelogModal>
                             </footer>
                         </DarkBox>
                     </div>

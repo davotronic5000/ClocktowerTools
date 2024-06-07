@@ -34,12 +34,7 @@ const Icon: ComponentType<IconProps> = ({
             {...rest}
         >
             {title && <title>{title}</title>}
-            <path
-                fill="currentColor"
-                d={iconType.d}
-                fillRule={iconType.fillRule}
-                clipPath={iconType.clipPath}
-            />
+            <path {...iconType} />
         </svg>
     );
 };
