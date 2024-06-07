@@ -24,7 +24,7 @@ const sortedJinxes = Object.keys(jinxes).sort((a, b) => {
 const Page = () => {
     return (
         <div
-            className={`grid h-full w-full grid-cols-[repeat(auto-fit,_minmax(400px,_1fr))] gap-4 p-4`}
+            className={`grid h-full w-full grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))] gap-4 p-4`}
         >
             {sortedJinxes.map((key) => {
                 const role = roles[key];
