@@ -3,21 +3,21 @@
 ## Unreleased
 
 ### Added
-- v1.2.0 Display changelog linked from version number in footer
-- v1.2.0 Search field for jinx list
-- v1.3.0 Travelers to script First Night page
-- v1.3.0 Fabled to script First Night page
-- v1.3.1 Switches to turn of sections of the script pages
-- v1.3.1 Switch to turn off Fabled and Travelers on the token page
-- v2.0.0 New script page to display specific scripts
+- Display changelog linked from version number in footer
+- Search field for jinx list
+- Travelers to script First Night page
+- Fabled to script First Night page
+- Switches to turn of sections of the script pages
+- Switch to turn off Fabled and Travelers on the token page
+- New script page to display specific scripts
 
 ### Updated
-- v1.2.0 Updating changelog format to be more complete
-- v1.2.0 Update jinx display layout for better clarity and ease of search
-- v1.2.0 better mobile support for jinx list
+- Updating changelog format to be more complete
+- Update jinx display layout for better clarity and ease of search
+- better mobile support for jinx list
 
 ### Fixed
-- v1.3.0 Fix JSON schema validation for homebrew scripts created on bloodstar
+- Fix JSON schema validation for homebrew scripts created on bloodstar
 
 ## 1.1.1 - 2024-5-31
 
