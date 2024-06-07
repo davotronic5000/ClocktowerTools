@@ -20,9 +20,14 @@ const NavBarLink = <T extends string>({
             href={path}
             aria-current={pathname === path ? "page" : false}
             className={({ isCurrent }) => `
-                px-4
+                w-full
+                p-4
+                text-center
                 underline-offset-4
                 hover:text-amber-400
+                md:w-auto
+                md:py-0
+                md:text-left
                 ${isCurrent ? "text-amber-500 underline" : ""}`}
         >
             {children}
