@@ -33,7 +33,11 @@ const Header: ComponentType = () => {
                         onChange={setNavOpen}
                         className="md:hidden"
                     >
-                        <Icon type="bars-3" className="text-white" size="sm" />
+                        <Icon
+                            type={navOpen ? "x-mark" : "bars-3"}
+                            className="text-white"
+                            size="sm"
+                        />
                     </ToggleButton>
                     <NavBar className="hidden basis-full md:flex lg:basis-auto" />
                 </div>
