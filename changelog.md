@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## Unreleased
 
 ### Added
 - v1.2.0 Display changelog linked from version number in footer
@@ -19,13 +19,13 @@
 ### Fixed
 - v1.3.0 Fix JSON schema validation for homebrew scripts created on bloodstar
 
-## [1.1.1] - 2024-5-31
+## 1.1.1 - 2024-5-31
 
 ### Added
 - Jinxes now listed on Other Night page of script.
 - Full configuration form for tokens.
 
-## [1.1.0] - 2024-5-24
+## 1.1.0 - 2024-5-24
 
 ### Added
 - Gradient functionality for scripts
@@ -48,7 +48,7 @@
 - Bug when removing the name from a script causes no change to take effect
 - "Not The First Night" text no longer goes off the bottom of the script page on longer scripts
 
-## [1.0.0] - 2024-5-17
+## 1.0.0 - 2024-5-17
 
 ### Added
 - Generating a script file from a json file
