@@ -7,16 +7,21 @@ const createIconConfig = ({
     d,
     clipPath = "evenodd",
     fillRule = "evenodd",
+    fill = "currentColor",
+    ...rest
 }: {
     viewBox?: string;
     d: string;
     clipPath?: SVGAttributes<unknown>["clipPath"];
     fillRule?: SVGAttributes<unknown>["fillRule"];
-}) => ({
+    fill?: SVGAttributes<unknown>["fill"];
+} & SVGAttributes<unknown>) => ({
     viewBox,
     d,
     clipPath,
     fillRule,
+    fill,
+    ...rest,
 });
 
 const icons = {
@@ -49,6 +54,14 @@ const icons = {
     }),
     "x-mark": createIconConfig({
         d: "M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z",
+    }),
+    "bars-3": createIconConfig({
+        d: "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5",
+        fill: "none",
+        strokeWidth: "1.5",
+        stroke: "currentColor",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
     }),
 };
 
