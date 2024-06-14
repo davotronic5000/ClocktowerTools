@@ -16,7 +16,8 @@ export const jsonPrinting =
             waitUntil: "networkidle0",
         });
         const pdf = await page.pdf({
-            format: "A4",
+            width: scriptJSON.tokenConfig.page.width,
+            height: scriptJSON.tokenConfig.page.height,
             printBackground: true,
         });
         await browser.close();
