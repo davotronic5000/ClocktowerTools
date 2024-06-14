@@ -1,5 +1,6 @@
 import getBackupRoleImage from "@/components/images/get-role-image";
 import { RoleType } from "@/components/json-upload/universal-json-validator";
+import extra from "@/data/extra";
 import Image from "next/image";
 import { Fragment, ReactNode } from "react";
 
@@ -39,6 +40,12 @@ const NightOrderPage = ({
                     }}
                 >
                     {roles
+                        .concat([
+                            extra.dawn,
+                            extra.dusk,
+                            extra.demonInfo,
+                            extra.minionInfo,
+                        ])
                         .filter(({ firstNight, otherNight }) =>
                             nightType === "First Night"
                                 ? firstNight && firstNight !== undefined
