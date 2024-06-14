@@ -19,16 +19,18 @@ const NightOrderPage = ({
     children,
 }: NightOrderPageProps) => {
     return (
-        <div className="col-span-full row-span-full grid grid-rows-[min-content_1fr]">
-            <div className="col-start-1 mb-1 mt-2.5 justify-self-center text-amber-950">
-                <div className="font-title text-4xl leading-none">{name}</div>
+        <div className="col-span-full row-span-full grid grid-rows-[min-content_1fr] font-content">
+            <div className="col-start-1 mt-2.5 justify-self-center text-amber-950">
+                <div className="font-semibold uppercase leading-none">
+                    {name}
+                </div>
             </div>
             <div className="z-0 col-span-full row-start-2 grid grid-cols-[40px_1fr] grid-rows-[min-content_minmax(0,1fr)] overflow-hidden font-content">
                 <div className="col-span-1 col-start-1 row-span-1 row-start-1 place-self-center py-4 font-content text-base font-extrabold uppercase text-gray-200 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] vertical-writing-rl orientation-upright">
                     {nightType}
                 </div>
                 <div
-                    className="col-start-2 grid grid-cols-[35px_auto_auto] gap-x-1 gap-y-1 border-b border-stone-700 py-2 font-content last:border-b-0"
+                    className="col-start-2 grid grid-cols-[35px_auto_auto] gap-x-1 gap-y-1 border-b border-stone-700 py-2 last:border-b-0"
                     style={{
                         gridTemplateRows: `repeat(${
                             nightType === "First Night"

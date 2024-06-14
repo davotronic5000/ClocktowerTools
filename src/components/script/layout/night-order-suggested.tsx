@@ -16,10 +16,11 @@ const NightSuggested = ({ children, roles }: NightSuggestedProps) => {
                 Recommended
             </div>
             <div className="flex flex-col">
-                <div className="col-start-1 flex flex-shrink flex-grow flex-col flex-wrap gap-y-1 overflow-hidden py-2">
-                    <div className="text-center font-semibold uppercase">
-                        Travelers and Fabled
-                    </div>
+                <div className="pt-1 text-center font-semibold uppercase">
+                    Travelers and Fabled
+                </div>
+                <div className="col-start-1 flex flex-shrink flex-grow flex-col flex-wrap gap-y-1 overflow-hidden py-1">
+                    <div className="h-0 w-full"></div>
                     <div className="grid w-full grid-cols-2">
                         {roles
                             .filter(
