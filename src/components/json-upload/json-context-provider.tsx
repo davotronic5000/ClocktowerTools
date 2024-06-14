@@ -111,6 +111,10 @@ const JSONContextProvider = ({ children }: JSONContextProviderProps) => {
 
                         draft["json"].tokenConfig.tokenStyles.tokenBackground =
                             action.payload.tokenBackground;
+                        draft[
+                            "json"
+                        ].tokenConfig.tokenStyles.tokenBackgroundBleed =
+                            action.payload.tokenBackgroundBleed;
                         draft["json"].tokenConfig.tokenSizes.tokenSpacerMargin =
                             action.payload.tokenSpacerMargin;
                         draft["json"].tokenConfig.tokenStyles.fontColour =

@@ -29,19 +29,20 @@ const Token = ({ token, pageLayout }: TokenProps) => {
                 height: `${tokenAreaSize}px`,
             }}
         >
-            {pageLayout.tokenConfig.tokenStyles.tokenBackground && (
-                <Image
-                    alt="parchment"
-                    src={parchment}
-                    style={{
-                        objectFit: "cover",
-                    }}
-                    placeholder="blur"
-                    quality={100}
-                    sizes={`${tokenAreaSize}px`}
-                    fill
-                />
-            )}
+            {pageLayout.tokenConfig.tokenStyles.tokenBackground &&
+                pageLayout.tokenConfig.tokenStyles.tokenBackgroundBleed && (
+                    <Image
+                        alt="parchment"
+                        src={parchment}
+                        style={{
+                            objectFit: "cover",
+                        }}
+                        placeholder="blur"
+                        quality={100}
+                        sizes={`${tokenAreaSize}px`}
+                        fill
+                    />
+                )}
             <div
                 className="z-10"
                 style={{
@@ -57,6 +58,14 @@ const Token = ({ token, pageLayout }: TokenProps) => {
                     style={{
                         height: `${tokenSize}px`,
                         width: `${tokenSize}px`,
+                        ...(pageLayout.tokenConfig.tokenStyles
+                            .tokenBackground &&
+                        !pageLayout.tokenConfig.tokenStyles.tokenBackgroundBleed
+                            ? {
+                                  backgroundImage: `url(${parchment.src})`,
+                                  backgroundSize: "cover",
+                              }
+                            : undefined),
                         ...(pageLayout.tokenConfig.tokenStyles.border
                             .circleBorder
                             ? generatedBorderStyles

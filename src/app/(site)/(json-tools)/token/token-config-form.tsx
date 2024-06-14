@@ -54,6 +54,7 @@ export const tokenFormSchema = z.object({
     squareBorder: z.boolean(),
     borderThickness: z.number().min(0),
     tokenBackground: z.boolean(),
+    tokenBackgroundBleed: z.boolean(),
 });
 
 const fontSizeOptions = [
@@ -111,6 +112,8 @@ const TokenConfigForm = ({ json }: TokenConfigFormProps) => {
             squareBorder: json.tokenConfig.tokenStyles.border.squareBorder,
             borderThickness: json.tokenConfig.tokenStyles.border.thickness,
             tokenBackground: json.tokenConfig.tokenStyles.tokenBackground,
+            tokenBackgroundBleed:
+                json.tokenConfig.tokenStyles.tokenBackgroundBleed,
         },
     });
 
@@ -150,6 +153,22 @@ const TokenConfigForm = ({ json }: TokenConfigFormProps) => {
                     <Switch
                         name={name}
                         label="Token Background"
+                        onChange={onChange}
+                        isSelected={value}
+                        errorMessage={error?.message}
+                    />
+                )}
+            />
+            <Controller
+                control={control}
+                name="tokenBackgroundBleed"
+                render={({
+                    field: { name, value, onChange },
+                    fieldState: { error },
+                }) => (
+                    <Switch
+                        name={name}
+                        label="Token Background Bleed"
                         onChange={onChange}
                         isSelected={value}
                         errorMessage={error?.message}

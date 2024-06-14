@@ -27,6 +27,7 @@ const testJSON: ScriptJSONSchemaType = {
         },
         tokenStyles: {
             tokenBackground: true,
+            tokenBackgroundBleed: true,
             fontColour: "#262626",
             fontSize: {
                 role: "text-lg",
