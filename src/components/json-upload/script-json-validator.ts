@@ -3,7 +3,7 @@ import { ScriptColourOptions } from "./universal-json-validator";
 
 const meta = z.object({
     id: z.literal("_meta"),
-    name: z.string(),
+    name: z.string().optional(),
     author: z.string().optional(),
     logo: z.string().url().optional(),
     background: z.string().url().optional(),

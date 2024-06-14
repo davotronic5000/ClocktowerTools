@@ -1,5 +1,4 @@
 import scriptJSONValidator, {
-    ScriptJSONFileType,
     metaType,
 } from "@/components/json-upload/script-json-validator";
 import { toast } from "react-toastify";
@@ -11,7 +10,7 @@ const convertScriptToJSON = async (scriptFile: File) => {
     const scriptFileJSON = JSON.parse(await scriptFile.text());
     const validator = scriptJSONValidator.safeParse(scriptFileJSON);
     if (validator.success) {
-        const json = scriptFileJSON as ScriptJSONFileType;
+        const json = validator.data;
         const metaIndex = json.findIndex((item) => {
             if (typeof item !== "string") {
                 if (item.id === "_meta") {
@@ -55,6 +54,7 @@ const convertScriptToJSON = async (scriptFile: File) => {
                 },
                 tokenStyles: {
                     tokenBackground: true,
+                    tokenBackgroundBleed: true,
                     fontColour: "#262626",
                     fontSize: {
                         role: "text-lg",

@@ -45,7 +45,8 @@ const NightJinx = ({ children, roles }: NightJinxProps) => {
                 Jinxes
             </div>
             <div className="flex flex-col">
-                <div className="col-start-1 flex flex-shrink flex-grow flex-col flex-wrap gap-y-1 overflow-hidden py-2">
+                <div className="col-start-1 flex flex-shrink flex-grow flex-col flex-wrap gap-y-1 overflow-hidden py-1">
+                    <div className="h-0 w-full"></div>
                     {onScriptJinxes.map((jinxPair, i) => (
                         <div key={i} className="grid w-full grid-cols-2">
                             {jinxPair.map((jinx) => (
@@ -87,7 +88,7 @@ const NightJinx = ({ children, roles }: NightJinxProps) => {
                         </div>
                     ))}
                 </div>
-                <div className="grid grid-cols-[50px_auto] gap-x-1 place-self-center py-2">
+                <div className="grid grid-cols-[50px_auto] gap-x-1 place-self-center pb-2">
                     <Image
                         alt={"QR Code"}
                         src={qrCode}
