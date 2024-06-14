@@ -60,6 +60,7 @@ const NightJinx = ({ children, roles }: NightJinxProps) => {
                                             GetRole(jinx.id1).image ||
                                             getBackupRoleImage()
                                         }
+                                        priority
                                         width={35}
                                         height={35}
                                         style={{
@@ -73,6 +74,7 @@ const NightJinx = ({ children, roles }: NightJinxProps) => {
                                             GetRole(jinx.id2).image ||
                                             getBackupRoleImage()
                                         }
+                                        priority
                                         width={35}
                                         height={35}
                                         style={{
@@ -94,12 +96,13 @@ const NightJinx = ({ children, roles }: NightJinxProps) => {
                         src={qrCode}
                         width={45}
                         height={45}
+                        priority
                         style={{
                             objectFit: "cover",
                         }}
                         quality={100}
                     />
-                    <div className="content-center font-content text-sm font-semibold leading-tight">
+                    <div className="flex items-center font-content text-sm font-semibold leading-tight">
                         A full list of Jinxes are available on
                         https://clocktower.guru/jinx. Scan the QR code to
                         access.

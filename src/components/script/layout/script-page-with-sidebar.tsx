@@ -43,6 +43,7 @@ const ScriptPageWithSideBar = ({
                                 ? colourBlendType
                                 : "difference",
                         }}
+                        priority
                         placeholder="blur"
                         quality={100}
                         className="h-full w-full opacity-60"

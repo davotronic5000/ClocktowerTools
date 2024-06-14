@@ -13,7 +13,7 @@ export const jsonPrinting =
         const browser = await puppeteer.launch({ headless: true });
         const page = await browser.newPage();
         await page.goto(`http://localhost:3000/pdf/${type}/${id}`, {
-            waitUntil: "networkidle0",
+            waitUntil: ["networkidle0", "load"],
         });
         const pdf = await page.pdf({
             width: scriptJSON.tokenConfig.page.width,

@@ -27,6 +27,7 @@ const RoleItem = ({
             <Image
                 alt={`role-${id}`}
                 src={getRole(id).image || getBackupRoleImage()}
+                priority
                 width={50}
                 height={50}
                 style={{
