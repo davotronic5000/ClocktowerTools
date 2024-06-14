@@ -1,5 +1,6 @@
 "use client";
-import { Fragment, ReactNode } from "react";
+import { Icon } from "@/components/icon";
+import { ReactNode } from "react";
 import {
     Button,
     Dialog,
@@ -17,9 +18,20 @@ const ChangelogModal = ({ children }: { children: ReactNode }) => {
                 className="fixed inset-0 z-40 bg-gray-950/30 backdrop-blur"
                 isDismissable
             >
-                <Modal className="fixed bottom-0 right-0 top-0 w-[600px] overflow-auto border-gray-950 bg-gray-600 p-2">
-                    <Dialog>
-                        {({ close }) => <Fragment>{children}</Fragment>}
+                <Modal className="fixed bottom-0 right-0 top-0 w-full overflow-auto border-l border-slate-950 bg-slate-800 p-2 shadow-xl shadow-gray-900 lg:w-[600px]">
+                    <Dialog className="outline-none">
+                        {({ close }) => (
+                            <div className="flex flex-col">
+                                <Button className="self-end" onPress={close}>
+                                    <Icon
+                                        type="x-mark"
+                                        size="xs"
+                                        className="text-gray-200"
+                                    />
+                                </Button>
+                                {children}
+                            </div>
+                        )}
                     </Dialog>
                 </Modal>
             </ModalOverlay>
