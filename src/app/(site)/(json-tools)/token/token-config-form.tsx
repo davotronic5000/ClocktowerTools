@@ -394,7 +394,7 @@ const TokenConfigForm = ({ json }: TokenConfigFormProps) => {
             />
             <Controller
                 control={control}
-                name="tokenRoleMargin"
+                name="tokenReminderMargin"
                 render={({
                     field: { name, value, onChange, onBlur, ref },
                     fieldState: { invalid, error },
@@ -415,7 +415,7 @@ const TokenConfigForm = ({ json }: TokenConfigFormProps) => {
             />
             <Controller
                 control={control}
-                name="tokenRoleImageBMargin"
+                name="tokenReminderImageBMargin"
                 render={({
                     field: { name, value, onChange, onBlur, ref },
                     fieldState: { invalid, error },
