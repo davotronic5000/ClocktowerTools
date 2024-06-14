@@ -4,6 +4,7 @@ import SinglePage from "@/components/page-viewer/single-page";
 import CoverPage from "./cover-page";
 import NightJinx from "./night-order-jinx";
 import NightOrderPage from "./night-order-page";
+import NightSuggested from "./night-order-suggested";
 import PlayerPage from "./player-page";
 import ScriptPageWithSideBar from "./script-page-with-sidebar";
 
@@ -37,7 +38,9 @@ const ScriptLayout = ({ script, noPageGap }: ScriptLayoutProps) => {
                     name={script.name}
                     nightType="First Night"
                     roles={script.roles}
-                />
+                >
+                    <NightSuggested roles={roles} />
+                </NightOrderPage>
             </ScriptPageWithSideBar>
             <ScriptPageWithSideBar {...colourOptions}>
                 <NightOrderPage
