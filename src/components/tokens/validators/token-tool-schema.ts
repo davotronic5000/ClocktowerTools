@@ -62,6 +62,7 @@ export const TokenToolSchema = z.object({
             thickness: z.number(),
         }),
         tokenBackground: z.boolean(),
+        tokenBackgroundBleed: z.boolean(),
     }),
 });
 
