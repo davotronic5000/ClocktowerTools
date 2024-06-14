@@ -37,6 +37,7 @@ const Token = ({ token, pageLayout }: TokenProps) => {
                         style={{
                             objectFit: "cover",
                         }}
+                        priority
                         placeholder="blur"
                         quality={100}
                         sizes={`${tokenAreaSize}px`}

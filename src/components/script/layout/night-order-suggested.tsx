@@ -40,6 +40,7 @@ const NightSuggested = ({ children, roles }: NightSuggestedProps) => {
                                                 role.image ||
                                                 getBackupRoleImage()
                                             }
+                                            priority
                                             width={50}
                                             height={50}
                                             style={{

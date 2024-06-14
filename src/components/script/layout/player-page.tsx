@@ -55,6 +55,7 @@ const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
                                                     role.image ||
                                                     getBackupRoleImage()
                                                 }
+                                                priority
                                                 width={50}
                                                 height={50}
                                                 style={{
@@ -88,6 +89,7 @@ const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
                                                                     ).image ||
                                                                     getBackupRoleImage()
                                                                 }
+                                                                priority
                                                                 width={20}
                                                                 height={20}
                                                                 style={{

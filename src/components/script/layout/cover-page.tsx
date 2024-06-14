@@ -43,6 +43,7 @@ const CoverPage = ({
                 quality={100}
                 sizes="100%"
                 fill
+                priority
                 className=" opacity-60"
             />
             <span className="text-center font-title text-7xl text-amber-950 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,0.8)]">

@@ -64,6 +64,7 @@ const NightOrderPage = ({
                                     <Image
                                         alt={`role-${role.id}`}
                                         src={role.image || getBackupRoleImage()}
+                                        priority
                                         width={35}
                                         height={35}
                                         style={{
@@ -72,10 +73,10 @@ const NightOrderPage = ({
                                         quality={100}
                                     />
                                 </div>
-                                <div className="col-span-1 col-start-2 content-center font-semibold leading-tight">
+                                <div className="col-span-1 col-start-2 flex items-center font-semibold leading-tight">
                                     {role.name}
                                 </div>
-                                <div className="col-span-1 col-start-3 content-center text-sm leading-tight">
+                                <div className="col-span-1 col-start-3 flex items-center text-sm leading-tight">
                                     {nightType === "First Night"
                                         ? role.firstNightReminder
                                         : role.otherNightReminder}

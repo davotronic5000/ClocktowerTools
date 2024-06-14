@@ -36,6 +36,7 @@ const SinglePage = ({
                     alt="parchment"
                     src={parchment}
                     style={{ objectFit: "cover" }}
+                    priority
                     placeholder="blur"
                     quality={100}
                     sizes={`${pSize.width}px`}
