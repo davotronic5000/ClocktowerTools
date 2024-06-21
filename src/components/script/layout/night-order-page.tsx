@@ -76,7 +76,7 @@ const NightOrderPage = ({
                                 <div className="col-span-1 col-start-2 flex items-center font-semibold leading-tight">
                                     {role.name}
                                 </div>
-                                <div className="col-span-1 col-start-3 flex items-center text-sm leading-tight">
+                                <div className="col-span-1 col-start-3 flex items-center pr-2 text-sm leading-tight">
                                     {nightType === "First Night"
                                         ? role.firstNightReminder
                                         : role.otherNightReminder}
