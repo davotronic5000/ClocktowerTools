@@ -592,10 +592,6 @@ const jinxes : Jinxes = {
             "reason": "If the Organ Grinder is causing eyes closed voting, the Butler may raise their hand to vote but their vote is only counted if their master voted too."
           },
           {
-            "id": "flowergirl",
-            "reason": "If the Organ Grinder is causing eyes-closed voting, the Flowergirl wakes tonight to choose a player: they learn if that player voted today. (instead of their normal ability)"
-          },
-          {
             "id": "minstrel",
             "reason": "Only 1 jinxed character can be in play. Evil players start knowing which player and character it is."
           },

@@ -2445,9 +2445,23 @@ const originalRoles : Roles = {
         otherNight: 0,
         otherNightReminder: "",
         reminders: [{text: "Dead", count: 1}],
-        setup: true,
+        setup: false,
         ability:
         "On your 1st night, choose a player (not yourself): you become their alignment (you don't know which) even if drunk or poisoned.",
+        count: 1,
+    },
+    squid: {
+        id: "squid",
+        name: "Squid",
+        team: "traveler",
+        firstNight: 0,
+        firstNightReminder: "",
+        otherNight: 0,
+        otherNightReminder: "",
+        reminders: [],
+        setup: false,
+        ability:
+        "You can vote with as many limbs as you can raise.",
         count: 1,
     },
 };
