@@ -2445,7 +2445,7 @@ const originalRoles : Roles = {
         otherNight: 0,
         otherNightReminder: "",
         reminders: [{text: "Dead", count: 1}],
-        setup: true,
+        setup: false,
         ability:
         "On your 1st night, choose a player (not yourself): you become their alignment (you don't know which) even if drunk or poisoned.",
         count: 1,
