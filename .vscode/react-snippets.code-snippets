@@ -31,5 +31,12 @@
             "",
             "export default ${1:Page};"
         ]
+    },
+    "New Jinx Update": {
+        "scope": "typescript",
+        "prefix": ["jinxupdate", "jxup"],
+        "body": [
+            "{ date: \"${1:$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE}\", reason: \"${2:Added jinx.}\" },"
+        ]
     }
 }

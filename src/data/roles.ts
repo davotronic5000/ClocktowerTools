@@ -1,10 +1,10 @@
 import { RoleType } from "@/components/json-upload/universal-json-validator";
 
 type Roles = {
-    [key: string] : RoleType
-}
+    [key: string]: RoleType;
+};
 
-const originalRoles : Roles = {
+const originalRoles: Roles = {
     washerwoman: {
         id: "washerwoman",
         name: "Washerwoman",
@@ -1195,7 +1195,7 @@ const originalRoles : Roles = {
             "Each night, choose a player & a good character: they are “mad” they are this character tomorrow, or might be executed.",
         count: 1,
     },
-    "pithag": {
+    pithag: {
         id: "pithag",
         name: "Pit-Hag",
         team: "minion",
@@ -1852,8 +1852,7 @@ const originalRoles : Roles = {
         team: "outsider",
         reminders: [{ text: "Storyteller Ability", count: 1 }],
         setup: false,
-        ability:
-            "If you die, the Storyteller gains a Minion ability.",
+        ability: "If you die, the Storyteller gains a Minion ability.",
         count: 1,
     },
     widow: {
@@ -2044,7 +2043,7 @@ const originalRoles : Roles = {
         ],
         setup: true,
         ability:
-        "Each night, Minions choose who babysits Lil' Monsta & 'is the Demon'. Each night*, a player might die. [+1 Minion]",
+            "Each night, Minions choose who babysits Lil' Monsta & 'is the Demon'. Each night*, a player might die. [+1 Minion]",
         count: 1,
     },
     lleech: {
@@ -2361,7 +2360,7 @@ const originalRoles : Roles = {
         firstNightReminder: "",
         otherNight: 42.1,
         otherNightReminder: "Announce that the Banshee has died.",
-        reminders: [{text: "Has Ability", count: 1}],
+        reminders: [{ text: "Has Ability", count: 1 }],
         setup: false,
         ability:
             "If the Demon kills you, all players learn this. From now on, you may nominate twice per day and vote twice per nomination.",
@@ -2372,12 +2371,15 @@ const originalRoles : Roles = {
         name: "Village Idiot",
         team: "townsfolk",
         firstNight: 45.2,
-        firstNightReminder: "The Village Idiot points to a player; give a thumbs up if that player is good or a thumbs down if that player is evil.",
+        firstNightReminder:
+            "The Village Idiot points to a player; give a thumbs up if that player is good or a thumbs down if that player is evil.",
         otherNight: 62.1,
-        otherNightReminder: "The Village Idiot points to a player; give a thumbs up if that player is good or a thumbs down if that player is evil.",
-        reminders: [{text: "Drunk", count: 1}],
+        otherNightReminder:
+            "The Village Idiot points to a player; give a thumbs up if that player is good or a thumbs down if that player is evil.",
+        reminders: [{ text: "Drunk", count: 1 }],
         setup: true,
-        ability: "Each night, choose a player: you learn their alignment. [+0 to +2 Village Idiots. 1 of the extras is drunk]",
+        ability:
+            "Each night, choose a player: you learn their alignment. [+0 to +2 Village Idiots. 1 of the extras is drunk]",
         count: 1,
     },
     hatter: {
@@ -2387,11 +2389,12 @@ const originalRoles : Roles = {
         firstNight: 0,
         firstNightReminder: "",
         otherNight: 39.1,
-        otherNightReminder: "If the Hatter died today: Wake the Minions and Demon. Show them the 'This Character Selected You' info token, then the Hatter token. Each player either shakes their head no or points to another character of the same type as their current character.  If a second player would end up with the same character as another player, shake your head no and gesture for them to choose again. Put them to sleep. Change each player to the character they chose.",
-        reminders: [{text: "Tea Party Tonight", count: 1}],
+        otherNightReminder:
+            "If the Hatter died today: Wake the Minions and Demon. Show them the 'This Character Selected You' info token, then the Hatter token. Each player either shakes their head no or points to another character of the same type as their current character.  If a second player would end up with the same character as another player, shake your head no and gesture for them to choose again. Put them to sleep. Change each player to the character they chose.",
+        reminders: [{ text: "Tea Party Tonight", count: 1 }],
         setup: false,
         ability:
-        "If you died today or tonight, the Minion & Demon players may choose new Minion & Demon characters to be.",
+            "If you died today or tonight, the Minion & Demon players may choose new Minion & Demon characters to be.",
         count: 1,
     },
     summoner: {
@@ -2399,13 +2402,19 @@ const originalRoles : Roles = {
         name: "Summoner",
         team: "minion",
         firstNight: 8.1,
-        firstNightReminder: "Show the 'These characters are not in play' card. Show 3 character tokens of good characters not in play.",
+        firstNightReminder:
+            "Show the 'These characters are not in play' card. Show 3 character tokens of good characters not in play.",
         otherNight: 19.1,
-        otherNightReminder: "If it is the 3rd night, wake the Summoner. They point to a player and a Demon on the character sheet - that player becomes that Demon.",
-        reminders: [{text: "Night 1", count: 1}, {text: "Night 2", count: 1}, {text: "Night 3", count: 1}],
+        otherNightReminder:
+            "If it is the 3rd night, wake the Summoner. They point to a player and a Demon on the character sheet - that player becomes that Demon.",
+        reminders: [
+            { text: "Night 1", count: 1 },
+            { text: "Night 2", count: 1 },
+            { text: "Night 3", count: 1 },
+        ],
         setup: true,
         ability:
-        "You get 3 bluffs. On the 3rd night, choose a player: they become an evil Demon of your choice. [No Demon]",
+            "You get 3 bluffs. On the 3rd night, choose a player: they become an evil Demon of your choice. [No Demon]",
         count: 1,
     },
     yaggababble: {
@@ -2415,11 +2424,12 @@ const originalRoles : Roles = {
         firstNight: 2.2,
         firstNightReminder: "Show the Yaggababble their secret phrase.",
         otherNight: 35.1,
-        otherNightReminder: "Choose a number of players up to the total number of times the Yaggababble said their secret phrase publicly, those players die.",
-        reminders: [{text: "Dead", count: 1}],
+        otherNightReminder:
+            "Choose a number of players up to the total number of times the Yaggababble said their secret phrase publicly, those players die.",
+        reminders: [{ text: "Dead", count: 1 }],
         setup: false,
         ability:
-        "You start knowing a secret phrase. For each time you said it publicly today, a player might die.",
+            "You start knowing a secret phrase. For each time you said it publicly today, a player might die.",
         count: 1,
     },
     kazali: {
@@ -2427,13 +2437,14 @@ const originalRoles : Roles = {
         name: "Kazali",
         team: "demon",
         firstNight: 2.1,
-        firstNightReminder: "The Kazali points to a player and a Minion on the character sheet. They do this for as many Minions as should be in play. Change those players' tokens to the chosen Minion tokens in the Grim. Wake those players, show them the 'You Are' card, the Minions they have become, and a thumbs down.",
+        firstNightReminder:
+            "The Kazali points to a player and a Minion on the character sheet. They do this for as many Minions as should be in play. Change those players' tokens to the chosen Minion tokens in the Grim. Wake those players, show them the 'You Are' card, the Minions they have become, and a thumbs down.",
         otherNight: 35.2,
         otherNightReminder: "The Kazali points to a player. That player dies",
-        reminders: [{text: "Dead", count: 1}],
+        reminders: [{ text: "Dead", count: 1 }],
         setup: true,
         ability:
-        "Each night*, choose a player: they die. [You choose which players are Minions. -? to +? Outsiders]",
+            "Each night*, choose a player: they die. [You choose which players are Minions. -? to +? Outsiders]",
         count: 1,
     },
     ogre: {
@@ -2441,13 +2452,14 @@ const originalRoles : Roles = {
         name: "Ogre",
         team: "outsider",
         firstNight: 49.1,
-        firstNightReminder: "The Ogre points to a player (not themselves) and becomes their alignment.",
+        firstNightReminder:
+            "The Ogre points to a player (not themselves) and becomes their alignment.",
         otherNight: 0,
         otherNightReminder: "",
-        reminders: [{text: "Friend", count: 1}],
+        reminders: [{ text: "Friend", count: 1 }],
         setup: false,
         ability:
-        "On your 1st night, choose a player (not yourself): you become their alignment (you don't know which) even if drunk or poisoned.",
+            "On your 1st night, choose a player (not yourself): you become their alignment (you don't know which) even if drunk or poisoned.",
         count: 1,
     },
     squid: {
@@ -2460,8 +2472,7 @@ const originalRoles : Roles = {
         otherNightReminder: "",
         reminders: [],
         setup: false,
-        ability:
-        "You can vote with as many limbs as you can raise.",
+        ability: "You can vote with as many limbs as you can raise.",
         count: 1,
     },
     alsaahir: {
@@ -2475,7 +2486,7 @@ const originalRoles : Roles = {
         reminders: [],
         setup: false,
         ability:
-        "Once per day, if you publicly guess which players are Minion(s) and which are Demon(s), good wins.",
+            "Once per day, if you publicly guess which players are Minion(s) and which are Demon(s), good wins.",
         count: 1,
     },
     fly: {
@@ -2489,7 +2500,7 @@ const originalRoles : Roles = {
         reminders: [],
         setup: false,
         ability:
-        "You secretly join the game. All players learn this when you first vote.",
+            "You secretly join the game. All players learn this when you first vote or nominate.",
         count: 1,
     },
 };
