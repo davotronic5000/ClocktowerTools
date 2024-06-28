@@ -2,12 +2,12 @@ type Jinxes = {
     [key: string]: Jinx;
 };
 
-interface Jinx {
+export interface Jinx {
     id: string;
     jinx: JinxContent[];
 }
 
-interface JinxContent {
+export interface JinxContent {
     id: string;
     reason: string;
     updates: { date: string; reason: string }[];

@@ -6,13 +6,21 @@ import {
 } from "react-aria-components";
 
 interface PopoverProps extends BasePopoverProps {
+    size?: "md" | "sm";
     children?: ReactNode;
 }
 
-const Popover = ({ children, className = "", ...rest }: PopoverProps) => {
+const Popover = ({
+    children,
+    className = "",
+    size = "md",
+    ...rest
+}: PopoverProps) => {
     return (
         <BasePopover
-            className={`group overflow-auto border border-gray-600 bg-gray-900 p-4 text-gray-50 ${className}`}
+            className={`group flex flex-col border border-gray-600 bg-gray-900 ${
+                size === "md" ? "p-4" : "p-2 text-sm"
+            } max-w-[300px] text-gray-50 ${className}`}
             containerPadding={25}
             {...rest}
         >
@@ -26,7 +34,9 @@ const Popover = ({ children, className = "", ...rest }: PopoverProps) => {
                     <path d="M0 0 L6 6 L12 0" />
                 </svg>
             </OverlayArrow>
-            {children}
+            <div className="flex-shrink-1 flex-grow-0 overflow-auto">
+                {children}
+            </div>
         </BasePopover>
     );
 };
