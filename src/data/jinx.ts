@@ -147,7 +147,7 @@ const jinxes : Jinxes = {
           },
           {
             "id": "magician",
-            "reason": "Only 1 jinxed character can be in play."
+            "reason": "Each night, the Magician chooses a Minion: if that Minion & Lil' Monsta are alive, that Minion babysits Lil' Monsta."
           },
           {
             "id": "scarletwoman",
@@ -185,11 +185,15 @@ const jinxes : Jinxes = {
           },
           {
             "id": "preacher",
-            "reason": "Only 1 jinxed character can be in play."
+            "reason": "If the Al-Hadikhia dies by execution, and the Mastermind is alive, the Al-Hadikhia chooses 3 good players tonight: if all 3 choose to live, evil wins. Otherwise, good wins."
           },
           {
             "id": "hatter",
             "reason": "If the Hatter dies and Legion is in play, nothing happens. If the Hatter dies and an evil player chooses Legion, all current evil players become Legion."
+          },
+          {
+            "id": "minstrel",
+            "reason": "If Legion died by execution today, Legion keeps their ability, but the Minstrel might learn they are Legion."
           }
         ]
       },
@@ -308,6 +312,10 @@ const jinxes : Jinxes = {
       summoner: {
         "id": "summoner",
         "jinx": [
+          {
+            "id": "preacher",
+            "reason": "If the Preacher chose the Summoner on or before the 3rd night, the Summoner chooses which Demon, but the Storyteller chooses which player."
+          },
           {
             "id": "clockmaker",
             "reason": "If the Summoner is in play, the Clockmaker does not receive their information until a Demon is created."
@@ -428,6 +436,10 @@ const jinxes : Jinxes = {
       kazali: {
         "id": "kazali",
         "jinx": [
+          {
+            "id": "soldier",
+            "reason": "If the Kazali turns the Soldier into a Minion, the Soldier chooses which not-in-play Minion to become."
+          },
           {
             "id": "bountyhunter",
             "reason": "An evil Townsfolk is only created if the Bounty Hunter is still in play after the Kazali acts."
@@ -580,7 +592,7 @@ const jinxes : Jinxes = {
           },
           {
             "id": "mastermind",
-            "reason": "Only 1 jinxed character can be in play. Evil players start knowing which player and character it is."
+            "reason": "If the Al-Hadikhia dies by execution, and the Mastermind is alive, the Al-Hadikhia chooses 3 good players tonight: if all 3 choose to live, evil wins. Otherwise, good wins."
           }          
         ]
       },
@@ -593,11 +605,11 @@ const jinxes : Jinxes = {
           },
           {
             "id": "minstrel",
-            "reason": "Only 1 jinxed character can be in play. Evil players start knowing which player and character it is."
+            "reason": "If the Minstrel makes everyone drunk, the Organ Grinder keeps their ability but the Minstrel keeps their eyes open when voting."
           },
           {
             "id": "preacher",
-            "reason": "Only 1 jinxed character can be in play. Evil players start knowing which player and character it is."
+            "reason": "If the Preacher removes the Organ Grinder ability, the Organ Grinder keeps their ability but the Preacher keeps their eyes open when voting."
           }
         ]
       },
