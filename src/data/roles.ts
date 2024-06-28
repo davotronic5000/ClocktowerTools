@@ -1472,7 +1472,7 @@ const originalRoles : Roles = {
         ],
         setup: true,
         ability:
-            "Each night, you learn 1 player of each character type, until there are no more types to learn. [+1 Outsider]",
+            "Each night, you learn a player of a different character type than last night. [+0 or +1 Outsider]",
         count: 1,
     },
     cultleader: {
@@ -1853,7 +1853,7 @@ const originalRoles : Roles = {
         reminders: [{ text: "Storyteller Ability", count: 1 }],
         setup: false,
         ability:
-            "If you die, the Storyteller gains a not-in-play Minion ability.",
+            "If you die, the Storyteller gains a Minion ability.",
         count: 1,
     },
     widow: {
@@ -2025,7 +2025,7 @@ const originalRoles : Roles = {
         ],
         setup: false,
         ability:
-            "Each night, choose 2 players: tomorrow, the 1st player is mad that the 2nd is evil, or both might die.",
+            "Each night, choose 2 players: tomorrow, the 1st player is mad that the 2nd is evil, or one or both might die.",
         count: 1,
     },
     lilmonsta: {
@@ -2044,7 +2044,7 @@ const originalRoles : Roles = {
         ],
         setup: true,
         ability:
-            "Each night, Minions choose who babysits Lil' Monsta's token & \"is the Demon\". A player dies each night*. [+1 Minion]",
+        "Each night, Minions choose who babysits Lil' Monsta & 'is the Demon'. Each night*, a player might die. [+1 Minion]",
         count: 1,
     },
     lleech: {
@@ -2444,7 +2444,7 @@ const originalRoles : Roles = {
         firstNightReminder: "The Ogre points to a player (not themselves) and becomes their alignment.",
         otherNight: 0,
         otherNightReminder: "",
-        reminders: [{text: "Dead", count: 1}],
+        reminders: [{text: "Friend", count: 1}],
         setup: false,
         ability:
         "On your 1st night, choose a player (not yourself): you become their alignment (you don't know which) even if drunk or poisoned.",
@@ -2462,6 +2462,34 @@ const originalRoles : Roles = {
         setup: false,
         ability:
         "You can vote with as many limbs as you can raise.",
+        count: 1,
+    },
+    alsaahir: {
+        id: "alsaahir",
+        name: "Alsaahir",
+        team: "townsfolk",
+        firstNight: 0,
+        firstNightReminder: "",
+        otherNight: 0,
+        otherNightReminder: "",
+        reminders: [],
+        setup: false,
+        ability:
+        "Once per day, if you publicly guess which players are Minion(s) and which are Demon(s), good wins.",
+        count: 1,
+    },
+    fly: {
+        id: "fly",
+        name: "Fly",
+        team: "traveler",
+        firstNight: 0,
+        firstNightReminder: "",
+        otherNight: 0,
+        otherNightReminder: "",
+        reminders: [],
+        setup: false,
+        ability:
+        "You secretly join the game. All players learn this when you first vote.",
         count: 1,
     },
 };
