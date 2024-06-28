@@ -10,7 +10,7 @@ interface Jinx {
 interface JinxContent {
     id: string;
     reason: string;
-    updates: { date: Date; reason: string }[];
+    updates: { date: string; reason: string }[];
 }
 
 const jinxes: Jinxes = {
@@ -170,7 +170,12 @@ const jinxes: Jinxes = {
             {
                 id: "magician",
                 reason: "Each night, the Magician chooses a Minion: if that Minion & Lil' Monsta are alive, that Minion babysits Lil' Monsta.",
-                updates: [],
+                updates: [
+                    {
+                        date: "2024-06-28",
+                        reason: "Added jinx",
+                    },
+                ],
             },
             {
                 id: "scarletwoman",
@@ -214,8 +219,13 @@ const jinxes: Jinxes = {
             },
             {
                 id: "preacher",
-                reason: "If the Al-Hadikhia dies by execution, and the Mastermind is alive, the Al-Hadikhia chooses 3 good players tonight: if all 3 choose to live, evil wins. Otherwise, good wins.",
-                updates: [],
+                reason: "If the Preacher chooses Legion, Legion keeps their ability, but the Preacher might learn they are Legion.",
+                updates: [
+                    {
+                        date: "2024-06-28",
+                        reason: "Removed hatred and replace with an ability that helps the Preacher.",
+                    },
+                ],
             },
             {
                 id: "hatter",
@@ -225,7 +235,12 @@ const jinxes: Jinxes = {
             {
                 id: "minstrel",
                 reason: "If Legion died by execution today, Legion keeps their ability, but the Minstrel might learn they are Legion.",
-                updates: [],
+                updates: [
+                    {
+                        date: "2024-06-28",
+                        reason: "Add jinx to stop Legion losing their ability.",
+                    },
+                ],
             },
         ],
     },
@@ -365,7 +380,7 @@ const jinxes: Jinxes = {
             {
                 id: "preacher",
                 reason: "If the Preacher chose the Summoner on or before the 3rd night, the Summoner chooses which Demon, but the Storyteller chooses which player.",
-                updates: [],
+                updates: [{ date: "2024-06-28", reason: "Added jinx." }],
             },
             {
                 id: "clockmaker",
@@ -489,6 +504,21 @@ const jinxes: Jinxes = {
             },
         ],
     },
+    mastermind: {
+        id: "mastermind",
+        jinx: [
+            {
+                id: "alhadikhia",
+                reason: "If the Al-Hadikhia dies by execution, and the Mastermind is alive, the Al-Hadikhia chooses 3 good players tonight: if all 3 choose to live, evil wins. Otherwise, good wins.",
+                updates: [
+                    {
+                        date: "2024-06-28",
+                        reason: "Updated to remove hatred, and make jinx more within spirit of the role.",
+                    },
+                ],
+            },
+        ],
+    },
     lleech: {
         id: "lleech",
         jinx: [
@@ -515,7 +545,12 @@ const jinxes: Jinxes = {
             {
                 id: "soldier",
                 reason: "If the Kazali turns the Soldier into a Minion, the Soldier chooses which not-in-play Minion to become.",
-                updates: [],
+                updates: [
+                    {
+                        date: "2024-06-28",
+                        reason: "New jinx.",
+                    },
+                ],
             },
             {
                 id: "bountyhunter",
@@ -702,11 +737,6 @@ const jinxes: Jinxes = {
                 reason: "If there are two living Al-Hadikhias, the Scarlet Woman Al-Hadikhia becomes the Scarlet Woman again.",
                 updates: [],
             },
-            {
-                id: "mastermind",
-                reason: "If the Al-Hadikhia dies by execution, and the Mastermind is alive, the Al-Hadikhia chooses 3 good players tonight: if all 3 choose to live, evil wins. Otherwise, good wins.",
-                updates: [],
-            },
         ],
     },
     organgrinder: {
@@ -720,12 +750,22 @@ const jinxes: Jinxes = {
             {
                 id: "minstrel",
                 reason: "If the Minstrel makes everyone drunk, the Organ Grinder keeps their ability but the Minstrel keeps their eyes open when voting.",
-                updates: [],
+                updates: [
+                    {
+                        date: "2024-06-28",
+                        reason: "Remove hatred and give minstrel an ability.",
+                    },
+                ],
             },
             {
                 id: "preacher",
                 reason: "If the Preacher removes the Organ Grinder ability, the Organ Grinder keeps their ability but the Preacher keeps their eyes open when voting.",
-                updates: [],
+                updates: [
+                    {
+                        date: "2024-06-28",
+                        reason: "Remove hatred and give preacher an ability.",
+                    },
+                ],
             },
         ],
     },
@@ -810,7 +850,7 @@ const jinxes: Jinxes = {
             {
                 id: "bountyhunter",
                 reason: "If the Philosopher gains the Bounty Hunter ability, a Townsfolk might turn evil.",
-                updates: [],
+                updates: [{ date: "2024-06-09", reason: "Added jinx." }],
             },
         ],
     },
