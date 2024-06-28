@@ -26,7 +26,7 @@ const Select = <T extends object>({
                 <SelectValue />
                 <span aria-hidden="true">▼</span>
             </Button>
-            <Popover placement="bottom" className="!p-2 text-sm">
+            <Popover placement="bottom" size="sm">
                 <ListBox
                     items={options}
                     selectionMode="single"
