@@ -2464,6 +2464,20 @@ const originalRoles : Roles = {
         "You can vote with as many limbs as you can raise.",
         count: 1,
     },
+    alsaahir: {
+        id: "alsaahir",
+        name: "Alsaahir",
+        team: "townsfolk",
+        firstNight: 0,
+        firstNightReminder: "",
+        otherNight: 0,
+        otherNightReminder: "",
+        reminders: [],
+        setup: false,
+        ability:
+        "Once per day, if you publicly guess which players are Minion(s) and which are Demon(s), good wins.",
+        count: 1,
+    },
 };
 
 export default originalRoles;
