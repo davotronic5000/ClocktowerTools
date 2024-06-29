@@ -26,7 +26,7 @@ const Page = () => {
         <div>
             <div></div>
             <div
-                className={`grid h-full w-full grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))] gap-4 p-4`}
+                className={`grid h-full w-full grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))] gap-2 p-2 sm:gap-4 sm:p-4`}
             >
                 {sortedJinxes.map((key) => {
                     const role = roles[key];
