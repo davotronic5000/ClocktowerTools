@@ -1,20 +1,25 @@
-import getBackupRoleImage from "@/components/images/get-role-image";
-import GetRole from "@/components/json-upload/get-role";
 import { RoleType } from "@/components/json-upload/universal-json-validator";
-import jinxes from "@/data/jinx";
-import Image from "next/image";
 import { Fragment, ReactNode } from "react";
+import RoleList from "./role-list";
 
 interface PlayerPageProps {
     name: string;
     author?: string;
     roles: RoleType[];
     children?: ReactNode;
+    layoutOptions: {
+        spaceEfficientLayout: boolean;
+    };
 }
 
 const roleTypeOrder = ["townsfolk", "outsider", "minion", "demon"] as const;
 
-const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
+const PlayerPage = ({
+    name,
+    author,
+    roles,
+    layoutOptions,
+}: PlayerPageProps) => {
     return (
         <div className="col-span-full row-span-full grid grid-rows-[min-content_1fr]">
             <div className="col-start-1 mb-1 mt-2.5 justify-self-center  text-amber-950">
@@ -41,78 +46,14 @@ const PlayerPage = ({ name, author, roles }: PlayerPageProps) => {
                                 }, auto)`,
                             }}
                         >
-                            {roles
-                                .filter(({ team }) => team === roleType)
-                                .map((role) => (
-                                    <div
-                                        key={role.id}
-                                        className="grid grid-cols-[50px_auto] gap-x-1"
-                                    >
-                                        <div>
-                                            <Image
-                                                alt={`role-${role.id}`}
-                                                src={
-                                                    role.image ||
-                                                    getBackupRoleImage()
-                                                }
-                                                priority
-                                                width={50}
-                                                height={50}
-                                                style={{
-                                                    objectFit: "cover",
-                                                }}
-                                                quality={100}
-                                            />
-                                        </div>
-                                        <div>
-                                            <div className="flex gap-2">
-                                                <div className="font-semibold leading-tight">
-                                                    {role.name}
-                                                </div>
-                                                <div className="flex">
-                                                    {jinxes[role.id]?.jinx
-                                                        .filter((jinx) =>
-                                                            roles.some(
-                                                                (e) =>
-                                                                    e.id ===
-                                                                    jinx.id,
-                                                            ),
-                                                        )
-                                                        .slice(0, 8)
-                                                        .map((jinx) => (
-                                                            <Image
-                                                                key={jinx.id}
-                                                                alt={`jinx-${jinx.id}`}
-                                                                src={
-                                                                    GetRole(
-                                                                        jinx.id,
-                                                                    ).image ||
-                                                                    getBackupRoleImage()
-                                                                }
-                                                                priority
-                                                                width={20}
-                                                                height={20}
-                                                                style={{
-                                                                    objectFit:
-                                                                        "cover",
-                                                                }}
-                                                                quality={100}
-                                                            />
-                                                        ))}
-                                                </div>
-                                                <div className="font-semibold leading-tight ">
-                                                    {jinxes[role.id]?.jinx
-                                                        .length >= 8
-                                                        ? "..."
-                                                        : null}
-                                                </div>
-                                            </div>
-                                            <div className="w-[97%] text-sm leading-tight">
-                                                {role.ability}
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
+                            <RoleList
+                                roles={roles.filter(
+                                    ({ team }) => team === roleType,
+                                )}
+                                spaceEfficientLayout={
+                                    layoutOptions.spaceEfficientLayout
+                                }
+                            />
                         </div>
                     </Fragment>
                 ))}

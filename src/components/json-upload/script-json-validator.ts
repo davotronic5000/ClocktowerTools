@@ -1,5 +1,9 @@
 import { z } from "zod";
-import { CategoryType, ScriptColourOptions } from "./universal-json-validator";
+import {
+    CategoryType,
+    ScriptColourOptions,
+    ScriptLayoutOptions,
+} from "./universal-json-validator";
 
 const meta = z.object({
     id: z.literal("_meta"),
@@ -20,6 +24,7 @@ const meta = z.object({
         )
         .optional(),
     scriptColourOptions: ScriptColourOptions.optional(),
+    scriptLayoutOptions: ScriptLayoutOptions.optional(),
 });
 
 export type metaType = z.infer<typeof meta>;

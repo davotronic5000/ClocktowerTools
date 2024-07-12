@@ -29,14 +29,16 @@ export const TeamType = z.enum([
     "traveler",
 ]);
 
-export const CategoryType = z.enum([
+export const categories = [
     "first-night",
     "every-night",
     "every-night-star",
     "during-day",
     "once-per-game",
     "other",
-]);
+] as const;
+
+export const CategoryType = z.enum(categories);
 
 export const RoleType = z.object({
     id: z.string(),
@@ -76,11 +78,16 @@ export const ScriptColourOptions = z.object({
     colourBlendType: ColourBlendType.optional(),
 });
 
+export const ScriptLayoutOptions = z.object({
+    spaceEfficientSorting: z.boolean().default(false),
+});
+
 export const ScriptJSONSchema = z.object({
     name: z.string(),
     author: z.string().optional(),
     roles: z.array(RoleType),
     scriptColourOptions: ScriptColourOptions,
+    scriptLayoutOptions: ScriptLayoutOptions,
     tokenConfig: TokenToolSchema,
 });
 

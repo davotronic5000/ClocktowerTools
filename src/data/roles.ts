@@ -2535,7 +2535,7 @@ const originalRoles: Roles = {
         setup: true,
         ability:
             "Each night, choose a player: you learn their alignment. [+0 to +2 Village Idiots. 1 of the extras is drunk]",
-        count: 1,
+        count: 3,
         category: "every-night",
     },
     hatter: {
