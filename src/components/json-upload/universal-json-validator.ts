@@ -29,6 +29,17 @@ export const TeamType = z.enum([
     "traveler",
 ]);
 
+export const categories = [
+    "first-night",
+    "every-night",
+    "every-night-star",
+    "during-day",
+    "once-per-game",
+    "other",
+] as const;
+
+export const CategoryType = z.enum(categories);
+
 export const RoleType = z.object({
     id: z.string(),
     name: z.string().optional(),
@@ -55,6 +66,7 @@ export const RoleType = z.object({
             }),
         )
         .optional(),
+    category: CategoryType.optional(),
 });
 
 export const hexCode = z.string().regex(/^#(?:[0-9a-fA-F]{3}){1,2}$/);
@@ -66,16 +78,22 @@ export const ScriptColourOptions = z.object({
     colourBlendType: ColourBlendType.optional(),
 });
 
+export const ScriptLayoutOptions = z.object({
+    spaceEfficientSorting: z.boolean().default(false),
+});
+
 export const ScriptJSONSchema = z.object({
     name: z.string(),
     author: z.string().optional(),
     roles: z.array(RoleType),
     scriptColourOptions: ScriptColourOptions,
+    scriptLayoutOptions: ScriptLayoutOptions,
     tokenConfig: TokenToolSchema,
 });
 
 export type ScriptJSONSchemaType = z.infer<typeof ScriptJSONSchema>;
 export type ColourBlendTypeType = z.infer<typeof ColourBlendType>;
+export type CategoryTypeType = z.infer<typeof CategoryType>;
 export type RoleType = z.infer<typeof RoleType>;
 export type TeamType = z.infer<typeof TeamType>;
 export type ScriptColourOptions = z.infer<typeof ScriptColourOptions>;

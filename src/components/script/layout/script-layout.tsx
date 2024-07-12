@@ -21,6 +21,9 @@ const ScriptLayout = ({ script, noPageGap }: ScriptLayoutProps) => {
         colourBlendType: script.scriptColourOptions.colourBlendType,
         useGradient: script.scriptColourOptions.useGradient,
     };
+    const layoutOptions = {
+        spaceEfficientLayout: script.scriptLayoutOptions.spaceEfficientSorting,
+    };
     return (
         <PageViewer noPageGap={noPageGap}>
             <ScriptPageWithSideBar {...colourOptions}>
@@ -28,6 +31,7 @@ const ScriptLayout = ({ script, noPageGap }: ScriptLayoutProps) => {
                     name={script.name}
                     author={script.author}
                     roles={roles}
+                    layoutOptions={layoutOptions}
                 />
             </ScriptPageWithSideBar>
             <SinglePage>

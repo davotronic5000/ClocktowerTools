@@ -33,6 +33,10 @@ const convertScriptToJSON = async (scriptFile: File) => {
                 colourBlendType:
                     meta?.scriptColourOptions?.colourBlendType || "difference",
             },
+            scriptLayoutOptions: {
+                spaceEfficientSorting:
+                    meta?.scriptLayoutOptions?.spaceEfficientSorting || false,
+            },
             tokenConfig: {
                 page: {
                     height: 1123,
