@@ -22,6 +22,7 @@ const originalRoles: Roles = {
         ability:
             "You start knowing that 1 of 2 players is a particular Townsfolk.",
         count: 1,
+        category: "first-night",
     },
     librarian: {
         id: "librarian",
@@ -40,6 +41,7 @@ const originalRoles: Roles = {
         ability:
             "You start knowing that 1 of 2 players is a particular Outsider. (Or that zero are in play.)",
         count: 1,
+        category: "first-night",
     },
     investigator: {
         id: "investigator",
@@ -58,6 +60,7 @@ const originalRoles: Roles = {
         ability:
             "You start knowing that 1 of 2 players is a particular Minion.",
         count: 1,
+        category: "first-night",
     },
     chef: {
         id: "chef",
@@ -72,6 +75,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "You start knowing how many pairs of evil players there are.",
         count: 1,
+        category: "first-night",
     },
     empath: {
         id: "empath",
@@ -88,6 +92,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, you learn how many of your 2 alive neighbours are evil.",
         count: 1,
+        category: "every-night",
     },
     fortuneteller: {
         id: "fortuneteller",
@@ -104,6 +109,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose 2 players: you learn if either is a Demon. There is a good player that registers as a Demon to you.",
         count: 1,
+        category: "every-night",
     },
     undertaker: {
         id: "undertaker",
@@ -119,6 +125,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, you learn which character died by execution today.",
         count: 1,
+        category: "every-night-star",
     },
     monk: {
         id: "monk",
@@ -134,6 +141,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose a player (not yourself): they are safe from the Demon tonight.",
         count: 1,
+        category: "every-night-star",
     },
     ravenkeeper: {
         id: "ravenkeeper",
@@ -149,6 +157,7 @@ const originalRoles: Roles = {
         ability:
             "If you die at night, you are woken to choose a player: you learn their character.",
         count: 1,
+        category: "other",
     },
     virgin: {
         id: "virgin",
@@ -163,6 +172,7 @@ const originalRoles: Roles = {
         ability:
             "The 1st time you are nominated, if the nominator is a Townsfolk, they are executed immediately.",
         count: 1,
+        category: "other",
     },
     slayer: {
         id: "slayer",
@@ -177,6 +187,7 @@ const originalRoles: Roles = {
         ability:
             "Once per game, during the day, publicly choose a player: if they are the Demon, they die.",
         count: 1,
+        category: "once-per-game",
     },
     soldier: {
         id: "soldier",
@@ -190,6 +201,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "You are safe from the Demon.",
         count: 1,
+        category: "other",
     },
     mayor: {
         id: "mayor",
@@ -204,6 +216,7 @@ const originalRoles: Roles = {
         ability:
             "If only 3 players live & no execution occurs, your team wins. If you die at night, another player might die instead.",
         count: 1,
+        category: "other",
     },
     butler: {
         id: "butler",
@@ -220,6 +233,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose a player (not yourself): tomorrow, you may only vote if they are voting too.",
         count: 1,
+        category: "every-night",
     },
     drunk: {
         id: "drunk",
@@ -234,6 +248,7 @@ const originalRoles: Roles = {
         ability:
             "You do not know you are the Drunk. You think you are a Townsfolk character, but you are not.",
         count: 1,
+        category: "other",
     },
     recluse: {
         id: "recluse",
@@ -248,6 +263,7 @@ const originalRoles: Roles = {
         ability:
             "You might register as evil & as a Minion or Demon, even if dead.",
         count: 1,
+        category: "other",
     },
     saint: {
         id: "saint",
@@ -261,6 +277,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "If you die by execution, your team loses.",
         count: 1,
+        category: "other",
     },
     poisoner: {
         id: "poisoner",
@@ -277,6 +294,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose a player: they are poisoned tonight and tomorrow day.",
         count: 1,
+        category: "every-night",
     },
     spy: {
         id: "spy",
@@ -293,6 +311,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, you see the Grimoire. You might register as good & as a Townsfolk or Outsider, even if dead.",
         count: 1,
+        category: "every-night",
     },
     scarletwoman: {
         id: "scarletwoman",
@@ -308,6 +327,7 @@ const originalRoles: Roles = {
         ability:
             "If there are 5 or more players alive & the Demon dies, you become the Demon. (Travellers don’t count)",
         count: 1,
+        category: "other",
     },
     baron: {
         id: "baron",
@@ -321,6 +341,7 @@ const originalRoles: Roles = {
         setup: true,
         ability: "There are extra Outsiders in play. [+2 Outsiders]",
         count: 1,
+        category: "other",
     },
     imp: {
         id: "imp",
@@ -336,6 +357,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose a player: they die. If you kill yourself this way, a Minion becomes the Imp.",
         count: 4,
+        category: "every-night-star",
     },
     bureaucrat: {
         id: "bureaucrat",
@@ -352,6 +374,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose a player (not yourself): their vote counts as 3 votes tomorrow.",
         count: 1,
+        category: "every-night",
     },
     thief: {
         id: "thief",
@@ -368,6 +391,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose a player (not yourself): their vote counts negatively tomorrow.",
         count: 1,
+        category: "every-night",
     },
     gunslinger: {
         id: "gunslinger",
@@ -382,6 +406,7 @@ const originalRoles: Roles = {
         ability:
             "Each day, after the 1st vote has been tallied, you may choose a player that voted: they die.",
         count: 1,
+        category: "during-day",
     },
     scapegoat: {
         id: "scapegoat",
@@ -396,6 +421,7 @@ const originalRoles: Roles = {
         ability:
             "If a player of your alignment is executed, you might be executed instead.",
         count: 1,
+        category: "other",
     },
     beggar: {
         id: "beggar",
@@ -410,6 +436,7 @@ const originalRoles: Roles = {
         ability:
             "You must use a vote token to vote. Dead players may choose to give you theirs. If so, you learn their alignment.",
         count: 1,
+        category: "other",
     },
     grandmother: {
         id: "grandmother",
@@ -426,6 +453,7 @@ const originalRoles: Roles = {
         ability:
             "You start knowing a good player & their character. If the Demon kills them, you die too.",
         count: 1,
+        category: "first-night",
     },
     sailor: {
         id: "sailor",
@@ -442,6 +470,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose an alive player: either you or they are drunk until dusk. You can't die.",
         count: 1,
+        category: "every-night",
     },
     chambermaid: {
         id: "chambermaid",
@@ -458,6 +487,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose 2 alive players (not yourself): you learn how many woke tonight due to their ability.",
         count: 1,
+        category: "every-night",
     },
     exorcist: {
         id: "exorcist",
@@ -473,6 +503,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose a player (different to last night): the Demon, if chosen, learns who you are then doesn't wake tonight.",
         count: 1,
+        category: "every-night-star",
     },
     innkeeper: {
         id: "innkeeper",
@@ -491,6 +522,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose 2 players: they can't die tonight, but 1 is drunk until dusk.",
         count: 1,
+        category: "every-night-star",
     },
     gambler: {
         id: "gambler",
@@ -506,6 +538,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose a player & guess their character: if you guess wrong, you die.",
         count: 1,
+        category: "every-night-star",
     },
     gossip: {
         id: "gossip",
@@ -521,6 +554,7 @@ const originalRoles: Roles = {
         ability:
             "Each day, you may make a public statement. Tonight, if it was true, a player dies.",
         count: 1,
+        category: "during-day",
     },
     courtier: {
         id: "courtier",
@@ -531,7 +565,7 @@ const originalRoles: Roles = {
             "The Courtier either shows a 'no' head signal, or points to a character on the sheet. If the Courtier used their ability: If that character is in play, that player is drunk.",
         otherNight: 10,
         otherNightReminder:
-            "Reduce the remaining number of days the marked player is poisoned. If the Courtier has not yet used their ability: The Courtier either shows a 'no' head signal, or points to a character on the sheet. If the Courtier used their ability: If that character is in play, that player is drunk.",
+            "Reduce the remaining number of days the marked player is drunk. If the Courtier has not yet used their ability: The Courtier either shows a 'no' head signal, or points to a character on the sheet. If the Courtier used their ability: If that character is in play, that player is drunk.",
         reminders: [
             { text: "Drunk 3", count: 1 },
             { text: "Drunk 2", count: 1 },
@@ -542,6 +576,7 @@ const originalRoles: Roles = {
         ability:
             "Once per game, at night, choose a character: they are drunk for 3 nights & 3 days.",
         count: 1,
+        category: "once-per-game",
     },
     professor: {
         id: "professor",
@@ -560,6 +595,7 @@ const originalRoles: Roles = {
         ability:
             "Once per game, at night*, choose a dead player: if they are a Townsfolk, they are resurrected.",
         count: 1,
+        category: "once-per-game",
     },
     minstrel: {
         id: "minstrel",
@@ -574,6 +610,7 @@ const originalRoles: Roles = {
         ability:
             "When a Minion dies by execution, all other players (except Travellers) are drunk until dusk tomorrow.",
         count: 1,
+        category: "other",
     },
     tealady: {
         id: "tealady",
@@ -587,6 +624,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "If both your alive neighbours are good, they can't die.",
         count: 1,
+        category: "other",
     },
     pacifist: {
         id: "pacifist",
@@ -600,6 +638,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "Executed good players might not die.",
         count: 1,
+        category: "other",
     },
     fool: {
         id: "fool",
@@ -613,6 +652,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "The first time you die, you don't.",
         count: 1,
+        category: "other",
     },
     tinker: {
         id: "tinker",
@@ -626,6 +666,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "You might die at any time.",
         count: 1,
+        category: "other",
     },
     moonchild: {
         id: "moonchild",
@@ -641,6 +682,7 @@ const originalRoles: Roles = {
         ability:
             "When you learn that you died, publicly choose 1 alive player. Tonight, if it was a good player, they die.",
         count: 1,
+        category: "other",
     },
     goon: {
         id: "goon",
@@ -655,6 +697,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, the 1st player to choose you with their ability is drunk until dusk. You become their alignment.",
         count: 1,
+        category: "every-night",
     },
     lunatic: {
         id: "lunatic",
@@ -675,6 +718,7 @@ const originalRoles: Roles = {
         ability:
             "You think you are a Demon, but you are not. The Demon knows who you are & who you choose at night.",
         count: 1,
+        category: "other",
     },
     godfather: {
         id: "godfather",
@@ -693,6 +737,7 @@ const originalRoles: Roles = {
         ability:
             "You start knowing which Outsiders are in play. If 1 died today, choose a player tonight: they die. [−1 or +1 Outsider]",
         count: 1,
+        category: "first-night",
     },
     devilsadvocate: {
         id: "devilsadvocate",
@@ -709,6 +754,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose a living player (different to last night): if executed tomorrow, they don't die.",
         count: 1,
+        category: "every-night",
     },
     assassin: {
         id: "assassin",
@@ -727,6 +773,7 @@ const originalRoles: Roles = {
         ability:
             "Once per game, at night*, choose a player: they die, even if for some reason they could not.",
         count: 1,
+        category: "once-per-game",
     },
     mastermind: {
         id: "mastermind",
@@ -741,6 +788,7 @@ const originalRoles: Roles = {
         ability:
             "If the Demon dies by execution (ending the game), play for 1 more day. If a player is then executed, their team loses.",
         count: 1,
+        category: "other",
     },
     zombuul: {
         id: "zombuul",
@@ -759,6 +807,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, if no-one died today, choose a player: they die. The 1st time you die, you live but register as dead.",
         count: 1,
+        category: "every-night-star",
     },
     pukka: {
         id: "pukka",
@@ -778,6 +827,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose a player: they are poisoned. The previously poisoned player dies then becomes healthy.",
         count: 1,
+        category: "every-night",
     },
     shabaloth: {
         id: "shabaloth",
@@ -796,6 +846,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose 2 players: they die. A dead player you chose last night might be regurgitated.",
         count: 1,
+        category: "every-night-star",
     },
     po: {
         id: "po",
@@ -814,6 +865,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, you may choose a player: they die. If your last choice was no-one, choose 3 players tonight.",
         count: 1,
+        category: "every-night-star",
     },
     apprentice: {
         id: "apprentice",
@@ -829,6 +881,7 @@ const originalRoles: Roles = {
         ability:
             "On your 1st night, you gain a Townsfolk ability (if good), or a Minion ability (if evil).",
         count: 1,
+        category: "first-night",
     },
     matron: {
         id: "matron",
@@ -843,6 +896,7 @@ const originalRoles: Roles = {
         ability:
             "Each day, you may choose up to 3 sets of 2 players to swap seats. Players may not leave their seats to talk in private.",
         count: 1,
+        category: "during-day",
     },
     judge: {
         id: "judge",
@@ -857,6 +911,7 @@ const originalRoles: Roles = {
         ability:
             "Once per game, if another player nominated, you may choose to force the current execution to pass or fail.",
         count: 1,
+        category: "once-per-game",
     },
     bishop: {
         id: "bishop",
@@ -874,6 +929,7 @@ const originalRoles: Roles = {
         ability:
             "Only the Storyteller can nominate. At least 1 opposite player must be nominated each day.",
         count: 1,
+        category: "during-day",
     },
     voudon: {
         id: "voudon",
@@ -888,6 +944,7 @@ const originalRoles: Roles = {
         ability:
             "Only you and the dead can vote. They don't need a vote token to do so. A 50% majority is not required.",
         count: 1,
+        category: "other",
     },
     clockmaker: {
         id: "clockmaker",
@@ -903,6 +960,7 @@ const originalRoles: Roles = {
         ability:
             "You start knowing how many steps from the Demon to its nearest Minion.",
         count: 1,
+        category: "first-night",
     },
     dreamer: {
         id: "dreamer",
@@ -919,6 +977,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose a player (not yourself or Travellers): you learn 1 good and 1 evil character, 1 of which is correct.",
         count: 1,
+        category: "every-night",
     },
     snakecharmer: {
         id: "snakecharmer",
@@ -935,6 +994,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose an alive player: a chosen Demon swaps characters & alignments with you & is then poisoned.",
         count: 1,
+        category: "every-night",
     },
     mathematician: {
         id: "mathematician",
@@ -951,6 +1011,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, you learn how many players’ abilities worked abnormally (since dawn) due to another character's ability.",
         count: 1,
+        category: "every-night",
     },
     flowergirl: {
         id: "flowergirl",
@@ -968,6 +1029,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "Each night*, you learn if a Demon voted today.",
         count: 1,
+        category: "every-night-star",
     },
     towncrier: {
         id: "towncrier",
@@ -985,6 +1047,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "Each night*, you learn if a Minion nominated today.",
         count: 1,
+        category: "every-night-star",
     },
     oracle: {
         id: "oracle",
@@ -999,6 +1062,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "Each night*, you learn how many dead players are evil.",
         count: 1,
+        category: "every-night-star",
     },
     savant: {
         id: "savant",
@@ -1013,6 +1077,7 @@ const originalRoles: Roles = {
         ability:
             "Each day, you may visit the Storyteller to learn 2 things in private: 1 is true & 1 is false.",
         count: 1,
+        category: "during-day",
     },
     seamstress: {
         id: "seamstress",
@@ -1029,6 +1094,7 @@ const originalRoles: Roles = {
         ability:
             "Once per game, at night, choose 2 players (not yourself): you learn if they are the same alignment.",
         count: 1,
+        category: "once-per-game",
     },
     philosopher: {
         id: "philosopher",
@@ -1048,6 +1114,7 @@ const originalRoles: Roles = {
         ability:
             "Once per game, at night, choose a good character: gain that ability. If this character is in play, they are drunk.",
         count: 1,
+        category: "once-per-game",
     },
     artist: {
         id: "artist",
@@ -1062,6 +1129,7 @@ const originalRoles: Roles = {
         ability:
             "Once per game, during the day, privately ask the Storyteller any yes/no question.",
         count: 1,
+        category: "once-per-game",
     },
     juggler: {
         id: "juggler",
@@ -1077,6 +1145,7 @@ const originalRoles: Roles = {
         ability:
             "On your 1st day, publicly guess up to 5 players' characters. That night, you learn how many you got correct.",
         count: 1,
+        category: "once-per-game",
     },
     sage: {
         id: "sage",
@@ -1091,6 +1160,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "If the Demon kills you, you learn that it is 1 of 2 players.",
         count: 1,
+        category: "other",
     },
     mutant: {
         id: "mutant",
@@ -1105,6 +1175,7 @@ const originalRoles: Roles = {
         ability:
             "If you are “mad” about being an Outsider, you might be executed.",
         count: 1,
+        category: "other",
     },
     sweetheart: {
         id: "sweetheart",
@@ -1118,6 +1189,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "When you die, 1 player is drunk from now on.",
         count: 1,
+        category: "other",
     },
     barber: {
         id: "barber",
@@ -1133,6 +1205,7 @@ const originalRoles: Roles = {
         ability:
             "If you died today or tonight, the Demon may choose 2 players (not another Demon) to swap characters.",
         count: 1,
+        category: "other",
     },
     klutz: {
         id: "klutz",
@@ -1147,6 +1220,7 @@ const originalRoles: Roles = {
         ability:
             "When you learn that you died, publicly choose 1 alive player: if they are evil, your team loses.",
         count: 1,
+        category: "other",
     },
     eviltwin: {
         id: "eviltwin",
@@ -1162,6 +1236,7 @@ const originalRoles: Roles = {
         ability:
             "You & an opposing player know each other. If the good player is executed, evil wins. Good can't win if you both live.",
         count: 1,
+        category: "other",
     },
     witch: {
         id: "witch",
@@ -1178,6 +1253,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose a player: if they nominate tomorrow, they die. If just 3 players live, you lose this ability.",
         count: 1,
+        category: "every-night",
     },
     cerenovus: {
         id: "cerenovus",
@@ -1194,6 +1270,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose a player & a good character: they are “mad” they are this character tomorrow, or might be executed.",
         count: 1,
+        category: "every-night",
     },
     pithag: {
         id: "pithag",
@@ -1209,6 +1286,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose a player & a character they become (if not-in-play). If a Demon is made, deaths tonight are arbitrary.",
         count: 1,
+        category: "every-night-star",
     },
     fanggu: {
         id: "fanggu",
@@ -1227,6 +1305,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose a player: they die. The 1st Outsider this kills becomes an evil Fang Gu & you die instead. [+1 Outsider]",
         count: 2,
+        category: "every-night-star",
     },
     vigormortis: {
         id: "vigormortis",
@@ -1246,6 +1325,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose a player: they die. Minions you kill keep their ability & poison 1 Townsfolk neighbour. [−1 Outsider]",
         count: 1,
+        category: "every-night-star",
     },
     nodashii: {
         id: "nodashii",
@@ -1264,6 +1344,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose a player: they die. Your 2 Townsfolk neighbours are poisoned.",
         count: 1,
+        category: "every-night-star",
     },
     vortox: {
         id: "vortox",
@@ -1278,6 +1359,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose a player: they die. Townsfolk abilities yield false info. Each day, if no-one is executed, evil wins.",
         count: 1,
+        category: "every-night-star",
     },
     barista: {
         id: "barista",
@@ -1297,6 +1379,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, until dusk, 1) a player becomes sober, healthy and gets true info, or 2) their ability works twice. They learn which.",
         count: 1,
+        category: "every-night",
     },
     harlot: {
         id: "harlot",
@@ -1312,6 +1395,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose a living player: if they agree, you learn their character, but you both might die.",
         count: 1,
+        category: "every-night-star",
     },
     butcher: {
         id: "butcher",
@@ -1325,6 +1409,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "Each day, after the 1st execution, you may nominate again.",
         count: 1,
+        category: "during-day",
     },
     bonecollector: {
         id: "bonecollector",
@@ -1343,6 +1428,7 @@ const originalRoles: Roles = {
         ability:
             "Once per game, at night, choose a dead player: they regain their ability until dusk.",
         count: 1,
+        category: "once-per-game",
     },
     deviant: {
         id: "deviant",
@@ -1356,6 +1442,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "If you were funny today, you cannot die by exile.",
         count: 1,
+        category: "other",
     },
     noble: {
         id: "noble",
@@ -1370,6 +1457,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "You start knowing 3 players, 1 and only 1 of which is evil.",
         count: 1,
+        category: "first-night",
     },
     bountyhunter: {
         id: "bountyhunter",
@@ -1386,6 +1474,7 @@ const originalRoles: Roles = {
         ability:
             "You start knowing 1 evil player. If the player you know dies, you learn another evil player tonight. [1 Townsfolk is evil]",
         count: 1,
+        category: "first-night",
     },
     pixie: {
         id: "pixie",
@@ -1404,6 +1493,7 @@ const originalRoles: Roles = {
         ability:
             "You start knowing 1 in-play Townsfolk. If you were mad that you were this character, you gain their ability when they die.",
         count: 1,
+        category: "first-night",
     },
     general: {
         id: "general",
@@ -1420,6 +1510,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, you learn which alignment the Storyteller believes is winning: good, evil, or neither.",
         count: 1,
+        category: "every-night",
     },
     preacher: {
         id: "preacher",
@@ -1436,6 +1527,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose a player: a Minion, if chosen, learns this. All chosen Minions have no ability.",
         count: 1,
+        category: "every-night",
     },
     king: {
         id: "king",
@@ -1452,6 +1544,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, if the dead equal or outnumber the living, you learn 1 alive character. The Demon knows who you are.",
         count: 1,
+        category: "every-night",
     },
     balloonist: {
         id: "balloonist",
@@ -1474,6 +1567,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, you learn a player of a different character type than last night. [+0 or +1 Outsider]",
         count: 1,
+        category: "every-night",
     },
     cultleader: {
         id: "cultleader",
@@ -1490,6 +1584,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, you become the alignment of an alive neighbour. If all good players choose to join your cult, your team wins.",
         count: 1,
+        category: "every-night",
     },
     lycanthrope: {
         id: "lycanthrope",
@@ -1505,6 +1600,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose a living player: if good, they die, but they are the only player that can die tonight.",
         count: 1,
+        category: "every-night-star",
     },
     amnesiac: {
         id: "amnesiac",
@@ -1521,6 +1617,7 @@ const originalRoles: Roles = {
         ability:
             "You do not know what your ability is. Each day, privately guess what it is: you learn how accurate you are.",
         count: 1,
+        category: "during-day",
     },
     nightwatchman: {
         id: "nightwatchman",
@@ -1537,6 +1634,7 @@ const originalRoles: Roles = {
         ability:
             "Once per game, at night, choose a player: they learn who you are.",
         count: 1,
+        category: "once-per-game",
     },
     engineer: {
         id: "engineer",
@@ -1553,6 +1651,7 @@ const originalRoles: Roles = {
         ability:
             "Once per game, at night, choose which Minions or which Demon is in play.",
         count: 1,
+        category: "once-per-game",
     },
     fisherman: {
         id: "fisherman",
@@ -1567,6 +1666,7 @@ const originalRoles: Roles = {
         ability:
             "Once per game, during the day, visit the Storyteller for some advice to help you win.",
         count: 1,
+        category: "once-per-game",
     },
     huntsman: {
         id: "huntsman",
@@ -1583,6 +1683,7 @@ const originalRoles: Roles = {
         ability:
             "Once per game, at night, choose a living player: the Damsel, if chosen, becomes a not-in-play Townsfolk. [+the Damsel]",
         count: 1,
+        category: "once-per-game",
     },
     alchemist: {
         id: "alchemist",
@@ -1596,6 +1697,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "You have a not-in-play Minion ability.",
         count: 1,
+        category: "other",
     },
     farmer: {
         id: "farmer",
@@ -1610,6 +1712,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "If you die at night, an alive good player becomes a Farmer.",
         count: 4,
+        category: "other",
     },
     magician: {
         id: "magician",
@@ -1624,6 +1727,7 @@ const originalRoles: Roles = {
         ability:
             "The Demon thinks you are a Minion. Minions think you are a Demon.",
         count: 1,
+        category: "other",
     },
     choirboy: {
         id: "choirboy",
@@ -1639,6 +1743,7 @@ const originalRoles: Roles = {
         ability:
             "If the Demon kills the King, you learn which player is the Demon. [+ the King]",
         count: 1,
+        category: "other",
     },
     poppygrower: {
         id: "poppygrower",
@@ -1655,6 +1760,7 @@ const originalRoles: Roles = {
         ability:
             "Minions & Demons do not know each other. If you die, they learn who each other are that night.",
         count: 1,
+        category: "other",
     },
     atheist: {
         id: "atheist",
@@ -1669,6 +1775,7 @@ const originalRoles: Roles = {
         ability:
             "The Storyteller can break the game rules & if executed, good wins, even if you are dead. [No evil characters]",
         count: 1,
+        category: "other",
     },
     cannibal: {
         id: "cannibal",
@@ -1686,6 +1793,7 @@ const originalRoles: Roles = {
         ability:
             "You have the ability of the recently killed executee. If they are evil, you are poisoned until a good player dies by execution.",
         count: 1,
+        category: "other",
     },
     steward: {
         id: "steward",
@@ -1699,6 +1807,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "You start knowing 1 good player.",
         count: 1,
+        category: "first-night",
     },
     knight: {
         id: "knight",
@@ -1712,6 +1821,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "You start knowing 2 players that are not the Demon.",
         count: 1,
+        category: "first-night",
     },
     highpriestess: {
         id: "highpriestess",
@@ -1727,6 +1837,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, learn which player the Storyteller believes you should talk to most.",
         count: 1,
+        category: "every-night",
     },
     shugenja: {
         id: "shugenja",
@@ -1741,6 +1852,7 @@ const originalRoles: Roles = {
         ability:
             "You start knowing if your closest evil player is clockwise or anti-clockwise. If equidistant, this info is arbitrary.",
         count: 1,
+        category: "first-night",
     },
     snitch: {
         id: "snitch",
@@ -1755,6 +1867,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "Minions start knowing 3 not-in-play characters.",
         count: 1,
+        category: "first-night",
     },
     acrobat: {
         id: "acrobat",
@@ -1770,6 +1883,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, if either good living neighbour is drunk or poisoned, you die.",
         count: 1,
+        category: "every-night-star",
     },
     puzzlemaster: {
         id: "puzzlemaster",
@@ -1787,6 +1901,7 @@ const originalRoles: Roles = {
         ability:
             "1 player is drunk, even if you die. If you guess (once) who it is, learn the Demon player, but guess wrong & get false info.",
         count: 1,
+        category: "once-per-game",
     },
     heretic: {
         id: "heretic",
@@ -1801,6 +1916,7 @@ const originalRoles: Roles = {
         ability:
             "Whoever wins, loses & whoever loses, wins, even if you are dead.",
         count: 1,
+        category: "other",
     },
     damsel: {
         id: "damsel",
@@ -1817,6 +1933,7 @@ const originalRoles: Roles = {
         ability:
             "All Minions know you are in play. If a Minion publicly guesses you (once), your team loses.",
         count: 1,
+        category: "other",
     },
     golem: {
         id: "golem",
@@ -1831,6 +1948,7 @@ const originalRoles: Roles = {
         ability:
             "You may only nominate once per game. When you do, if the nominee is not the Demon, they die.",
         count: 1,
+        category: "once-per-game",
     },
     politician: {
         id: "politician",
@@ -1845,6 +1963,7 @@ const originalRoles: Roles = {
         ability:
             "If you were the player most responsible for your team losing, you change alignment & win, even if dead.",
         count: 1,
+        category: "other",
     },
     plaguedoctor: {
         id: "plaguedoctor",
@@ -1854,6 +1973,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "If you die, the Storyteller gains a Minion ability.",
         count: 1,
+        category: "other",
     },
     widow: {
         id: "widow",
@@ -1872,6 +1992,7 @@ const originalRoles: Roles = {
         ability:
             "On your 1st night, look at the Grimoire and choose a player: they are poisoned. 1 good player knows a Widow is in play.",
         count: 1,
+        category: "first-night",
     },
     fearmonger: {
         id: "fearmonger",
@@ -1888,6 +2009,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose a player. If you nominate & execute them, their team loses. All players know if you choose a new player.",
         count: 1,
+        category: "every-night",
     },
     psychopath: {
         id: "psychopath",
@@ -1902,6 +2024,7 @@ const originalRoles: Roles = {
         ability:
             "Each day, before nominations, you may publicly choose a player: they die. If executed, you only die if you lose roshambo.",
         count: 1,
+        category: "during-day",
     },
     goblin: {
         id: "goblin",
@@ -1916,6 +2039,7 @@ const originalRoles: Roles = {
         ability:
             "If you publicly claim to be the Goblin when nominated & are executed that day, your team wins.",
         count: 1,
+        category: "other",
     },
     mephit: {
         id: "mephit",
@@ -1934,6 +2058,7 @@ const originalRoles: Roles = {
         ability:
             "You start knowing a secret word. The 1st good player to say this word becomes evil that night.",
         count: 1,
+        category: "first-night",
     },
     mezepheles: {
         id: "mezepheles",
@@ -1952,6 +2077,7 @@ const originalRoles: Roles = {
         ability:
             "You start knowing a secret word. The 1st good player to say this word becomes evil that night.",
         count: 1,
+        category: "first-night",
     },
     marionette: {
         id: "marionette",
@@ -1967,6 +2093,7 @@ const originalRoles: Roles = {
         ability:
             "You think you are a good character but you are not. The Demon knows who you are. [You neighbour the Demon]",
         count: 1,
+        category: "other",
     },
     boomdandy: {
         id: "boomdandy",
@@ -1981,6 +2108,7 @@ const originalRoles: Roles = {
         ability:
             "If you are executed, all but 3 players die. 1 minute later, the player with the most players pointing at them dies.",
         count: 1,
+        category: "other",
     },
     organgrinder: {
         id: "organgrinder",
@@ -1995,6 +2123,7 @@ const originalRoles: Roles = {
         ability:
             "All players keep their eyes closed when voting & the vote tally is secret. Votes for you only count if you vote.",
         count: 1,
+        category: "other",
     },
     vizier: {
         id: "vizier",
@@ -2009,6 +2138,7 @@ const originalRoles: Roles = {
         ability:
             "All players know who you are. You can not die during the day. If good voted, you may choose to execute immediately.",
         count: 1,
+        category: "other",
     },
     harpy: {
         id: "harpy",
@@ -2026,6 +2156,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose 2 players: tomorrow, the 1st player is mad that the 2nd is evil, or one or both might die.",
         count: 1,
+        category: "every-night",
     },
     lilmonsta: {
         id: "lilmonsta",
@@ -2045,6 +2176,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, Minions choose who babysits Lil' Monsta & 'is the Demon'. Each night*, a player might die. [+1 Minion]",
         count: 1,
+        category: "every-night-star",
     },
     lleech: {
         id: "lleech",
@@ -2063,6 +2195,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose a player: they die. You start by choosing an alive player: they are poisoned - you die if & only if they die.",
         count: 1,
+        category: "every-night-star",
     },
     alhadikhia: {
         id: "alhadikhia",
@@ -2082,6 +2215,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose 3 players (all players learn who): each silently chooses to live or die, but if all live, all die.",
         count: 1,
+        category: "every-night-star",
     },
     legion: {
         id: "legion",
@@ -2099,6 +2233,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, a player might die. Executions fail if only evil voted. You register as a Minion too. [Most players are Legion]",
         count: 12,
+        category: "every-night-star",
     },
     leviathan: {
         id: "leviathan",
@@ -2122,6 +2257,7 @@ const originalRoles: Roles = {
         ability:
             "If more than 1 good player is executed, you win. All players know you are in play. After day 5, evil wins.",
         count: 1,
+        category: "other",
     },
     riot: {
         id: "riot",
@@ -2136,6 +2272,7 @@ const originalRoles: Roles = {
         ability:
             "Nominees die, but may nominate again immediately (on day 3, they must). After day 3, evil wins. [All Minions are Riot]",
         count: 4,
+        category: "other",
     },
     ojo: {
         id: "ojo",
@@ -2150,6 +2287,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose a character: they die. If they are not in play, the Storyteller chooses who dies.",
         count: 1,
+        category: "every-night-star",
     },
     gangster: {
         id: "gangster",
@@ -2164,6 +2302,7 @@ const originalRoles: Roles = {
         ability:
             "Once per day, you may choose to kill an alive neighbour, if your other alive neighbour agrees.",
         count: 1,
+        category: "during-day",
     },
     doomsayer: {
         id: "doomsayer",
@@ -2176,6 +2315,7 @@ const originalRoles: Roles = {
         ability:
             "If 4 or more players live, each living player may publicly choose (once per game) that a player of their own alignment dies.",
         count: 1,
+        category: "other",
     },
     angel: {
         id: "angel",
@@ -2191,6 +2331,7 @@ const originalRoles: Roles = {
         ability:
             "Something bad might happen to whoever is most responsible for the death of a new player.",
         count: 1,
+        category: "other",
     },
     buddhist: {
         id: "buddhist",
@@ -2203,6 +2344,7 @@ const originalRoles: Roles = {
         ability:
             "For the first 2 minutes of each day, veteran players may not talk.",
         count: 1,
+        category: "during-day",
     },
     hellslibrarian: {
         id: "hellslibrarian",
@@ -2215,6 +2357,7 @@ const originalRoles: Roles = {
         ability:
             "Something bad might happen to whoever talks when the Storyteller has asked for silence.",
         count: 1,
+        category: "other",
     },
     revolutionary: {
         id: "revolutionary",
@@ -2227,6 +2370,7 @@ const originalRoles: Roles = {
         ability:
             "2 neighboring players are known to be the same alignment. Once per game, one of them registers falsely.",
         count: 1,
+        category: "once-per-game",
     },
     fiddler: {
         id: "fiddler",
@@ -2239,6 +2383,7 @@ const originalRoles: Roles = {
         ability:
             "Once per game, the Demon secretly chooses an opposing player: all players choose which of these 2 players win.",
         count: 1,
+        category: "once-per-game",
     },
     toymaker: {
         id: "toymaker",
@@ -2253,6 +2398,7 @@ const originalRoles: Roles = {
         ability:
             "The Demon may choose not to attack & must do this at least once per game. Evil players get normal starting info.",
         count: 1,
+        category: "once-per-game",
     },
     fibbin: {
         id: "fibbin",
@@ -2264,6 +2410,7 @@ const originalRoles: Roles = {
         team: "fabled",
         ability: "Once per game, 1 good player might get false information.",
         count: 1,
+        category: "once-per-game",
     },
     duchess: {
         id: "duchess",
@@ -2281,6 +2428,7 @@ const originalRoles: Roles = {
         ability:
             "Each day, 3 players may choose to visit you. At night*, each visitor learns how many visitors are evil, but 1 gets false info.",
         count: 1,
+        category: "during-day",
     },
     sentinel: {
         id: "sentinel",
@@ -2292,6 +2440,7 @@ const originalRoles: Roles = {
         team: "fabled",
         ability: "There might be 1 extra or 1 fewer Outsider in play.",
         count: 1,
+        category: "other",
     },
     spiritofivory: {
         id: "spiritofivory",
@@ -2303,6 +2452,7 @@ const originalRoles: Roles = {
         team: "fabled",
         ability: "There can't be more than 1 extra evil player.",
         count: 1,
+        category: "other",
     },
     djinn: {
         id: "djinn",
@@ -2315,6 +2465,7 @@ const originalRoles: Roles = {
         team: "fabled",
         ability: "Use the Djinn's special rule. All players know what it is.",
         count: 1,
+        category: "other",
     },
     stormcatcher: {
         id: "stormcatcher",
@@ -2329,6 +2480,7 @@ const originalRoles: Roles = {
         ability:
             "Name a good character. If in play, they can only die by execution, but evil players learn which player it is.",
         count: 1,
+        category: "other",
     },
     plusone: {
         id: "plusone",
@@ -2341,6 +2493,7 @@ const originalRoles: Roles = {
         ability:
             "One role from off the script will be in play, it can be either a player or a demon bluff.",
         count: 1,
+        category: "other",
     },
     iamspartacusfallofrome: {
         id: "iamspartacusfallofrome",
@@ -2351,6 +2504,7 @@ const originalRoles: Roles = {
         ability:
             "Each day, up to half the living players (rounded up & Travellers don’t count) may publicly claim to be Spartacus.",
         count: 1,
+        category: "during-day",
     },
     banshee: {
         id: "banshee",
@@ -2365,6 +2519,7 @@ const originalRoles: Roles = {
         ability:
             "If the Demon kills you, all players learn this. From now on, you may nominate twice per day and vote twice per nomination.",
         count: 1,
+        category: "other",
     },
     villageidiot: {
         id: "villageidiot",
@@ -2381,6 +2536,7 @@ const originalRoles: Roles = {
         ability:
             "Each night, choose a player: you learn their alignment. [+0 to +2 Village Idiots. 1 of the extras is drunk]",
         count: 1,
+        category: "every-night",
     },
     hatter: {
         id: "hatter",
@@ -2396,6 +2552,7 @@ const originalRoles: Roles = {
         ability:
             "If you died today or tonight, the Minion & Demon players may choose new Minion & Demon characters to be.",
         count: 1,
+        category: "other",
     },
     summoner: {
         id: "summoner",
@@ -2416,6 +2573,7 @@ const originalRoles: Roles = {
         ability:
             "You get 3 bluffs. On the 3rd night, choose a player: they become an evil Demon of your choice. [No Demon]",
         count: 1,
+        category: "other",
     },
     yaggababble: {
         id: "yaggababble",
@@ -2431,6 +2589,7 @@ const originalRoles: Roles = {
         ability:
             "You start knowing a secret phrase. For each time you said it publicly today, a player might die.",
         count: 1,
+        category: "first-night",
     },
     kazali: {
         id: "kazali",
@@ -2446,6 +2605,7 @@ const originalRoles: Roles = {
         ability:
             "Each night*, choose a player: they die. [You choose which players are Minions. -? to +? Outsiders]",
         count: 1,
+        category: "every-night-star",
     },
     ogre: {
         id: "ogre",
@@ -2461,6 +2621,7 @@ const originalRoles: Roles = {
         ability:
             "On your 1st night, choose a player (not yourself): you become their alignment (you don't know which) even if drunk or poisoned.",
         count: 1,
+        category: "first-night",
     },
     squid: {
         id: "squid",
@@ -2474,6 +2635,7 @@ const originalRoles: Roles = {
         setup: false,
         ability: "You can vote with as many limbs as you can raise.",
         count: 1,
+        category: "other",
     },
     alsaahir: {
         id: "alsaahir",
@@ -2488,6 +2650,7 @@ const originalRoles: Roles = {
         ability:
             "Once per day, if you publicly guess which players are Minion(s) and which are Demon(s), good wins.",
         count: 1,
+        category: "during-day",
     },
     fly: {
         id: "fly",
@@ -2502,6 +2665,7 @@ const originalRoles: Roles = {
         ability:
             "You secretly join the game. All players learn this when you first vote or nominate.",
         count: 1,
+        category: "other",
     },
 };
 

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ScriptColourOptions } from "./universal-json-validator";
+import { CategoryType, ScriptColourOptions } from "./universal-json-validator";
 
 const meta = z.object({
     id: z.literal("_meta"),
@@ -129,6 +129,7 @@ const customCharacter = z.object({
             }),
         )
         .optional(),
+    category: CategoryType.optional(),
 });
 
 export type customCharacterType = z.infer<typeof customCharacter>;

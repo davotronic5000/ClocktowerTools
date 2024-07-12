@@ -1,7 +1,9 @@
-var roleData = require("./roles.ts");
-var fs = require("fs");
+import {
+    CategoryTypeType,
+    RoleType,
+} from "@/components/json-upload/universal-json-validator";
 
-const getCategoryFromAbilityText = (ability) => {
+const getCategoryFromAbilityText = (ability: string): CategoryTypeType => {
     const abilityLower = ability.toLowerCase();
     if (
         abilityLower.includes("start knowing") ||
@@ -22,13 +24,16 @@ const getCategoryFromAbilityText = (ability) => {
     ) {
         return "during-day";
     }
-    if (abilityLower.includes("once per game")) {
+    if (
+        abilityLower.includes("once per game") ||
+        abilityLower.includes("1st day")
+    ) {
         return "once-per-game";
     }
     return "other";
 };
 
-const getCategory = (role) => {
+const getCategory = (role: RoleType): CategoryTypeType => {
     if (role.category) {
         return role.category;
     }
@@ -38,22 +43,4 @@ const getCategory = (role) => {
     return "other";
 };
 
-const processor = (roles) => {
-    return Object.keys(roles).reduce((acc, curr) => {
-        return {
-            ...acc,
-            [curr]: {
-                ...roles[curr],
-                category: getCategory(roles[curr]),
-            },
-        };
-    }, {});
-};
-
-fs.writeFile(
-    "src/data/roles-new.json",
-    JSON.stringify(processor(roleData)),
-    (err) => {
-        console.log(err);
-    },
-);
+export default getCategory;
