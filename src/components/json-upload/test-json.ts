@@ -6,6 +6,9 @@ const testJSON: ScriptJSONSchemaType = {
         colour: "#FFA500",
         colourBlendType: "difference",
     },
+    scriptLayoutOptions: {
+        spaceEfficientSorting: false,
+    },
     tokenConfig: {
         page: {
             height: 1123,

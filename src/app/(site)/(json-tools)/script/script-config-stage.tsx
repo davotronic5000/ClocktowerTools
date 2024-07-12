@@ -27,6 +27,7 @@ export const scriptFormSchema = z.object({
     secondaryColour: hexCode.optional(),
     useGradient: z.boolean(),
     blendMode: ColourBlendType,
+    spaceEfficientLayout: z.boolean().default(false),
 });
 
 const colourBlendOptions = [
@@ -73,6 +74,8 @@ const ScriptConfigStage = () => {
             author: json?.author,
             colour: json?.scriptColourOptions.colour,
             blendMode: json?.scriptColourOptions.colourBlendType,
+            spaceEfficientLayout:
+                json?.scriptLayoutOptions.spaceEfficientSorting || false,
         },
     });
 
@@ -187,6 +190,22 @@ const ScriptConfigStage = () => {
                             onSelectionChange={onChange}
                             options={colourBlendOptions}
                             label="Blend Mode"
+                        />
+                    )}
+                />
+                <Controller
+                    control={control}
+                    name="spaceEfficientLayout"
+                    render={({
+                        field: { name, value, onChange },
+                        fieldState: { error },
+                    }) => (
+                        <Switch
+                            name={name}
+                            label="Space Efficient Layout"
+                            onChange={onChange}
+                            isSelected={value}
+                            errorMessage={error?.message}
                         />
                     )}
                 />

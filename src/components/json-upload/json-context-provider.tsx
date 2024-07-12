@@ -38,6 +38,15 @@ const JSONContextProvider = ({ children }: JSONContextProviderProps) => {
                         if (action.payload.blendMode)
                             draft["json"].scriptColourOptions.colourBlendType =
                                 action.payload.blendMode;
+                        if (
+                            typeof action.payload.spaceEfficientLayout !==
+                            "undefined"
+                        ) {
+                            draft[
+                                "json"
+                            ].scriptLayoutOptions.spaceEfficientSorting =
+                                action.payload.spaceEfficientLayout;
+                        }
                         draft["json"].author = action.payload.author;
                         draft["json"].scriptColourOptions.secondaryColour =
                             action.payload.secondaryColour;
