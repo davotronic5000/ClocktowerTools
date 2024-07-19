@@ -2623,6 +2623,22 @@ const originalRoles: Roles = {
         count: 1,
         category: "first-night",
     },
+    zealot: {
+        id: "zealot",
+        name: "Zealot",
+        team: "outsider",
+        firstNight: 0,
+        firstNightReminder:
+            "",
+        otherNight: 0,
+        otherNightReminder: "",
+        reminders: [],
+        setup: false,
+        ability:
+            "If 5 or more players are alive, then you must vote for every nomination",
+        count: 1,
+        category: "other",
+    },
     squid: {
         id: "squid",
         name: "Squid",
