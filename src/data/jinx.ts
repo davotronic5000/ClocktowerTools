@@ -447,6 +447,11 @@ const jinxes: Jinxes = {
                 reason: "The Summoner cannot create an in-play Demon. If the Summoner creates a not-in-play Demon, deaths tonight are arbitrary.",
                 updates: [],
             },
+            {
+                id: "lordoftyphon",
+                reason: "If the Summoner creates a Lord Of Typhon, the Lord Of Typhon must neighbor a Minion. The other neighbor becomes a not-in-play evil Minion.",
+                updates: [{ date: "2024-09-03", reason: "Added jinx." }],
+            },
         ],
     },
     baron: {
@@ -484,8 +489,13 @@ const jinxes: Jinxes = {
             },
             {
                 id: "balloonist",
-                reason: "If the Marionette thinks that they are the Balloonist, +1 Outsider was added.",
-                updates: [],
+                reason: "If the Marionette thinks that they are the Balloonist, +1 Outsider might have been added.",
+                updates: [
+                    {
+                        date: "2024-09-03",
+                        reason: "Updated for new Balloonist ability.",
+                    },
+                ],
             },
             {
                 id: "damsel",
