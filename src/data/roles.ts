@@ -1827,9 +1827,10 @@ const originalRoles: Roles = {
         id: "highpriestess",
         name: "High Priestess",
         team: "townsfolk",
-        firstNight: 50,
+        firstNight: 49.2,
         firstNightReminder:
             "Each night, wake the High Priestess. Point to a player. Put the High Priestess to sleep.",
+        otherNight: 68.1,
         otherNightReminder:
             "Each night, wake the High Priestess. Point to a player. Put the High Priestess to sleep.",
         reminders: [{ text: "Friend", count: 1 }],
@@ -2628,8 +2629,7 @@ const originalRoles: Roles = {
         name: "Zealot",
         team: "outsider",
         firstNight: 0,
-        firstNightReminder:
-            "",
+        firstNightReminder: "",
         otherNight: 0,
         otherNightReminder: "",
         reminders: [],
@@ -2682,6 +2682,23 @@ const originalRoles: Roles = {
             "You secretly join the game. All players learn this when you first vote or nominate.",
         count: 1,
         category: "other",
+    },
+    lordoftyphon: {
+        id: "lordoftyphon",
+        firstNight: 0.1,
+        firstNightReminder:
+            "Wake the players on either side of the Demon. Show them the 'You Are' card, the token of the Minion they now are, and a thumbs down to indicate they are evil.",
+        otherNight: 31.1,
+        otherNightReminder:
+            "The Lord of Typhon points to a player. That player dies.",
+        reminders: [{ text: "Dead", count: 1 }],
+        name: "Lord of Typhon",
+        team: "demon",
+        count: 1,
+        setup: true,
+        category: "every-night-star",
+        ability:
+            "Each night*, choose a player: they die. [Evil characters are in a line. You are in the middle. +1 Minion. -? To +? Outsiders]",
     },
 };
 
