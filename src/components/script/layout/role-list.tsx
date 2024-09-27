@@ -10,6 +10,7 @@ import { Fragment } from "react";
 
 interface RoleListProps {
     roles: RoleType[];
+    allRoles: RoleType[];
     spaceEfficientLayout: boolean;
 }
 
@@ -32,7 +33,7 @@ const sortRolesEfficiently = (roles: RoleType[]) => {
     return sortedRoles;
 };
 
-const RoleList = ({ roles, spaceEfficientLayout }: RoleListProps) => {
+const RoleList = ({ roles, allRoles, spaceEfficientLayout }: RoleListProps) => {
     const sortedRoles = spaceEfficientLayout
         ? sortRolesEfficiently(roles)
         : roles;
@@ -63,9 +64,11 @@ const RoleList = ({ roles, spaceEfficientLayout }: RoleListProps) => {
                             </div>
                             <div className="flex">
                                 {jinxes[role.id]?.jinx
-                                    .filter((jinx) =>
-                                        roles.some((e) => e.id === jinx.id),
-                                    )
+                                    .filter((jinx) => {
+                                        return allRoles.some((e) => {
+                                            return e.id === jinx.id;
+                                        });
+                                    })
                                     .slice(0, 8)
                                     .map((jinx) => (
                                         <Image
@@ -86,7 +89,11 @@ const RoleList = ({ roles, spaceEfficientLayout }: RoleListProps) => {
                                     ))}
                             </div>
                             <div className="font-semibold leading-tight ">
-                                {jinxes[role.id]?.jinx.length >= 8
+                                {jinxes[role.id]?.jinx.filter((jinx) => {
+                                    return allRoles.some((e) => {
+                                        return e.id === jinx.id;
+                                    });
+                                }).length >= 8
                                     ? "..."
                                     : null}
                             </div>
