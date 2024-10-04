@@ -37,7 +37,7 @@ const PlayerPage = ({
                             {roleType}
                         </div>
                         <div
-                            className="col-start-2 grid grid-cols-2 gap-y-1 border-b border-stone-700 py-2 last:border-b-0"
+                            className="col-start-2 grid grid-cols-2 gap-y-1 border-b border-stone-700 py-1.5 last:border-b-0"
                             style={{
                                 gridTemplateRows: `repeat(${
                                     roles.filter(
@@ -50,6 +50,7 @@ const PlayerPage = ({
                                 roles={roles.filter(
                                     ({ team }) => team === roleType,
                                 )}
+                                allRoles={roles}
                                 spaceEfficientLayout={
                                     layoutOptions.spaceEfficientLayout
                                 }

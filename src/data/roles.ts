@@ -2588,7 +2588,7 @@ const originalRoles: Roles = {
         otherNight: 35.1,
         otherNightReminder:
             "Choose a number of players up to the total number of times the Yaggababble said their secret phrase publicly, those players die.",
-        reminders: [{ text: "Dead", count: 1 }],
+        reminders: [{ text: "Dead", count: 3 }],
         setup: false,
         ability:
             "You start knowing a secret phrase. For each time you said it publicly today, a player might die.",
@@ -2702,6 +2702,23 @@ const originalRoles: Roles = {
         category: "every-night-star",
         ability:
             "Each night*, choose a player: they die. [Evil characters are in a line. You are in the middle. +1 Minion. -? To +? Outsiders]",
+    },
+    boffin: {
+        id: "boffin",
+        firstNight: 0.3,
+        firstNightReminder:
+            "Wake the Boffin and how them the token of the ability the Demon has. Put the Boffin back to sleep. Wake the Demon, show the Boffin token, then show the token of the good ability the Demon has.",
+        otherNight: 0,
+        otherNightReminder:
+           "",
+        reminders: [],
+        name: "Boffin",
+        team: "minion",
+        count: 1,
+        setup: false,
+        category: "other",
+        ability:
+            "The Demon (even if drunk or poisoned) has a not-in-play good character’s ability. You both know which.",
     },
 };
 

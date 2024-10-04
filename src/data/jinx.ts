@@ -848,6 +848,51 @@ const jinxes: Jinxes = {
             },
         ],
     },
+    boffin: {
+        id: "boffin",
+        jinx: [
+            {
+                id: "heretic",
+                reason: 	"The Demon cannot have the Heretic ability.",
+                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+            },
+            {
+                id: "cultleader",
+                reason: 	"If the Demon has the Cult Leader ability, they can’t turn good due to this ability.",
+                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+            },
+            {
+                id: "goon",
+                reason: "If the Demon has the Goon ability, they can’t turn good due to this ability.",
+                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+            },
+            {
+                id: "ogre",
+                reason: "The Demon cannot have the Ogre ability.",
+                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+            },
+            {
+                id: "politician",
+                reason: "The Demon cannot have the Politician ability.",
+                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+            },
+            {
+                id: "drunk",
+                reason: "If the Demon would have the Drunk ability, the Boffin chooses a Townsfolk player to have this ability instead.",
+                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+            },
+            {
+                id: "alchemist",
+                reason: "If the Alchemist has the Boffin ability, the Alchemist does not learn what ability the Demon has.",
+                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+            },
+            {
+                id: "villageidiot",
+                reason: 	"If there is a spare token, the Boffin can give the Demon the Village Idiot ability.",
+                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+            }
+        ]
+    }
 };
 
 export default jinxes;
