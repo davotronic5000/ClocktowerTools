@@ -554,11 +554,15 @@ const jinxes: Jinxes = {
         jinx: [
             {
                 id: "soldier",
-                reason: "If the Kazali turns the Soldier into a Minion, the Soldier chooses which not-in-play Minion to become.",
+                reason: "The Kazali can choose that the Soldier player is one of their evil Minions",
                 updates: [
                     {
                         date: "2024-06-28",
                         reason: "New jinx.",
+                    },
+                    {
+                        date: "2024-10-04",
+                        reason: "Updated jinx to remove Soldier being able to choose Minion type.",
                     },
                 ],
             },
@@ -756,26 +760,6 @@ const jinxes: Jinxes = {
                 id: "butler",
                 reason: "If the Organ Grinder is causing eyes closed voting, the Butler may raise their hand to vote but their vote is only counted if their master voted too.",
                 updates: [],
-            },
-            {
-                id: "minstrel",
-                reason: "If the Minstrel makes everyone drunk, the Organ Grinder keeps their ability but the Minstrel keeps their eyes open when voting.",
-                updates: [
-                    {
-                        date: "2024-06-28",
-                        reason: "Remove hatred and give minstrel an ability.",
-                    },
-                ],
-            },
-            {
-                id: "preacher",
-                reason: "If the Preacher removes the Organ Grinder ability, the Organ Grinder keeps their ability but the Preacher keeps their eyes open when voting.",
-                updates: [
-                    {
-                        date: "2024-06-28",
-                        reason: "Remove hatred and give preacher an ability.",
-                    },
-                ],
             },
         ],
     },
