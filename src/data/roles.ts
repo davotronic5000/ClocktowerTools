@@ -1594,11 +1594,11 @@ const originalRoles: Roles = {
         firstNightReminder: "",
         otherNight: 23,
         otherNightReminder:
-            "The Lycanthrope points to a living player: if good, they die and no one else can die tonight.",
+            "The Lycanthrope points to a living player: if good, they die and the demon doesn't kill tonight.",
         reminders: [{ text: "Dead", count: 1 }],
         setup: false,
         ability:
-            "Each night*, choose a living player: if good, they die, but they are the only player that can die tonight.",
+            "Each night*, choose an alive player. If good, they die & the Demon doesn't kill tonight. One good player registers as evil.",
         count: 1,
         category: "every-night-star",
     },
@@ -1882,7 +1882,7 @@ const originalRoles: Roles = {
         reminders: [{ text: "Dead", count: 1 }],
         setup: false,
         ability:
-            "Each night*, choose a player: if they are drunk or poisoned, you die.",
+            "Each night*, choose a player: if they are or become drunk or poisoned tonight, you die.",
         count: 1,
         category: "every-night-star",
     },
@@ -2107,7 +2107,7 @@ const originalRoles: Roles = {
         reminders: [],
         setup: false,
         ability:
-            "If you are executed, all but 3 players die. 1 minute later, the player with the most players pointing at them dies.",
+            "If you are executed, all but 3 players die. After a 10 to 1 countdown, the player with the most players pointing at them, dies.",
         count: 1,
         category: "other",
     },
@@ -2709,8 +2709,7 @@ const originalRoles: Roles = {
         firstNightReminder:
             "Wake the Boffin and how them the token of the ability the Demon has. Put the Boffin back to sleep. Wake the Demon, show the Boffin token, then show the token of the good ability the Demon has.",
         otherNight: 0,
-        otherNightReminder:
-           "",
+        otherNightReminder: "",
         reminders: [],
         name: "Boffin",
         team: "minion",
