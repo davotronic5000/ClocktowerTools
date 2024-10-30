@@ -32,7 +32,9 @@ const Select = <T extends object>({
                     selectionMode="single"
                     className="text-sm"
                 >
-                    {(item) => <ListBoxItem>{item.name}</ListBoxItem>}
+                    {(item) => (
+                        <ListBoxItem className="px-4">{item.name}</ListBoxItem>
+                    )}
                 </ListBox>
             </Popover>
         </BaseSelect>
