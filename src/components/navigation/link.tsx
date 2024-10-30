@@ -1,3 +1,4 @@
+"use client";
 import { Route } from "next";
 import {
     Link as LinkAria,

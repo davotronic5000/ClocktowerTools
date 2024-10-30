@@ -11,6 +11,7 @@ const NavBar = ({ className }: NavBarProps) => {
         >
             <NavBarLink path="/script">Script Tool</NavBarLink>
             <NavBarLink path="/token">Token Generator</NavBarLink>
+            <NavBarLink path="/roles">Role Info</NavBarLink>
             <NavBarLink path="/jinx">Jinx List</NavBarLink>
         </nav>
     );
