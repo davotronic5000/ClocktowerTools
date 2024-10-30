@@ -22,17 +22,23 @@ const Select = <T extends object>({
     return (
         <BaseSelect className="flex flex-col text-sm" {...rest}>
             <FieldLabel>{label}</FieldLabel>
-            <Button className="flex justify-between border border-gray-600 bg-gray-900 px-2 py-1 invalid:border-red-500">
+            <Button className="flex items-center justify-between border border-gray-600 bg-gray-900 px-2 py-1 outline-none invalid:border-red-500 focus:border-gray-400">
                 <SelectValue />
-                <span aria-hidden="true">▼</span>
+                <span aria-hidden="true" className="text-xs">
+                    ▼
+                </span>
             </Button>
             <Popover placement="bottom" size="sm">
                 <ListBox
                     items={options}
                     selectionMode="single"
-                    className="text-sm"
+                    className="text-sm outline-none"
                 >
-                    {(item) => <ListBoxItem>{item.name}</ListBoxItem>}
+                    {(item) => (
+                        <ListBoxItem className="px-4 outline-none focus:bg-slate-400 focus:text-indigo-950">
+                            {item.name}
+                        </ListBoxItem>
+                    )}
                 </ListBox>
             </Popover>
         </BaseSelect>

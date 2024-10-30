@@ -28,7 +28,7 @@ const TextField = ({
             <FieldLabel>{label}</FieldLabel>
             <Input
                 ref={inputRef}
-                className="border border-gray-600 bg-gray-900 px-2 py-1 invalid:border-red-500"
+                className="border border-gray-600 bg-gray-900 px-2 py-1 outline-none invalid:border-red-500 focus:border-gray-400"
             />
             <FieldError>{errorMessage}</FieldError>
         </BaseTextField>
