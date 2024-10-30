@@ -27,7 +27,7 @@ const Page = () => {
             <div
                 className={`grid h-full w-full grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))] gap-2 p-2 sm:gap-4 sm:p-4`}
             >
-                <div className="p2 rounded bg-indigo-950">Hello</div>
+                {/* <div className="p2 rounded bg-indigo-950">Hello</div> */}
                 {sortedJinxes.map((key) => {
                     const role = roles[key];
                     const jinxList = jinxes[key].jinx;
