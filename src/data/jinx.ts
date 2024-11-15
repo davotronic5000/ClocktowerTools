@@ -108,55 +108,60 @@ const jinxes: Jinxes = {
         id: "leviathan",
         jinx: [
             {
-                id: "soldier",
-                reason: "If Leviathan nominates and executes the Soldier, the Soldier does not die.",
-                updates: [],
-            },
-            {
-                id: "monk",
-                reason: "If Leviathan nominates and executes the player the Monk chose, that player does not die.",
-                updates: [],
-            },
-            {
-                id: "innkeeper",
-                reason: "If Leviathan nominates and executes a player the Innkeeper chose, that player does not die.",
-                updates: [],
-            },
-            {
-                id: "ravenkeeper",
-                reason: "If Leviathan is in play & the Ravenkeeper dies by execution, they wake that night to use their ability. They are drunk if their nominator was good.",
-                updates: [],
-            },
-            {
                 id: "banshee",
-                reason: "If Leviathan is in play, and the Banshee dies by execution, all players learn that the Banshee has died, and the Banshee gains their ability.",
-                updates: [],
+                reason: "Each night, the Leviathan chooses a living player (different to previous nights): a chosen Banshee dies & gains their ability",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
             },
             {
-                id: "sage",
-                reason: "If Leviathan is in play & the Sage dies by execution, they wake that night to use their ability. They are drunk if their nominator was good.",
-                updates: [],
+                id: "exorcist",
+                reason: "Evil does not win when more than 1 good player is executed, if the Exorcist is alive and has ever successfully chosen the Leviathan.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
             },
             {
                 id: "farmer",
-                reason: "If Leviathan is in play & a Farmer dies by execution, a good player becomes a Farmer that night.",
-                updates: [],
+                reason: "Each night, the Leviathan chooses a living player (different to previous nights): a chosen Farmer uses their ability but does not die.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+            },
+            {
+                id: "grandmother",
+                reason: "If the Grandchild dies by execution, evil wins.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+            },
+            {
+                id: "innkeeper",
+                reason: "If the Leviathan is in play, the Innkeeper-protected-players are safe from all evil abilities.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+            },
+            {
+                id: "king",
+                reason: "If the Leviathan is in play, and at least 1 player is dead, the King learns an alive character each night.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
             },
             {
                 id: "mayor",
-                reason: "If Leviathan is in play & no execution occurs on day 5, good wins.",
-                updates: [],
+                reason: "If the Leviathan is in play & no execution occurs on day 5, good wins",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
             },
             {
-                id: "hatter",
-                reason: "If the Hatter dies on or after day 5, the Demon cannot choose Leviathan.",
-                updates: [],
+                id: "monk",
+                reason: "If the Leviathan is in play, the Monk-protected-player is safe from all evil abilities.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
             },
             {
-                id: "pithag",
-                reason: "After day 5, the Pit-Hag cannot choose Leviathan.",
-                updates: [],
+                id: "ravenkeeper",
+                reason: "Each night, the Leviathan chooses a living player (different to previous nights): a chosen Ravenkeeper uses their ability but does not die.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
             },
+            {
+                id: "sage",
+                reason: "Each night, the Leviathan chooses a living player (different to previous nights): a chosen Sage uses their ability but does not die.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+            },
+            {
+                id: "soldier",
+                reason: "If the Leviathan is in play, the soldier is safe from all evil abilities.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+            }
         ],
     },
     lilmonsta: {
@@ -433,11 +438,6 @@ const jinxes: Jinxes = {
                 updates: [],
             },
             {
-                id: "riot",
-                reason: "If the Summoner creates Riot, all Minions also become Riot.",
-                updates: [],
-            },
-            {
                 id: "legion",
                 reason: "If the Summoner creates Legion, most players (including all evil players) become evil Legion.",
                 updates: [],
@@ -597,150 +597,55 @@ const jinxes: Jinxes = {
         id: "riot",
         jinx: [
             {
-                id: "engineer",
-                reason: "Riot and the Engineer can not both be in play at the start of the game. \nIf the Engineer creates Riot, the evil players become Riot.",
-                updates: [],
-            },
-            {
-                id: "golem",
-                reason: "If The Golem nominates Riot, the Riot player does not die.",
-                updates: [],
-            },
-            {
-                id: "snitch",
-                reason: "If the Snitch is in play, each Riot player gets an extra 3 bluffs.",
-                updates: [],
-            },
-            {
-                id: "saint",
-                reason: "If a good player nominates and kills the Saint, the Saint's team loses.",
-                updates: [],
-            },
-            {
-                id: "butler",
-                reason: "The Butler can not nominate their master.",
-                updates: [],
-            },
-            {
-                id: "pithag",
-                reason: "If the Pit-Hag creates Riot, all evil players become Riot. \nIf the Pit-Hag creates Riot after day 3, the game continues for one more day.",
-                updates: [],
-            },
-            {
-                id: "mayor",
-                reason: "If the 3rd day begins with just three players alive, the players may choose (as a group) not to nominate at all. If so (and a Mayor is alive) then the Mayor's team wins.",
-                updates: [],
-            },
-            {
-                id: "monk",
-                reason: "If a Riot player nominates and kills the Monk-protected-player, the Monk-protected-player does not die.",
-                updates: [],
-            },
-            {
-                id: "farmer",
-                reason: "If a Riot player nominates and kills a Farmer, the Farmer uses their ability tonight.",
-                updates: [],
-            },
-            {
-                id: "innkeeper",
-                reason: "If a Riot player nominates an Innkeeper-protected-player, the Innkeeper-protected-player does not die.",
-                updates: [],
-            },
-            {
-                id: "sage",
-                reason: "If a Riot player nominates and kills a Sage, the Sage uses their ability tonight.",
-                updates: [],
-            },
-            {
                 id: "banshee",
-                reason: "If Riot nominates and kills the Banshee, all players learn that the Banshee has died, and the Banshee may nominate two players immediately.",
-                updates: [],
-            },
-            {
-                id: "ravenkeeper",
-                reason: "If a Riot player nominates and kills the Ravenkeeper, the Ravenkeeper uses their ability tonight.",
-                updates: [],
-            },
-            {
-                id: "soldier",
-                reason: "If a Riot player nominates the Soldier, the Soldier does not die.",
-                updates: [],
-            },
-            {
-                id: "grandmother",
-                reason: "If a Riot player nominates and kills the Grandchild, the Grandmother dies too.",
-                updates: [],
-            },
-            {
-                id: "king",
-                reason: "If a Riot player nominates and kills the King and the Choirboy is alive, the Choirboy uses their ability tonight.",
-                updates: [],
+                reason: "Each night, Riot chooses a living player (different to previous nights): a chosen Banshee dies & gains their ability",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
             },
             {
                 id: "exorcist",
-                reason: "Only 1 jinxed character can be in play.",
-                updates: [],
+                reason: "If the Exorcist chooses Riot on the 3rd night, Minions do not become Riot",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
             },
             {
-                id: "minstrel",
-                reason: "Only 1 jinxed character can be in play.",
-                updates: [],
+                id: "farmer",
+                reason: "Each night, Riot chooses a living player (different to previous nights): a chosen Farmer uses therir ability but does not die.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
             },
             {
-                id: "flowergirl",
-                reason: "Only 1 jinxed character can be in play.",
-                updates: [],
+                id: "grandmother",
+                reason: "If the Grandchild dies during the day, the Grandmother dies too.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
             },
             {
-                id: "undertaker",
-                reason: "Players that die by nomination register as being executed to the Undertaker.",
-                updates: [],
+                id: "king",
+                reason: "If Riot is in play, and at least 1 player is dead, the king learns an alive character each night.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
             },
             {
-                id: "cannibal",
-                reason: "Players that die by nomination register as being executed to the Cannibal.",
-                updates: [],
+                id: "mayor",
+                reason: "The Mayor may choose to stop nominations. If they do so when only 1 Riot is alive, good wins. Otherwise, evil wins.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
             },
             {
-                id: "pacifist",
-                reason: "Players that die by nomination register as being executed to the Pacifist.",
-                updates: [],
+                id: "monk",
+                reason: "If Riot is in play, the monk protected player is safe from all evil abilities.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
-                id: "devilsadvocate",
-                reason: "Players that die by nomination register as being executed to the Devil's Advocate.",
-                updates: [],
+                id: "ravenkeeper",
+                reason: "Each night, Riot chooses a living player (different to previous nights): a chosen Ravenkeeper uses their ability but does not die.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]                 
             },
             {
-                id: "investigator",
-                reason: "Riot registers as a Minion to the Investigator.",
-                updates: [],
+                id: "sage",
+                reason: "Each night, Riot chooses a living player (different to previous nights): a chosen Sage uses their ability but does not die.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
             },
             {
-                id: "clockmaker",
-                reason: "Riot registers as a Minion to the Clockmaker.",
-                updates: [],
-            },
-            {
-                id: "towncrier",
-                reason: "Riot registers as a Minion to the Town Crier.",
-                updates: [],
-            },
-            {
-                id: "damsel",
-                reason: "Riot registers as a Minion to the Damsel.",
-                updates: [],
-            },
-            {
-                id: "preacher",
-                reason: "Riot registers as a Minion to the Preacher.",
-                updates: [],
-            },
-            {
-                id: "hatter",
-                reason: "If the Hatter dies, Riot is in play and a Riot chooses a different Demon, a normal evil team is created from the Riot players. If the Hatter dies and the Demon chooses Riot, Minions become Riot too.",
-                updates: [],
-            },
+                id: "soldier",
+                reason: "If Riot is in play, the soldier is safe from all evil abilities.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+            }
         ],
     },
     alhadikhia: {
@@ -817,6 +722,11 @@ const jinxes: Jinxes = {
         id: "cannibal",
         jinx: [
             {
+                id: "poppygrower",
+                reason: "If the Cannibal eats the Poppy Grower, then dies or loses the Poppy Grower ability, the Demon and Minions learn each other that night.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
+            },
+            {
                 id: "butler",
                 reason: "If the Cannibal gains the Butler ability, the Cannibal learns this.",
                 updates: [],
@@ -890,6 +800,16 @@ const jinxes: Jinxes = {
                 id: "villageidiot",
                 reason: 	"If there is a spare token, the Boffin can give the Demon the Village Idiot ability.",
                 updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+            }
+        ]
+    },
+    psychopath: {
+        id: "psychopath",
+        jinx: [
+            {
+                id: "golem",
+                reason: "If the Psychopath is mad as the Golem, the Psychopath has the Golem ability instead.",
+                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
             }
         ]
     }
