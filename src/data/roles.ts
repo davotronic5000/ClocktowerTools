@@ -1542,7 +1542,7 @@ const originalRoles: Roles = {
         reminders: [],
         setup: false,
         ability:
-            "Each night, if the dead equal or outnumber the living, you learn 1 alive character. The Demon knows who you are.",
+            "Each night, if the dead equal or outnumber the living, you learn 1 alive character. The Demon knows you are the King",
         count: 1,
         category: "every-night",
     },
@@ -1595,7 +1595,7 @@ const originalRoles: Roles = {
         otherNight: 23,
         otherNightReminder:
             "The Lycanthrope points to a living player: if good, they die and the demon doesn't kill tonight.",
-        reminders: [{ text: "Dead", count: 1 }],
+        reminders: [{ text: "Dead", count: 1 }, { text: "Faux Paw", count: 1}],
         setup: false,
         ability:
             "Each night*, choose an alive player. If good, they die & the Demon doesn't kill tonight. One good player registers as evil.",
@@ -1632,7 +1632,7 @@ const originalRoles: Roles = {
         reminders: [{ text: "No ability", count: 1 }],
         setup: false,
         ability:
-            "Once per game, at night, choose a player: they learn who you are.",
+            "Once per game, at night, choose a player: they learn you are the Nightwatchman.",
         count: 1,
         category: "once-per-game",
     },
@@ -1710,7 +1710,7 @@ const originalRoles: Roles = {
             "If a Farmer died tonight, choose another good player and make them the Farmer. Wake this player, show them the 'You are' card and the Farmer character token.",
         reminders: [],
         setup: false,
-        ability: "If you die at night, an alive good player becomes a Farmer.",
+        ability: "When you die at night, an alive good player becomes a Farmer.",
         count: 4,
         category: "other",
     },
@@ -1787,7 +1787,7 @@ const originalRoles: Roles = {
         otherNightReminder: "",
         reminders: [
             { text: "Poisoned", count: 1 },
-            { text: "Died today", count: 1 },
+            { text: "Lunch", count: 1 },
         ],
         setup: false,
         ability:
@@ -1866,7 +1866,7 @@ const originalRoles: Roles = {
         otherNightReminder: "",
         reminders: [],
         setup: false,
-        ability: "Minions start knowing 3 not-in-play characters.",
+        ability: "Each Minion gets 3 bluffs",
         count: 1,
         category: "first-night",
     },
@@ -1932,7 +1932,7 @@ const originalRoles: Roles = {
         reminders: [{ text: "Guess used", count: 1 }],
         setup: false,
         ability:
-            "All Minions know you are in play. If a Minion publicly guesses you (once), your team loses.",
+            "All Minions know a Damsel is in play. If a Minion publicly guesses you (once), your team loses.",
         count: 1,
         category: "other",
     },
@@ -1972,7 +1972,7 @@ const originalRoles: Roles = {
         team: "outsider",
         reminders: [{ text: "Storyteller Ability", count: 1 }],
         setup: false,
-        ability: "If you die, the Storyteller gains a Minion ability.",
+        ability: "When you die, the Storyteller gains a Minion ability.",
         count: 1,
         category: "other",
     },
@@ -2140,7 +2140,7 @@ const originalRoles: Roles = {
         reminders: [],
         setup: false,
         ability:
-            "All players know who you are. You can not die during the day. If good voted, you may choose to execute immediately.",
+            "All players know you are the Vizier. You can not die during the day. If good voted, you may choose to execute immediately.",
         count: 1,
         category: "other",
     },
@@ -2274,7 +2274,7 @@ const originalRoles: Roles = {
         reminders: [],
         setup: true,
         ability:
-            "Nominees die, but may nominate again immediately (on day 3, they must). After day 3, evil wins. [All Minions are Riot]",
+            "On day 3, Minions become Riot and nomineesdie but nominate an alive player immediately. This must happen.",
         count: 4,
         category: "other",
     },
@@ -2667,7 +2667,7 @@ const originalRoles: Roles = {
         reminders: [],
         setup: false,
         ability:
-            "Once per day, if you publicly guess which players are Minion(s) and which are Demon(s), good wins.",
+            "Each day, if you publicly guess which players are Minion(s) and which are Demon(s), good wins.",
         count: 1,
         category: "during-day",
     },
@@ -2719,6 +2719,16 @@ const originalRoles: Roles = {
         ability:
             "The Demon (even if drunk or poisoned) has a not-in-play good character’s ability. You both know which.",
     },
+    gnome: {
+        id: "gnome",
+        reminders: [{text: "Amigo", count: 1}],
+        name: "Gnome",
+        team: "traveler",
+        ability: "All players start knowing a player of your alignment. You may choose to kill anyone who nominates them.",
+        category: "other",
+        count: 1,
+        setup: false
+    }
 };
 
 export default originalRoles;
