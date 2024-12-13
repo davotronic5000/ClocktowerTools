@@ -71,10 +71,11 @@ const generateTokenSizes = (
         imageSize:
             tokenSizeConfig.tokenSize -
             tokenSizeConfig.tokenMargin * 2 -
-            tokenSizeConfig.tokenImageBMargin,
+            tokenSizeConfig.tokenImageBMargin * 2,
         imageMarginX:
-            tokenSizeConfig.tokenMargin + tokenSizeConfig.tokenImageBMargin / 2,
-        imageMarginY: tokenSizeConfig.tokenMargin,
+            tokenSizeConfig.tokenMargin + tokenSizeConfig.tokenImageBMargin,
+        imageMarginY:
+            tokenSizeConfig.tokenMargin + tokenSizeConfig.tokenImageBMargin,
     };
 };
 

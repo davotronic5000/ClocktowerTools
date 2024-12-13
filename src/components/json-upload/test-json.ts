@@ -19,7 +19,7 @@ const testJSON: ScriptJSONSchemaType = {
             role: {
                 tokenSize: 170,
                 tokenMargin: 4,
-                tokenImageBMargin: 0,
+                tokenImageBMargin: 12,
             },
             reminder: {
                 tokenSize: 94.5,

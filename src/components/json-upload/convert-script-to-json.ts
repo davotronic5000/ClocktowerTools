@@ -47,7 +47,7 @@ const convertScriptToJSON = async (scriptFile: File) => {
                     role: {
                         tokenSize: 170,
                         tokenMargin: 4,
-                        tokenImageBMargin: 0,
+                        tokenImageBMargin: 10,
                     },
                     reminder: {
                         tokenSize: 94.5,
