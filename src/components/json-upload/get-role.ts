@@ -7,7 +7,7 @@ const getRole = (id: string): RoleType => {
     if (roleId in originalRoles) {
         return {
             ...originalRoles[roleId as keyof typeof originalRoles],
-            image: `/roles/modern/${roleId}.webp`,
+            image: `/roles/cropped/Icon_${roleId}.png`,
         } as RoleType;
     }
     toast.error(`UNKNOWN ROLE: ${roleId} - Not found in roles.json`);
@@ -20,7 +20,7 @@ const getRole = (id: string): RoleType => {
         otherNight: 0,
         otherNightReminder: "",
         ability: "This role is missing a definition",
-        image: "/roles/modern/good.webp",
+        image: "/roles/cropped/Generic_townsfolk.png",
         setup: false,
         count: 1,
         reminders: [],
