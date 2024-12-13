@@ -1595,7 +1595,10 @@ const originalRoles: Roles = {
         otherNight: 23,
         otherNightReminder:
             "The Lycanthrope points to a living player: if good, they die and the demon doesn't kill tonight.",
-        reminders: [{ text: "Dead", count: 1 }, { text: "Faux Paw", count: 1}],
+        reminders: [
+            { text: "Dead", count: 1 },
+            { text: "Faux Paw", count: 1 },
+        ],
         setup: false,
         ability:
             "Each night*, choose an alive player. If good, they die & the Demon doesn't kill tonight. One good player registers as evil.",
@@ -1690,12 +1693,13 @@ const originalRoles: Roles = {
         name: "Alchemist",
         team: "townsfolk",
         firstNight: 3,
-        firstNightReminder: "Show the Alchemist a not-in-play Minion token",
+        firstNightReminder: "Show the Alchemist a Minion token",
         otherNight: 0,
         otherNightReminder: "",
         reminders: [{ text: "Is the Alchemist", count: 1 }],
         setup: false,
-        ability: "You have a not-in-play Minion ability.",
+        ability:
+            "You have a Minion ability. When using this, the Storyteller may prompt you to choose differently.",
         count: 1,
         category: "other",
     },
@@ -1710,7 +1714,8 @@ const originalRoles: Roles = {
             "If a Farmer died tonight, choose another good player and make them the Farmer. Wake this player, show them the 'You are' card and the Farmer character token.",
         reminders: [],
         setup: false,
-        ability: "When you die at night, an alive good player becomes a Farmer.",
+        ability:
+            "When you die at night, an alive good player becomes a Farmer.",
         count: 4,
         category: "other",
     },
@@ -2217,7 +2222,7 @@ const originalRoles: Roles = {
         ],
         setup: false,
         ability:
-            "Each night*, choose 3 players (all players learn who): each silently chooses to live or die, but if all live, all die.",
+            "Each night*, you may choose 3 players (all players learn who): each silently chooses to live or die, but if all live, all die.",
         count: 1,
         category: "every-night-star",
     },
@@ -2721,14 +2726,15 @@ const originalRoles: Roles = {
     },
     gnome: {
         id: "gnome",
-        reminders: [{text: "Amigo", count: 1}],
+        reminders: [{ text: "Amigo", count: 1 }],
         name: "Gnome",
         team: "traveler",
-        ability: "All players start knowing a player of your alignment. You may choose to kill anyone who nominates them.",
+        ability:
+            "All players start knowing a player of your alignment. You may choose to kill anyone who nominates them.",
         category: "other",
         count: 1,
-        setup: false
-    }
+        setup: false,
+    },
 };
 
 export default originalRoles;
