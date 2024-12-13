@@ -2719,6 +2719,20 @@ const originalRoles: Roles = {
         ability:
             "The Demon (even if drunk or poisoned) has a not-in-play good character’s ability. You both know which.",
     },
+    xaan: {
+        id: "xaan",
+        firstNight: 15.5,
+        firstNightReminder: "Add the Night 1 reminder token to the grimoire",
+        otherNight: 7.5,
+        otherNightReminder: "Replace the previous night reminder token with the next one in order, on the night that equals the number of outsiders in play at the beginig of the game.  Remove the Night x reminder token and place the X reminder token.  All townsfolk are poisoned until dusk.",
+        reminders: [{text: "Night 1", count: 1}, {text: "Night 2", count: 1}, {text: "Night 3", count: 1}, {text: "Night 4", count: 1}, {text: "X", count: 1}],
+        name: "Xaan",
+        team: "minion",
+        count: 1,
+        setup: true,
+        category: "other",
+        ability: "Ability: On night X, all Townsfolk are poisoned until dusk. [X Outsiders]"
+    },
     gnome: {
         id: "gnome",
         reminders: [{text: "Amigo", count: 1}],
