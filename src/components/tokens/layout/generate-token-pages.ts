@@ -71,10 +71,19 @@ const generateTokenSizes = (
         imageSize:
             tokenSizeConfig.tokenSize -
             tokenSizeConfig.tokenMargin * 2 -
-            tokenSizeConfig.tokenImageBMargin,
+            (type === "reminder"
+                ? tokenSizeConfig.tokenImageBMargin
+                : tokenSizeConfig.tokenImageBMargin * 2),
         imageMarginX:
-            tokenSizeConfig.tokenMargin + tokenSizeConfig.tokenImageBMargin / 2,
-        imageMarginY: tokenSizeConfig.tokenMargin,
+            tokenSizeConfig.tokenMargin +
+            (type === "reminder"
+                ? tokenSizeConfig.tokenImageBMargin / 2
+                : tokenSizeConfig.tokenImageBMargin),
+        imageMarginY:
+            type === "reminder"
+                ? tokenSizeConfig.tokenMargin
+                : tokenSizeConfig.tokenMargin +
+                  tokenSizeConfig.tokenImageBMargin,
     };
 };
 

@@ -4,7 +4,9 @@ const isEvil = (roleType: TeamType) =>
     roleType === "minion" || roleType === "demon";
 
 const getBackupRoleImage = (team: TeamType | undefined = "townsfolk") => {
-    return `/roles/modern/${isEvil(team) ? "evil" : "good"}.webp`;
+    return `/roles/cropped/${
+        isEvil(team) ? "Generic_evil" : "Generic_good"
+    }.png`;
 };
 
 export default getBackupRoleImage;
