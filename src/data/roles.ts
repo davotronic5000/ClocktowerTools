@@ -2749,6 +2749,17 @@ const originalRoles: Roles = {
         count: 1,
         setup: false,
     },
+    wizard: {
+        id: "wizard",
+        reminders: [{ text: "?", count: 2 }],
+        name: "Wizard",
+        team: "minion",
+        ability:
+            "Once per game, choose to make a wish. If granted, it might have a price & leave a clue as to its nature.",
+        category: "once-per-game",
+        count: 1,
+        setup: false,
+    },
 };
 
 export default originalRoles;
