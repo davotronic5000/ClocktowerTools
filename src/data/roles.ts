@@ -2130,7 +2130,7 @@ const originalRoles: Roles = {
         ],
         setup: false,
         ability:
-            "All players keep their eyes closed when voting & the vote tally is secret. Each night, choose if you are drunk or not.",
+            "All players keep eyes closed when voting & the vote tally is secret. Each night, choose if you are drunk until dusk or not.",
         count: 1,
         category: "other",
     },
@@ -2724,6 +2724,20 @@ const originalRoles: Roles = {
         ability:
             "The Demon (even if drunk or poisoned) has a not-in-play good character’s ability. You both know which.",
     },
+    xaan: {
+        id: "xaan",
+        firstNight: 15.5,
+        firstNightReminder: "Add the Night 1 reminder token to the grimoire",
+        otherNight: 7.5,
+        otherNightReminder: "Replace the previous night reminder token with the next one in order, on the night that equals the number of outsiders in play at the beginig of the game.  Remove the Night x reminder token and place the X reminder token.  All townsfolk are poisoned until dusk.",
+        reminders: [{text: "Night 1", count: 1}, {text: "Night 2", count: 1}, {text: "Night 3", count: 1}, {text: "Night 4", count: 1}, {text: "X", count: 1}],
+        name: "Xaan",
+        team: "minion",
+        count: 1,
+        setup: true,
+        category: "other",
+        ability: "Ability: On night X, all Townsfolk are poisoned until dusk. [X Outsiders]"
+    },
     gnome: {
         id: "gnome",
         reminders: [{ text: "Amigo", count: 1 }],
@@ -2732,6 +2746,17 @@ const originalRoles: Roles = {
         ability:
             "All players start knowing a player of your alignment. You may choose to kill anyone who nominates them.",
         category: "other",
+        count: 1,
+        setup: false,
+    },
+    wizard: {
+        id: "wizard",
+        reminders: [{ text: "?", count: 2 }],
+        name: "Wizard",
+        team: "minion",
+        ability:
+            "Once per game, choose to make a wish. If granted, it might have a price & leave a clue as to its nature.",
+        category: "once-per-game",
         count: 1,
         setup: false,
     },
