@@ -2130,7 +2130,7 @@ const originalRoles: Roles = {
         ],
         setup: false,
         ability:
-            "All players keep their eyes closed when voting & the vote tally is secret. Each night, choose if you are drunk or not.",
+            "All players keep eyes closed when voting & the vote tally is secret. Each night, choose if you are drunk until dusk or not.",
         count: 1,
         category: "other",
     },
