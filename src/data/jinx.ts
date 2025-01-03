@@ -14,44 +14,9 @@ export interface JinxContent {
 }
 
 const jinxes: Jinxes = {
-    chambermaid: {
-        id: "chambermaid",
-        jinx: [
-            {
-                id: "mathematician",
-                reason: "The Chambermaid learns if the Mathematician wakes tonight or not, even though the Chambermaid wakes first.",
-                updates: [],
-            },
-        ],
-    },
-    eviltwin: {
-        id: "eviltwin",
-        jinx: [
-            {
-                id: "plaguedoctor",
-                reason: "The Storyteller cannot gain the Evil Twin ability if the Plague Doctor dies.",
-                updates: [],
-            },
-        ],
-    },
-    lunatic: {
-        id: "lunatic",
-        jinx: [
-            {
-                id: "mathematician",
-                reason: "The Mathematician learns if the Lunatic attacks a different player(s) than the real Demon attacked.",
-                updates: [],
-            },
-        ],
-    },
     pithag: {
         id: "pithag",
         jinx: [
-            {
-                id: "heretic",
-                reason: "A Pit-Hag can not create a Heretic.",
-                updates: [],
-            },
             {
                 id: "damsel",
                 reason: "If a Pit-Hag creates a Damsel, the Storyteller chooses which player it is.",
@@ -94,74 +59,64 @@ const jinxes: Jinxes = {
             },
         ],
     },
-    goblin: {
-        id: "goblin",
-        jinx: [
-            {
-                id: "plaguedoctor",
-                reason: "If the Plague Doctor dies, a living Minion gains the Goblin ability in addition to their own ability, and learns this.",
-                updates: [],
-            },
-        ],
-    },
     leviathan: {
         id: "leviathan",
         jinx: [
             {
                 id: "banshee",
                 reason: "Each night, the Leviathan chooses a living player (different to previous nights): a chosen Banshee dies & gains their ability",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "exorcist",
                 reason: "Evil does not win when more than 1 good player is executed, if the Exorcist is alive and has ever successfully chosen the Leviathan.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "farmer",
                 reason: "Each night, the Leviathan chooses a living player (different to previous nights): a chosen Farmer uses their ability but does not die.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "grandmother",
                 reason: "If the Grandchild dies by execution, evil wins.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "innkeeper",
                 reason: "If the Leviathan is in play, the Innkeeper-protected-players are safe from all evil abilities.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "king",
                 reason: "If the Leviathan is in play, and at least 1 player is dead, the King learns an alive character each night.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "mayor",
                 reason: "If the Leviathan is in play & no execution occurs on day 5, good wins",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "monk",
                 reason: "If the Leviathan is in play, the Monk-protected-player is safe from all evil abilities.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "ravenkeeper",
                 reason: "Each night, the Leviathan chooses a living player (different to previous nights): a chosen Ravenkeeper uses their ability but does not die.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "sage",
                 reason: "Each night, the Leviathan chooses a living player (different to previous nights): a chosen Sage uses their ability but does not die.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "soldier",
                 reason: "If the Leviathan is in play, the soldier is safe from all evil abilities.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
-            }
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
+            },
         ],
     },
     lilmonsta: {
@@ -204,16 +159,6 @@ const jinxes: Jinxes = {
             },
         ],
     },
-    lycanthrope: {
-        id: "lycanthrope",
-        jinx: [
-            {
-                id: "gambler",
-                reason: "If the Lycanthrope is alive and the Gambler kills themself at night, no other players can die tonight.",
-                updates: [],
-            },
-        ],
-    },
     legion: {
         id: "legion",
         jinx: [
@@ -249,16 +194,6 @@ const jinxes: Jinxes = {
             },
         ],
     },
-    fanggu: {
-        id: "fanggu",
-        jinx: [
-            {
-                id: "scarletwoman",
-                reason: "If the Fang Gu chooses an Outsider and dies, the Scarlet Woman does not become the Fang Gu.",
-                updates: [],
-            },
-        ],
-    },
     spy: {
         id: "spy",
         jinx: [
@@ -277,19 +212,10 @@ const jinxes: Jinxes = {
                 reason: "If the Poppy Grower is in play, the Spy does not see the Grimoire until the Poppy Grower dies.",
                 updates: [],
             },
-            {
-                id: "plaguedoctor",
-                reason: "If the Plague Doctor dies, a living Minion gains the Spy ability in addition to their own ability, and learns this.",
-                updates: [],
-            },
+
             {
                 id: "damsel",
                 reason: "If the Spy is (or has been) in play, the Damsel is poisoned.",
-                updates: [],
-            },
-            {
-                id: "heretic",
-                reason: "Only 1 jinxed character can be in play.",
                 updates: [],
             },
             {
@@ -322,49 +248,24 @@ const jinxes: Jinxes = {
                 reason: "If the Widow is (or has been) in play, the Damsel is poisoned.",
                 updates: [],
             },
-            {
-                id: "heretic",
-                reason: "Only 1 jinxed character can be in play.",
-                updates: [],
-            },
-        ],
-    },
-    godfather: {
-        id: "godfather",
-        jinx: [
-            {
-                id: "heretic",
-                reason: "Only 1 jinxed character can be in play.",
-                updates: [],
-            },
         ],
     },
     scarletwoman: {
         id: "scarletwoman",
         jinx: [
             {
-                id: "plaguedoctor",
-                reason: "If the Plague Doctor dies, a living Minion gains the Scarlet Woman ability in addition to their own ability, and learns this.",
-                updates: [],
+                id: "fanggu",
+                reason: "If the Fang Gu chooses an Outsider and dies, the Scarlet Woman does not become the Fang Gu.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "AMoved jinx to Scarlet Woman",
+                    },
+                ],
             },
-        ],
-    },
-    boomdandy: {
-        id: "boomdandy",
-        jinx: [
             {
-                id: "plaguedoctor",
-                reason: "If the Plague Doctor is executed and the Storyteller would gain the Boomdandy ability, the Boomdandy ability triggers immediately.",
-                updates: [],
-            },
-        ],
-    },
-    fearmonger: {
-        id: "fearmonger",
-        jinx: [
-            {
-                id: "plaguedoctor",
-                reason: "If the Plague Doctor dies, a living Minion gains the Fearmonger ability in addition to their own ability, and learns this.",
+                id: "alhadikhia",
+                reason: "If there are two living Al-Hadikhias, the Scarlet Woman Al-Hadikhia becomes the Scarlet Woman again.",
                 updates: [],
             },
         ],
@@ -454,21 +355,6 @@ const jinxes: Jinxes = {
             },
         ],
     },
-    baron: {
-        id: "baron",
-        jinx: [
-            {
-                id: "heretic",
-                reason: "The Baron might only add 1 Outsider, not 2.",
-                updates: [],
-            },
-            {
-                id: "plaguedoctor",
-                reason: "If the Storyteller gains the Baron ability, up to two players become not-in-play Outsiders.",
-                updates: [],
-            },
-        ],
-    },
     marionette: {
         id: "marionette",
         jinx: [
@@ -502,11 +388,7 @@ const jinxes: Jinxes = {
                 reason: "The Marionette does not learn that a Damsel is in play.",
                 updates: [],
             },
-            {
-                id: "plaguedoctor",
-                reason: "If the Demon has a neighbor who is alive and a Townsfolk or Outsider when the Plague Doctor dies, that player becomes an evil Marionette. If there is already an extra evil player, this does not happen.",
-                updates: [],
-            },
+
             {
                 id: "huntsman",
                 reason: "If the Marionette thinks that they are the Huntsman, the Damsel was added.",
@@ -542,11 +424,6 @@ const jinxes: Jinxes = {
                 reason: "If the Slayer slays the Lleech's host, the host dies.",
                 updates: [],
             },
-            {
-                id: "heretic",
-                reason: "If the Lleech has poisoned the Heretic then the Lleech dies, the Heretic remains poisoned.",
-                updates: [],
-            },
         ],
     },
     kazali: {
@@ -565,11 +442,6 @@ const jinxes: Jinxes = {
                         reason: "Updated jinx to remove Soldier being able to choose Minion type.",
                     },
                 ],
-            },
-            {
-                id: "bountyhunter",
-                reason: "An evil Townsfolk is only created if the Bounty Hunter is still in play after the Kazali acts.",
-                updates: [],
             },
             {
                 id: "goon",
@@ -599,32 +471,32 @@ const jinxes: Jinxes = {
             {
                 id: "banshee",
                 reason: "Each night, Riot chooses a living player (different to previous nights): a chosen Banshee dies & gains their ability",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "exorcist",
                 reason: "If the Exorcist chooses Riot on the 3rd night, Minions do not become Riot",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "farmer",
                 reason: "Each night, Riot chooses a living player (different to previous nights): a chosen Farmer uses therir ability but does not die.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "grandmother",
                 reason: "If the Grandchild dies during the day, the Grandmother dies too.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "king",
                 reason: "If Riot is in play, and at least 1 player is dead, the king learns an alive character each night.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "mayor",
                 reason: "The Mayor may choose to stop nominations. If they do so when only 1 Riot is alive, good wins. Otherwise, evil wins.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "monk",
@@ -634,37 +506,17 @@ const jinxes: Jinxes = {
             {
                 id: "ravenkeeper",
                 reason: "Each night, Riot chooses a living player (different to previous nights): a chosen Ravenkeeper uses their ability but does not die.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]                 
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "sage",
                 reason: "Each night, Riot chooses a living player (different to previous nights): a chosen Sage uses their ability but does not die.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
             {
                 id: "soldier",
                 reason: "If Riot is in play, the soldier is safe from all evil abilities.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
-            }
-        ],
-    },
-    alhadikhia: {
-        id: "alhadikhia",
-        jinx: [
-            {
-                id: "scarletwoman",
-                reason: "If there are two living Al-Hadikhias, the Scarlet Woman Al-Hadikhia becomes the Scarlet Woman again.",
-                updates: [],
-            },
-        ],
-    },
-    organgrinder: {
-        id: "organgrinder",
-        jinx: [
-            {
-                id: "butler",
-                reason: "If the Organ Grinder is causing eyes closed voting, the Butler may raise their hand to vote but their vote is only counted if their master voted too.",
-                updates: [],
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
             },
         ],
     },
@@ -748,60 +600,45 @@ const jinxes: Jinxes = {
             },
         ],
     },
-    philosopher: {
-        id: "philosopher",
-        jinx: [
-            {
-                id: "bountyhunter",
-                reason: "If the Philosopher gains the Bounty Hunter ability, a Townsfolk might turn evil.",
-                updates: [{ date: "2024-06-09", reason: "Added jinx." }],
-            },
-        ],
-    },
     boffin: {
         id: "boffin",
         jinx: [
             {
-                id: "heretic",
-                reason: 	"The Demon cannot have the Heretic ability.",
-                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
-            },
-            {
                 id: "cultleader",
-                reason: 	"If the Demon has the Cult Leader ability, they can’t turn good due to this ability.",
-                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+                reason: "If the Demon has the Cult Leader ability, they can’t turn good due to this ability.",
+                updates: [{ date: "2024-09-27", reason: "Added jinx." }],
             },
             {
                 id: "goon",
                 reason: "If the Demon has the Goon ability, they can’t turn good due to this ability.",
-                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+                updates: [{ date: "2024-09-27", reason: "Added jinx." }],
             },
             {
                 id: "ogre",
                 reason: "The Demon cannot have the Ogre ability.",
-                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+                updates: [{ date: "2024-09-27", reason: "Added jinx." }],
             },
             {
                 id: "politician",
                 reason: "The Demon cannot have the Politician ability.",
-                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+                updates: [{ date: "2024-09-27", reason: "Added jinx." }],
             },
             {
                 id: "drunk",
                 reason: "If the Demon would have the Drunk ability, the Boffin chooses a Townsfolk player to have this ability instead.",
-                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+                updates: [{ date: "2024-09-27", reason: "Added jinx." }],
             },
             {
                 id: "alchemist",
                 reason: "If the Alchemist has the Boffin ability, the Alchemist does not learn what ability the Demon has.",
-                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
+                updates: [{ date: "2024-09-27", reason: "Added jinx." }],
             },
             {
                 id: "villageidiot",
-                reason: 	"If there is a spare token, the Boffin can give the Demon the Village Idiot ability.",
-                updates: [{ date: "2024-09-27", reason: "Added jinx." },]
-            }
-        ]
+                reason: "If there is a spare token, the Boffin can give the Demon the Village Idiot ability.",
+                updates: [{ date: "2024-09-27", reason: "Added jinx." }],
+            },
+        ],
     },
     psychopath: {
         id: "psychopath",
@@ -809,10 +646,234 @@ const jinxes: Jinxes = {
             {
                 id: "golem",
                 reason: "If the Psychopath is mad as the Golem, the Psychopath has the Golem ability instead.",
-                updates: [{ date: "2024-11-15", reason: "Added jinx." },]
-            }
-        ]
-    }
+                updates: [{ date: "2024-11-15", reason: "Added jinx." }],
+            },
+        ],
+    },
+    plaguedoctor: {
+        id: "plaguedoctor",
+        jinx: [
+            {
+                id: "eviltwin",
+                reason: "The Storyteller cannot gain the Evil Twin ability if the Plague Doctor dies.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Plague Doctor",
+                    },
+                ],
+            },
+            {
+                id: "goblin",
+                reason: "If the Plague Doctor dies, a living Minion gains the Goblin ability in addition to their own ability, and learns this.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Plague Doctor",
+                    },
+                ],
+            },
+            {
+                id: "spy",
+                reason: "If the Plague Doctor dies, a living Minion gains the Spy ability in addition to their own ability, and learns this.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Plague Doctor",
+                    },
+                ],
+            },
+            {
+                id: "scarletwoman",
+                reason: "If the Plague Doctor dies, a living Minion gains the Scarlet Woman ability in addition to their own ability, and learns this.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Plague Doctor",
+                    },
+                ],
+            },
+            {
+                id: "boomdandy",
+                reason: "If the Plague Doctor is executed and the Storyteller would gain the Boomdandy ability, the Boomdandy ability triggers immediately.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Plague Doctor",
+                    },
+                ],
+            },
+            {
+                id: "fearmonger",
+                reason: "If the Plague Doctor dies, a living Minion gains the Fearmonger ability in addition to their own ability, and learns this.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Plague Doctor",
+                    },
+                ],
+            },
+            {
+                id: "baron",
+                reason: "If the Storyteller gains the Baron ability, up to two players become not-in-play Outsiders.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Plague Doctor",
+                    },
+                ],
+            },
+            {
+                id: "marionette",
+                reason: "If the Demon has a neighbor who is alive and a Townsfolk or Outsider when the Plague Doctor dies, that player becomes an evil Marionette. If there is already an extra evil player, this does not happen.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Plague Doctor",
+                    },
+                ],
+            },
+        ],
+    },
+    heretic: {
+        id: "heretic",
+        jinx: [
+            {
+                id: "pithag",
+                reason: "A Pit-Hag can not create a Heretic.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Heretic",
+                    },
+                ],
+            },
+            {
+                id: "spy",
+                reason: "Only 1 jinxed character can be in play.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Heretic",
+                    },
+                ],
+            },
+            {
+                id: "widow",
+                reason: "Only 1 jinxed character can be in play.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Heretic",
+                    },
+                ],
+            },
+            {
+                id: "godfather",
+                reason: "Only 1 jinxed character can be in play.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Heretic",
+                    },
+                ],
+            },
+            {
+                id: "baron",
+                reason: "The Baron might only add 1 Outsider, not 2.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Heretic",
+                    },
+                ],
+            },
+            {
+                id: "lleech",
+                reason: "If the Lleech has poisoned the Heretic then the Lleech dies, the Heretic remains poisoned.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Heretic",
+                    },
+                ],
+            },
+            {
+                id: "boffin",
+                reason: "The Demon cannot have the Heretic ability.",
+                updates: [
+                    { date: "2024-09-27", reason: "Added jinx." },
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Heretic",
+                    },
+                ],
+            },
+        ],
+    },
+    mathematician: {
+        id: "mathematician",
+        jinx: [
+            {
+                id: "mathematician",
+                reason: "The Chambermaid learns if the Mathematician wakes tonight or not, even though the Chambermaid wakes first.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Mathematician",
+                    },
+                ],
+            },
+            {
+                id: "lunatic",
+                reason: "The Mathematician learns if the Lunatic attacks a different player(s) than the real Demon attacked.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Mathematician",
+                    },
+                ],
+            },
+        ],
+    },
+    bountyhunter: {
+        id: "bountyhunter",
+        jinx: [
+            {
+                id: "kazali",
+                reason: "An evil Townsfolk is only created if the Bounty Hunter is still in play after the Kazali acts.",
+                updates: [
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Bounty Hunter",
+                    },
+                ],
+            },
+            {
+                id: "philosopher",
+                reason: "If the Philosopher gains the Bounty Hunter ability, a Townsfolk might turn evil.",
+                updates: [
+                    { date: "2024-06-09", reason: "Added jinx." },
+                    {
+                        date: "2024-12-13",
+                        reason: "Moved jinx to Bounty Hunter",
+                    },
+                ],
+            },
+        ],
+    },
+    butler: {
+        id: "butler",
+        jinx: [
+            {
+                id: "butler",
+                reason: "If the Organ Grinder is causing eyes closed voting, the Butler may raise their hand to vote but their vote is only counted if their master voted too.",
+                updates: [
+                    { date: "2024-12-13", reason: "Moved jinx to Butler" },
+                ],
+            },
+        ],
+    },
 };
 
 export default jinxes;
