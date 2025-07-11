@@ -2729,14 +2729,22 @@ const originalRoles: Roles = {
         firstNight: 15.5,
         firstNightReminder: "Add the Night 1 reminder token to the grimoire",
         otherNight: 7.5,
-        otherNightReminder: "Replace the previous night reminder token with the next one in order, on the night that equals the number of outsiders in play at the beginig of the game.  Remove the Night x reminder token and place the X reminder token.  All townsfolk are poisoned until dusk.",
-        reminders: [{text: "Night 1", count: 1}, {text: "Night 2", count: 1}, {text: "Night 3", count: 1}, {text: "Night 4", count: 1}, {text: "X", count: 1}],
+        otherNightReminder:
+            "Replace the previous night reminder token with the next one in order, on the night that equals the number of outsiders in play at the beginig of the game.  Remove the Night x reminder token and place the X reminder token.  All townsfolk are poisoned until dusk.",
+        reminders: [
+            { text: "Night 1", count: 1 },
+            { text: "Night 2", count: 1 },
+            { text: "Night 3", count: 1 },
+            { text: "Night 4", count: 1 },
+            { text: "X", count: 1 },
+        ],
         name: "Xaan",
         team: "minion",
         count: 1,
         setup: true,
         category: "other",
-        ability: "Ability: On night X, all Townsfolk are poisoned until dusk. [X Outsiders]"
+        ability:
+            "Ability: On night X, all Townsfolk are poisoned until dusk. [X Outsiders]",
     },
     gnome: {
         id: "gnome",
@@ -2759,6 +2767,53 @@ const originalRoles: Roles = {
         category: "once-per-game",
         count: 1,
         setup: false,
+    },
+    hermit: {
+        id: "hermit",
+        name: "Hermit",
+        team: "outsider",
+        reminders: [
+            { text: "1", count: 1 },
+            { text: "2", count: 1 },
+            { text: "3", count: 1 },
+        ],
+        ability: "You have all Outsider abilities. [-0 or -1 Outsider]",
+        category: "other",
+        count: 1,
+        setup: false,
+    },
+    princess: {
+        id: "princess",
+        name: "Princess",
+        team: "townsfolk",
+        reminders: [{ text: "Doesn't Kill", count: 1 }],
+        ability:
+            "On your first day, if you nominated & executed a player, the Demon doesn't kill tonight.",
+        category: "once-per-game",
+        count: 1,
+        setup: false,
+    },
+    wraith: {
+        id: "wraith",
+        name: "Wraith",
+        team: "minion",
+        setup: false,
+        ability:
+            "You may choose to open your eyes at night. You wake when other evil players do.",
+        count: 1,
+        category: "other",
+        reminders: [],
+    },
+    deusexfiasco: {
+        id: "deusexfiasco",
+        name: "Deus Ex Fiasco",
+        team: "fabled",
+        reminders: [{ text: "WHOOPSIE", count: 1 }],
+        setup: false,
+        ability:
+            "If you die, the Storyteller chooses a player to die. If that player is not the Demon, your team wins.",
+        count: 1,
+        category: "other",
     },
 };
 
