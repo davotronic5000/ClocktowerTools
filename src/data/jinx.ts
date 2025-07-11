@@ -14,6 +14,106 @@ export interface JinxContent {
 }
 
 const jinxes: Jinxes = {
+    magician: {
+        id: "magician",
+        jinx: [
+            {
+                id: "wraith",
+                reason: "Each day, after the execution phase, the living Magician may publicly guess a living player as the Wraith: if correct, the Demon must choose the Wraith tonight.",
+                updates: [{ date: "2025-07-11", reason: "Added jinx." }],
+            },
+        ],
+    },
+    wraith: {
+        id: "wraith",
+        jinx: [
+            {
+                id: "marionette",
+                reason: "The Wraith does not wake with the Marionette.",
+                updates: [{ date: "2025-07-11", reason: "Added jinx." }],
+            },
+        ],
+    },
+    alchemist: {
+        id: "alchemist",
+        jinx: [
+            {
+                id: "boffin",
+                reason: "The Alchemist-Boffin does not learn what ability the Demon has.",
+                updates: [
+                    {
+                        date: "2025-07-11",
+                        reason: "Moved from Boffin to Alchemist.",
+                    },
+                ],
+            },
+            {
+                id: "spy",
+                reason: "If the Alchemist has the Spy ability, they do not, and a Spy is in play. Each day, after the execution phase, the living Alchemist may publically guess a living player as the Spy. If correct, the Demon must choose the Spy tonight.",
+                updates: [
+                    {
+                        date: "2025-07-11",
+                        reason: "Moved from Spy to Alchemist, updated wording.",
+                    },
+                ],
+            },
+            {
+                id: "widow",
+                reason: "If the Alchemist has the Widow ability, they do not, and a Widow is in play. Each day, after the execution phase, the living Alchemist may publically guess a living player as the Widow. If correct, the Demon must choose the Widow tonight.",
+                updates: [
+                    {
+                        date: "2025-07-11",
+                        reason: "Moved from Widow to Alchemist, updated wording.",
+                    },
+                ],
+            },
+            {
+                id: "marionette",
+                reason: "An Alchemist-Marionette has no Marionette ability & the Marionette is in play.",
+                updates: [
+                    {
+                        date: "2025-07-11",
+                        reason: "Added jinx.",
+                    },
+                ],
+            },
+            {
+                id: "summoner",
+                reason: "An Alchemist-Summoner does not get bluffs, and chooses which Demon but not which player. If they die before this happens, evil wins. [No Demon]",
+                updates: [
+                    {
+                        date: "2025-07-11",
+                        reason: "Moved from Summoner and updated wording.",
+                    },
+                ],
+            },
+            {
+                id: "mastermind",
+                reason: "An Alchemist-Mastermind has no Mastermind ability & the Mastermind is not-in-play.",
+                updates: [
+                    {
+                        date: "2025-07-11",
+                        reason: "Added jinx.",
+                    },
+                ],
+            },
+            {
+                id: "organgrinder",
+                reason: "If the Alchemist has the Organ Grinder ability, the Organ Grinder is in play & if both the Alchemist and Organ Grinder are sober, both are drunk.",
+                updates: [
+                    {
+                        date: "2025-07-11",
+                        reason: "Added jinx.",
+                    },
+                ],
+            },
+            {
+                id: "wraith",
+                reason: "If the Alchemist has the Wraith ability, they do not, and a Wraith is in play. Each day, after the execution phase, the living Alchemist may publicly guess a living player as the Wraith: if correct, the Demon must choose the Wraith tonight.",
+                updates: [{ date: "2025-07-11", reason: "Added jinx." }],
+            },
+        ],
+    },
     pithag: {
         id: "pithag",
         jinx: [
@@ -198,11 +298,6 @@ const jinxes: Jinxes = {
         id: "spy",
         jinx: [
             {
-                id: "alchemist",
-                reason: "The Alchemist can not have the Spy ability.",
-                updates: [],
-            },
-            {
                 id: "magician",
                 reason: "When the Spy sees the Grimoire, the Demon and Magician's character tokens are removed.",
                 updates: [],
@@ -228,11 +323,6 @@ const jinxes: Jinxes = {
     widow: {
         id: "widow",
         jinx: [
-            {
-                id: "alchemist",
-                reason: "The Alchemist can not have the Widow ability.",
-                updates: [],
-            },
             {
                 id: "magician",
                 reason: "When the Widow sees the Grimoire, the Demon and Magician's character tokens are removed.",
@@ -291,11 +381,6 @@ const jinxes: Jinxes = {
             {
                 id: "clockmaker",
                 reason: "If the Summoner is in play, the Clockmaker does not receive their information until a Demon is created.",
-                updates: [],
-            },
-            {
-                id: "alchemist",
-                reason: "If there is an Alchemist-Summoner in play, the game starts with a Demon in play, as normal. If the Alchemist-Summoner chooses a player, they make that player a Demon but do not change their alignment.",
                 updates: [],
             },
             {
@@ -393,6 +478,16 @@ const jinxes: Jinxes = {
                 id: "huntsman",
                 reason: "If the Marionette thinks that they are the Huntsman, the Damsel was added.",
                 updates: [],
+            },
+        ],
+    },
+    alhadikhia: {
+        id: "alhadikhia",
+        jinx: [
+            {
+                id: "princess",
+                reason: "If the Princess nominated & executed a player on their 1st day, no one dies to the Al-Hadikhia ability tonight.",
+                updates: [{ date: "2025-07-11", reason: "Added jinx." }],
             },
         ],
     },
@@ -539,11 +634,6 @@ const jinxes: Jinxes = {
                 updates: [],
             },
             {
-                id: "alchemist",
-                reason: "If the Alchemist has the Vizier ability, they may only choose to execute immediately if three or more players voted, regardless of those players' alignment.",
-                updates: [],
-            },
-            {
                 id: "magician",
                 reason: "Only 1 jinxed character can be in play. Evil players start knowing which player and character it is.",
                 updates: [],
@@ -573,6 +663,11 @@ const jinxes: Jinxes = {
     cannibal: {
         id: "cannibal",
         jinx: [
+            {
+                id: "princess",
+                reason: "If the Cannibal nominated, executed, & killed the Princess today, the Demon doesn’t kill tonight.",
+                updates: [{ date: "2025-07-11", reason: "Added jinx." }],
+            },
             {
                 id: "poppygrower",
                 reason: "If the Cannibal eats the Poppy Grower, then dies or loses the Poppy Grower ability, the Demon and Minions learn each other that night.",
@@ -626,11 +721,6 @@ const jinxes: Jinxes = {
             {
                 id: "drunk",
                 reason: "If the Demon would have the Drunk ability, the Boffin chooses a Townsfolk player to have this ability instead.",
-                updates: [{ date: "2024-09-27", reason: "Added jinx." }],
-            },
-            {
-                id: "alchemist",
-                reason: "If the Alchemist has the Boffin ability, the Alchemist does not learn what ability the Demon has.",
                 updates: [{ date: "2024-09-27", reason: "Added jinx." }],
             },
             {
